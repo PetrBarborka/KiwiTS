@@ -1,0 +1,6 @@
+*.html~
+*.org~
+*.pyc
+*.pyo
+.idea
+*__pycache__*
