@@ -45,7 +45,7 @@ def NN(data, cities_to_visit):
 
     while( cities_to_visit ):
         pos = getPossibilities(stripped_data, cur_ap, cities_to_visit, cur_day+1)
-        if pos.shape[0] == 0:
+        if pos.shape[0] == 0 or pos.shape[1] == 0:
             return "Failed to find cycle", trip
 
         cur_flight = np.asarray(pos[0,:])[0]
@@ -57,7 +57,7 @@ def NN(data, cities_to_visit):
 
     cities_to_visit = [start_ap]
     pos = getPossibilities(stripped_data, cur_ap, cities_to_visit, cur_day+1)
-    if pos.shape[0] == 0:
+    if pos.shape[0] == 0 or pos.shape[1] == 0:
         return "Failed to find cycle", trip
 
     cur_flight = np.asarray(pos[0,:])[0]
@@ -71,10 +71,11 @@ if __name__ == "__main__":
     import iotools
     from pprint import PrettyPrinter
 
-    # all_cities = ["PRG", "BCN", "TXL", "JFK", "CDG", "ORL", "SXT"]
+    all_cities = ["PRG", "BCN", "TXL", "JFK", "CDG", "ORL", "SXT"]
+    some_cities = ["PRG", "BCN", "JFK"]
     # data = generateData( cities, 1000, 10)
     data = iotools.readcsv("Data1.csv")
 
     pp = PrettyPrinter()
-    pp.pprint(NN(data, ["PRG", "BCN", "JFK"]))
+    pp.pprint(NN(data, all_cities))
     # # savecsv(data, "Data1.csv")
