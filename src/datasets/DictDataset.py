@@ -1,5 +1,5 @@
-from DatasetInterface import DatasetInterface
-from Flight import Flight
+from .DatasetInterface import DatasetInterface
+from .Flight import Flight
 
 import sys
 
@@ -10,11 +10,14 @@ class DictDataset(DatasetInterface):
         self.dataset = dict()
         self.starting_city = None
 
+    def __repr__(self):
+        return self.starting_city + repr(self.dataset)
+
     def load_data(self, path):
         """ See DatasetInterface """
         with open(path, 'r') as f:
+            self.starting_city = f.readline().rstrip()
             lines = f.readlines()
-        self.starting_city = lines[0]
         self._proccess_input(lines[1:])
 
     def _proccess_input(self, lines):
@@ -40,4 +43,4 @@ class DictDataset(DatasetInterface):
 
     def get_flights(self, airport_code, day):
         """ See DatasetInterface """
-        return self.dataset[airport_code].get(day, None)
+        return self.dataset[airport_code].get(day, list())

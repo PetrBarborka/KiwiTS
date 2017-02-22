@@ -17,6 +17,7 @@ class HenryGenerator:
         self.flights_per_airport_max = flights_per_airport_max
         self.flights = None
         self.target_flights = None
+        self.starting_city = None
 
     def _generate_airports(self, n_of_airports):
         def __generate_name():
@@ -83,7 +84,7 @@ class HenryGenerator:
     def save_input_file(self, path=None):
         if not self.flights:
             self.generate()
-        string = '{}\n'.format(self.flights[0][0])
+        string = '{}\n'.format(self.starting_city)
         for f in self.flights:
             string += '{} {} {} {}\n'.format(*f)
         string = string[:-1]
@@ -109,20 +110,8 @@ class HenryGenerator:
         flights = self._generate_flights(airports)
         best_path = self._generate_best_path(airports)
         flights.extend(best_path)
+        self.starting_city = flights[0][0]
         flights = sorted(flights, key=lambda x: (x[0], x[2]))
         self.flights = flights
         self.target_flights = best_path
         return flights
-
-
-generator = HenryGenerator(
-    name_length = 3,
-    flights_per_airport_min = 2,
-    flights_per_airport_max = 5,
-    airports = 3
-)
-generator.generate()
-
-print(generator.save_input_file())
-print('----')
-print(generator.save_target_file())

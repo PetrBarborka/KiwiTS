@@ -9,5 +9,5 @@ class DatasetInterface:
 		raise NotImplementedError( "Should have implemented this" )
 
 	def get_flights(self, airport_code, day):
-		""" Gets flights from given airport for given day. Returns None if there are no flights """
+		""" Gets flights from given airport for given day. Returns list() if there are no flights """
 		raise NotImplementedError( "Should have implemented this" )
