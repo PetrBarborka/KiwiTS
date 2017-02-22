@@ -19,7 +19,7 @@ class DictDataset(DatasetInterface):
 
     def _proccess_input(self, lines):
         """ Proccesses input file lines to dict """
-        def add_to_dataset(from_city, to_city, day, price):
+        def __add_to_dataset(from_city, to_city, day, price):
             """ Adds give flight to dataset """
             flight = Flight(from_city, to_city, day, price)
             if from_city in self.dataset:
@@ -32,7 +32,7 @@ class DictDataset(DatasetInterface):
 
         for line in lines:
             l = line.split(' ') # from, to, day, price
-            add_to_dataset(l[0], l[1], int(l[2]), int(l[3]))
+            __add_to_dataset(l[0], l[1], int(l[2]), int(l[3]))
 
     def get_starting_city(self):
         """ See DatasetInterface """
