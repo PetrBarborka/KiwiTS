@@ -16,7 +16,8 @@ def generate_flights():
 def load_data():
     from src.datasets import DictDataset
     d = DictDataset()
-    d.load_data('input/3_airports_input.csv')
+    # d.load_data('input/3_airports_input.csv')
+    d.load_data('input/3_airports_backtrace.csv')
     return d
 
 #generate_flights()
@@ -26,5 +27,8 @@ dataset = load_data()
 from src.searchers import BackTracker
 b = BackTracker()
 
-for f in b.search(dataset):
-    print( f )
+r = b.search(dataset)
+if r:
+    print( dataset.starting_city )
+    for f in r:
+        print( f )
