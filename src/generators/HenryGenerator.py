@@ -110,7 +110,7 @@ class HenryGenerator:
         flights = self._generate_flights(airports)
         best_path = self._generate_best_path(airports)
         flights.extend(best_path)
-        self.starting_city = flights[0][0]
+        self.starting_city = best_path[0][0]
         flights = sorted(flights, key=lambda x: (x[0], x[2]))
         self.flights = flights
         self.target_flights = best_path
