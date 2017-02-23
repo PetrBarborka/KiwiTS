@@ -105,13 +105,17 @@ class HenryGenerator:
                 f.write(string)
         return string
 
-    def generate(self):
+    def generate(self, generate_best_path=True):
         airports = self._generate_airports(self.n_of_airports)
         flights = self._generate_flights(airports)
-        best_path = self._generate_best_path(airports)
-        flights.extend(best_path)
-        self.starting_city = best_path[0][0]
+        if generate_best_path:
+            best_path = self._generate_best_path(airports)
+            flights.extend(best_path)
+            self.starting_city = best_path[0][0]
+            self.target_flights = best_path
+        else:
+            self.target_flights = None
+            self.starting_city = flights[random.randint(0, len(flights)-1)][0]
         flights = sorted(flights, key=lambda x: (x[0], x[2]))
         self.flights = flights
-        self.target_flights = best_path
         return flights
