@@ -19,29 +19,20 @@ class BackTracker:
         cur_city = start_city
 
         while(cities_to_visit):
-            # print ( "--------------" )
-            # print ( "day: {}".format(day) )
-            # print ( "cur_city: {}".format(cur_city) )
             if day not in possible_flights.keys():
                 possible_flights[day] = dataset.get_flights(cur_city,
                                                             day,
                                                             cities_to_visit=cities_to_visit,
                                                             sort_by_price=True)
-            # print ( "possible_flights[day]: {}".format(possible_flights[day]) )
             if not possible_flights[day]:
                 assert day != 0, "day 0 and nowhere to go  \
                                   - either a bug or no cycle in data"
                 #backwards
-                # print ( "---- backing from: " )
-                # print ( "day: {}".format(day) )
-                # print ( "trip: {}".format(trip) )
-                # print ( "cities to visit: {}".format(cities_to_visit) )
-                # print ( "Nowhere to go: returning " )
-                # print ( "possible_flights[day]: {}".format(possible_flights[day]) )
                 del possible_flights[day]
 
                 last_flight = trip.pop(-1)
                 cities_to_visit.append(cur_city)
+                cur_city = last_flight.city_from
                 day -= 1
                 assert day >= 0, "bug: returning before day 0"
 
@@ -64,6 +55,7 @@ class BackTracker:
                 else:
                     last_flight = trip.pop(-1)
                     cities_to_visit.append(cur_city)
+                    cur_city = last_flight.city_from
                     day -= 1
                     assert day >= 0, "bug: returning before day 0"
 

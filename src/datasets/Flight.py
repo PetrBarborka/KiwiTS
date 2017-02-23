@@ -11,3 +11,9 @@ class Flight:
 
     def __repr__(self):
         return '<Flight: {}>'.format(str(self))
+
+    def __eq__(self, other):
+        return  self.city_from == other.city_from and \
+                self.city_to == other.city_to and \
+                self.day == other.day and \
+                self.price == other.price

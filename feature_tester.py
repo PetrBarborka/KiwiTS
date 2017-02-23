@@ -16,8 +16,8 @@ def generate_flights():
 def load_data():
     from src.datasets import DictDataset
     d = DictDataset()
-    # d.load_data('input/3_airports_input.csv')
-    d.load_data('input/3_airports_backtrace.csv')
+    d.load_data('input/3_airports_input.csv')
+    # d.load_data('input/3_airports_backtrace.csv')
     return d
 
 #generate_flights()

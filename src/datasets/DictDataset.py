@@ -21,7 +21,7 @@ class DictDataset(DatasetInterface):
         with open(path, 'r') as f:
             self.starting_city = f.readline().rstrip()
             lines = f.readlines()
-        self._proccess_input(lines[1:])
+        self._proccess_input(lines)
         self.cities = list(self.dataset.keys())
 
     def _proccess_input(self, lines):

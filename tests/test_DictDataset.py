@@ -21,8 +21,8 @@ class DictDatasetTest(unittest.TestCase):
         
         count = 0
         for ap in d.dataset:
-            for day in ap:
-                for flight in day:
+            for day in d.dataset[ap]:
+                for flight in d.dataset[ap][day]:
                     count += 1
         self.assertEquals( count, 9 )
 
