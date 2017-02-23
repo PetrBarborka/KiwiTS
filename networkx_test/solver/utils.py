@@ -2,9 +2,7 @@ import sys
 import fileinput
 from collections import namedtuple
 
-
 Flight = namedtuple('Flight', 'FROM TO DOD PRICE')
-
 
 def read_file(filename=None):
     flights = []

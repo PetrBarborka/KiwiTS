@@ -25,4 +25,6 @@ dataset = load_data()
 
 from src.searchers import BackTracker
 b = BackTracker()
-b.search(dataset)
+
+for f in b.search(dataset):
+    print( f )

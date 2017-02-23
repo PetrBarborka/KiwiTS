@@ -7,7 +7,7 @@ class Flight:
         self.price = price
 
     def __str__(self):
-        return '{},{},{},{}'.format(self.city_from, self.city_to, self.day, self.price)
+        return '{} {} {} {}'.format(self.city_from, self.city_to, self.day, self.price)
 
     def __repr__(self):
         return '<Flight: {}>'.format(str(self))
