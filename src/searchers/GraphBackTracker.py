@@ -53,6 +53,7 @@ class GraphBackTracker:
 
         cost = 0
         path = []
+        tabu = {}
         current_day = 0
         current_city = self.start_city
 
@@ -60,7 +61,8 @@ class GraphBackTracker:
             # select all edges/flights to unvisited cities from current city on current day
             possible_flights = [(city_from, city_to, data) for (city_from, city_to, data) in
                                 self.G.edges(current_city, data=True)
-                                if data['day'] == current_day and city_to in to_visit]
+                                if data['day'] == current_day and city_to in to_visit and not tabu.get(
+                        (city_from, city_to, data['day'], data['weight']), False)]
 
             if possible_flights:
                 # weight == prize
@@ -81,11 +83,7 @@ class GraphBackTracker:
                 current_city = last_flight.city_from
                 current_day -= 1
 
-                # remove edge from graph based on unsuccessful flight
-                for city_from, city_to, key, data in self.G.out_edges(last_flight.city_from, data=True, keys=True):
-                    if city_from == last_flight.city_from and city_to == last_flight.city_to and data[
-                        'day'] == last_flight.day and data['weight'] == last_flight.price:
-                        self.G.remove_edge(city_from, city_to, key=key)
+                tabu[(last_flight.city_from, last_flight.city_to, last_flight.day, last_flight.price)] = 1
 
         return cost, path
 
