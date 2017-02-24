@@ -44,7 +44,7 @@ class GraphBackTrackerTest(unittest.TestCase):
         cost, path = solver.search()
 
         self.assertEquals(cost, 0)
-
+        self.assertEquals(len(path), solver.last_day + 1)
         self.assertEqual(path[0], Flight("QSA", "EFQ", 0, 0))
         self.assertEqual(path[1], Flight("EFQ", "KCA", 1, 0))
         self.assertEqual(path[2], Flight("KCA", "QSA", 2, 0))
@@ -56,6 +56,7 @@ class GraphBackTrackerTest(unittest.TestCase):
         cost, path = solver.search()
 
         self.assertEquals(cost, 300)
+        self.assertEquals(len(path), solver.last_day + 1)
         self.assertEqual(path[0], Flight("PRG", "TXL", 0, 100))
         self.assertEqual(path[1], Flight("TXL", "BCN", 1, 100))
         self.assertEqual(path[2], Flight("BCN", "PRG", 2, 100))
@@ -66,10 +67,22 @@ class GraphBackTrackerTest(unittest.TestCase):
         cost, path = solver.search()
 
         self.assertEquals(cost, 400)
+        self.assertEquals(len(path), solver.last_day + 1)
         self.assertEqual(path[0], Flight("PRG", "TXL", 0, 100))
         self.assertEqual(path[1], Flight("TXL", "BCN", 1, 100))
         self.assertEqual(path[2], Flight("BCN", "DEL", 2, 100))
         self.assertEqual(path[3], Flight("DEL", "PRG", 3, 100))
+
+    def test_run(self):
+        start_city, flights = load_data('../input/500_airports_input.csv')
+
+        solver = GraphBackTracker(start_city, flights)
+        cost, path = solver.search()
+
+        self.assertEquals(len(path), solver.last_day + 1)
+
+        print cost
+        print path
 
 
 if __name__ == '__main__':
