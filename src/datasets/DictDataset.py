@@ -5,13 +5,16 @@ import sys
 
 
 class DictDataset(DatasetInterface):
-    """ Class representing dataset with dict 
+    """ Class representing dataset with dict
         dataset = { from: { day: [Flight1, Flight2, ... ] } } """
 
     def __init__(self):
         self.dataset = dict()
         self.starting_city = None
         self.cities = []
+
+    def __len__(self):
+        return len(self.cities)
 
     def __repr__(self):
         return self.starting_city + repr(self.dataset)
@@ -45,7 +48,7 @@ class DictDataset(DatasetInterface):
         """ See DatasetInterface """
         return self.starting_city
 
-    def get_flights(self, airport_code, day, 
+    def get_flights(self, airport_code, day,
                     cities_to_visit=None, sort_by_price=None):
         """ See DatasetInterface """
         possibilities = self.dataset[airport_code].get(day, list())
@@ -53,5 +56,5 @@ class DictDataset(DatasetInterface):
             possibilities = sorted(possibilities, key=lambda p: p.price)
         if cities_to_visit is None:
             return possibilities
-        else: 
+        else:
             return [f for f in possibilities if f.city_to in cities_to_visit]
