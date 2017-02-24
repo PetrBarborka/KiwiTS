@@ -33,7 +33,7 @@ class DictDataset(DatasetInterface):
         """ Proccesses input file lines to dict """
         def __add_to_dataset(from_city, to_city, day, price):
             """ Adds given flight to dataset """
-            flight = Flight(self.next_id, from_city, to_city, day, price)
+            flight = Flight(from_city, to_city, day, price, self.next_id)
             self.flights[self.next_id] = flight
             self.next_id += 1
             if from_city in self.dataset:

@@ -1,6 +1,6 @@
 class Flight:
     """ Class representing one flight """
-    def __init__(self, int_id, city_from, city_to, day, price):
+    def __init__(self, city_from, city_to, day, price, int_id=None):
         self.int_id = int_id
         self.city_from = city_from
         self.city_to = city_to
