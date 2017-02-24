@@ -1,4 +1,6 @@
 import copy
+from multiprocessing import Process
+
 from .Path import Path
 
 
@@ -19,9 +21,7 @@ class Indian:
         flights = self.dataset.get_flights(self.path.get_current_city(), self.day)
         self._cycle_flights(flights)
         if self.path.is_valid():
-            if not self.tribe.best_path or self.tribe.best_path.price > self.path.price:
-                self.tribe.best_path = self.path
-                print(self.path)
+            self.tribe.compare_path(self.path)
 
     def _cycle_flights(self, flights):
         for f in flights:
@@ -29,5 +29,4 @@ class Indian:
                 continue
             path = self.path.get_copy()
             i = Indian(self.tribe, self.dataset, path, self.day+1)
-            self.tribe.append(i)
             i.go(f)

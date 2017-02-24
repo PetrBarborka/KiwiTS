@@ -10,6 +10,8 @@ class DictDataset(DatasetInterface):
 
     def __init__(self):
         self.dataset = dict()
+        self.flights = dict() # stores flights by IDs
+        self.next_id = 0 # next ID to be assigned to a flight
         self.starting_city = None
         self.cities = []
 
@@ -30,8 +32,10 @@ class DictDataset(DatasetInterface):
     def _proccess_input(self, lines):
         """ Proccesses input file lines to dict """
         def __add_to_dataset(from_city, to_city, day, price):
-            """ Adds give flight to dataset """
-            flight = Flight(from_city, to_city, day, price)
+            """ Adds given flight to dataset """
+            flight = Flight(self.next_id, from_city, to_city, day, price)
+            self.flights[self.next_id] = flight
+            self.next_id += 1
             if from_city in self.dataset:
                 if day in self.dataset[from_city]:
                     self.dataset[from_city][day].append(flight)
@@ -47,6 +51,9 @@ class DictDataset(DatasetInterface):
     def get_starting_city(self):
         """ See DatasetInterface """
         return self.starting_city
+
+    def get_flight_by_id(self, int_id):
+        return self.flights[int_id]
 
     def get_flights(self, airport_code, day,
                     cities_to_visit=None, sort_by_price=None):
