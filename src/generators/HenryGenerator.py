@@ -18,6 +18,7 @@ class HenryGenerator:
         self.flights = None
         self.target_flights = None
         self.starting_city = None
+        self.trip_price = 0
 
     def _generate_airports(self, n_of_airports):
         def __generate_name():
@@ -58,9 +59,13 @@ class HenryGenerator:
                 ])
         return flights
 
-    def _generate_best_path(self, airport_list):
+    def _generate_best_path(self, airport_list, random_cost=False):
         def __pop_random_from_list(lst):
             return lst.pop(random.randint(0, len(lst)-1))
+        def __get_price(random_cost):
+            price = 10 * random.randint(self.price_min, self.price_max) if random_cost else 0
+            self.trip_price += price
+            return price
         airports = copy.copy(airport_list)
         flights = list()
         flying_from = __pop_random_from_list(airports)
@@ -70,14 +75,14 @@ class HenryGenerator:
                 flying_from,
                 flying_to,
                 len(flights),
-                0
+                __get_price(random_cost)
             ])
             flying_from = flying_to
         flights.append([
             flying_from,
             flights[0][0],
             len(flights),
-            0
+            __get_price(random_cost)
         ])
         return flights
 
@@ -96,7 +101,7 @@ class HenryGenerator:
     def save_target_file(self, path=None):
         if not self.flights:
             self.generate()
-        string = '{}\n'.format('0')
+        string = '{}\n'.format(self.trip_price)
         for f in self.target_flights:
             string += '{} {} {} {}\n'.format(*f)
         string = string[:-1]
@@ -105,11 +110,11 @@ class HenryGenerator:
                 f.write(string)
         return string
 
-    def generate(self, generate_best_path=True):
+    def generate(self, generate_best_path=True, random_cost=False):
         airports = self._generate_airports(self.n_of_airports)
         flights = self._generate_flights(airports)
         if generate_best_path:
-            best_path = self._generate_best_path(airports)
+            best_path = self._generate_best_path(airports, random_cost)
             flights.extend(best_path)
             self.starting_city = best_path[0][0]
             self.target_flights = best_path
