@@ -1,4 +1,3 @@
-import random
 import fileinput
 import networkx as nx
 
@@ -6,8 +5,8 @@ from src.datasets import Flight
 
 
 class Graph:
-    def __init__(self, path, min_phe=None, max_phe=None):
-        self.G = self._build_graph(path, min_phe, max_phe)
+    def __init__(self, path):
+        self.G = self._build_graph(path)
 
     def _load_data(self, path=None):
         flights = []
@@ -36,7 +35,7 @@ class Graph:
 
         return (is_first_day_flight or is_last_day_flight or is_midtrip_flight) and not is_same_city
 
-    def _build_graph(self, path, min_phe, max_phe):
+    def _build_graph(self, path):
         start_city, flights = self._load_data(path)
         to_visit = {flt.city_from for flt in flights}
         last_day = len(to_visit) - 1
@@ -45,10 +44,6 @@ class Graph:
 
         for flt in flights:
             if self._is_new_edge(flt, start_city, last_day):
-                if min_phe and max_phe:
-                    graph.add_edge(flt.city_from, flt.city_to, weight=flt.price, day=flt.day,
-                                   phe=random.uniform(min_phe, max_phe))
-                else:
-                    graph.add_edge(flt.city_from, flt.city_to, weight=flt.price, day=flt.day)
+                graph.add_edge(flt.city_from, flt.city_to, weight=flt.price, day=flt.day)
 
         return graph
