@@ -26,6 +26,7 @@ class Indian:
     def _cycle_flights(self, flights):
         for f in flights:
             if not f.day == self.day or not self.path.possible_flight(f):
+                # this should technically never happen
                 continue
             path = self.path.get_copy()
             i = Indian(self.tribe, self.dataset, path, self.day+1)

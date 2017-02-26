@@ -24,7 +24,7 @@ class GraphBackTracker:
 
             if possible_flights:
                 # weight == prize
-                best_flight = min(possible_flights, key=lambda (u, v, d): d['weight'])
+                best_flight = min(possible_flights, key=lambda d: d[2]['weight'])
 
                 cost += best_flight[2]['weight']
                 current_city = best_flight[1]
@@ -34,7 +34,10 @@ class GraphBackTracker:
                 path.append(Flight(best_flight[0], best_flight[1], best_flight[2]['day'], best_flight[2]['weight']))
             else:
                 # remove last flight from path
-                last_flight = path.pop(-1)
+                if path:
+                    last_flight = path.pop(-1)
+                else:
+                     return cost, path
                 to_visit.append(current_city)
 
                 cost -= last_flight.price

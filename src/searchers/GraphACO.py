@@ -13,23 +13,23 @@ class GraphACO:
         self.mu = mu
         self.rho = rho
 
-    def _calculate_neighbors_probabilities(self, neighbors):
-        # total pheromone neighborhood
+    def _calculate_neighbours_probabilities(self, neighbours):
+        # total pheromone neighbourhood
         min_val = 0.00001
-        neighbors_phe = 0
-        for n in neighbors:
-            neighbors_phe += n[2]['phe'] ** self.alpha * (1.0 / max(n[2]['weight'], min_val)) ** self.beta
+        neighbours_phe = 0
+        for n in neighbours:
+            neighbours_phe += n[2]['phe'] ** self.alpha * (1.0 / max(n[2]['weight'], min_val)) ** self.beta
 
-        # probability per neighbor
-        for n in neighbors:
-            prob = (n[2]['phe'] ** self.alpha * (1.0 / max(n[2]['weight'], min_val)) ** self.beta) / neighbors_phe
+        # probability per neighbour
+        for n in neighbours:
+            prob = (n[2]['phe'] ** self.alpha * (1.0 / max(n[2]['weight'], min_val)) ** self.beta) / neighbours_phe
             yield n[1], prob, n[2]['weight']
 
-    def _select_neighbor(self, neighbors):
+    def _select_neighbour(self, neighbours):
         bottom = 0
         rand = random.random()
 
-        for city_to, prob, price in self._calculate_neighbors_probabilities(neighbors):
+        for city_to, prob, price in self._calculate_neighbours_probabilities(neighbours):
             if bottom < rand <= bottom + prob:
                 return city_to, price
             bottom += prob
@@ -48,11 +48,11 @@ class GraphACO:
             dap = []
 
             while len(path) != max_days + 2:
-                neighbors = [(u, v, d) for (u, v, d) in self.G.edges(current_city, data=True) if
+                neighbours = [(u, v, d) for (u, v, d) in self.G.edges(current_city, data=True) if
                              d['day'] == current_day and v in to_visit]
 
-                if neighbors:
-                    current_city, price = self._select_neighbor(neighbors)
+                if neighbours:
+                    current_city, price = self._select_neighbour(neighbours)
                     to_visit.remove(current_city)
                 else:
                     price = (max_days + 2 - len(path)) * 10000
@@ -61,7 +61,7 @@ class GraphACO:
                 dap.append([current_day, price])
                 current_day += 1
 
-                if not neighbors:
+                if not neighbours:
                     break
 
             paths.append(path)
@@ -98,7 +98,7 @@ class GraphACO:
 
     def _select_best_path(self, days_and_prices):
         index = 0
-        best_price = sys.maxint
+        best_price = sys.maxsize
 
         for i, dap in enumerate(days_and_prices):
             price = self._calculate_total_price(dap)
@@ -117,7 +117,7 @@ class GraphACO:
     def search(self, iterations):
         global_best_path = []
         global_dap = []
-        global_best_price = sys.maxint
+        global_best_price = sys.maxsize
 
         for i in range(iterations):
             paths, days_and_prices = self._construct_paths()

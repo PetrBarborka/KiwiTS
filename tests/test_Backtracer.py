@@ -38,27 +38,16 @@ class BacktracerTest(unittest.TestCase):
         self.assertEqual(r[1], Flight("EFQ", "KCA", 1, 0))
         self.assertEqual(r[2], Flight("KCA", "QSA", 2, 0))
 
+    def test_big(self):
 
-    # def test_cities(self):
-    #     from src.datasets import DictDataset
-    #     d = DictDataset()
-    #     d.load_data('../input/3_airports_backtrace.csv')
-    #
-    #     self.assertTrue("PRG" in d.cities )
-    #     self.assertTrue("TXL" in d.cities )
-    #     self.assertTrue("TXL" in d.cities )
-    #
-    # def test_num_flights(self):
-    #     from src.datasets import DictDataset
-    #     d = DictDataset()
-    #     d.load_data('../input/3_airports_backtrace.csv')
-    #
-    #     count = 0
-    #     for ap in d.dataset:
-    #         for day in d.dataset[ap]:
-    #             for flight in d.dataset[ap][day]:
-    #                 count += 1
-    #     self.assertEquals( count, 9 )
+        dataset = load_data('../input/300_90K_flights.csv')
+
+        b = BackTracker()
+        r = b.search(dataset)
+
+        # self.assertEqual(r[0], Flight("QSA", "EFQ", 0, 0))
+        # self.assertEqual(r[1], Flight("EFQ", "KCA", 1, 0))
+        # self.assertEqual(r[2], Flight("KCA", "QSA", 2, 0))
 
 if __name__ == '__main__':
     unittest.main()

@@ -21,15 +21,20 @@ class Path:
         return str_out
 
     def possible_flight(self, flight):
+        # is returning flight and its time to return
         if flight.city_to == self.starting_city and len(self.flights) + 1 == self.total_cities:
             return True
+        # the destination has not yet been visited
         else:
             return not flight.city_to in self.cities_dict
 
     def is_valid(self):
-        bool_a = self.cities_dict[self.starting_city] == 0
-        bool_b = len(self.cities_dict) == self.total_cities
-        return bool_a and bool_b
+        # gets set to 0 when returning flight is appended
+        returned_home = self.cities_dict[self.starting_city] == 0
+        all_cities_visited = len(self.cities_dict) == self.total_cities
+
+        # the path is complete
+        return all_cities_visited and returned_home
 
     def add_to_path(self, flight):
         self.cities_dict[flight.city_to] = 0
