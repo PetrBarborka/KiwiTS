@@ -3,8 +3,10 @@ import random
 
 from src.datasets import Flight
 
+
 class GraphACO:
-    def __init__(self, G, ants=2, alpha=1, beta=1, mu=100, rho=0.5):
+    def __init__(self, G, ants=2, alpha=1, beta=1, mu=100, rho=0.5, min_phe=0.001, max_phe=0.1, phe_reinit=50,
+                 evaporation=True):
         self.G = G
         self.start_city = G.graph['start_city']
         self.ants = ants
@@ -12,6 +14,10 @@ class GraphACO:
         self.beta = beta
         self.mu = mu
         self.rho = rho
+        self.min_phe = min_phe
+        self.max_phe = max_phe
+        self.phe_reinit = phe_reinit
+        self.evaporation = evaporation
 
     def _calculate_neighbours_probabilities(self, neighbours):
         # total pheromone neighbourhood
@@ -69,19 +75,36 @@ class GraphACO:
 
         return paths, days_and_prices
 
-    def _update_pheromone(self, paths, days_and_prices):
-        # evaporation phase
+    def _init_pheromone(self):
         last_city_from = ''
         last_city_to = ''
         for city_from, city_to in self.G.edges_iter():
             if city_from == last_city_from and city_to == last_city_to:
                 continue
             for i in range(len(self.G[city_from][city_to])):
-                self.G[city_from][city_to][i]['phe'] = (1 - self.rho) * self.G[city_from][city_to][i]['phe'] + .00001
+                self.G[city_from][city_to][i]['phe'] = random.uniform(self.min_phe, self.max_phe)
             last_city_from = city_from
             last_city_to = city_to
 
-        # reinforcement phase
+    def _evaporate(self):
+        last_city_from = ''
+        last_city_to = ''
+        for city_from, city_to in self.G.edges_iter():
+            if city_from == last_city_from and city_to == last_city_to:
+                continue
+
+            for i in range(len(self.G[city_from][city_to])):
+                updated_phe = (1 - self.rho) * self.G[city_from][city_to][i]['phe'] + .00001
+                if self.min_phe < updated_phe < self.max_phe:
+                    self.G[city_from][city_to][i]['phe'] = updated_phe
+
+            last_city_from = city_from
+            last_city_to = city_to
+
+    def _update_pheromone(self, paths, days_and_prices):
+        if self.evaporation:
+            self._evaporate()
+
         for path, dap in zip(paths, days_and_prices):
             phe = 1.0 * self.mu / max(self._calculate_total_price(dap), 0.00001)
             edges = zip(path[:-1], path[1:])
@@ -91,7 +114,8 @@ class GraphACO:
                         if self.G[city_from][city_to][j]['weight'] == dap[i][1] and self.G[city_from][city_to][j][
                             'day'] == dap[i][0]:
                             # add more phe to first flights
-                            self.G[city_from][city_to][j]['phe'] += phe / (i + 1)
+                            if self.min_phe < (self.G[city_from][city_to][j]['phe'] + phe / (i + 1)) < self.max_phe:
+                                self.G[city_from][city_to][j]['phe'] += phe / (i + 1)
 
     def _calculate_total_price(self, dap):
         return sum(x[1] for x in dap)
@@ -120,6 +144,9 @@ class GraphACO:
         global_best_price = sys.maxsize
 
         for i in range(iterations):
+            if i % self.phe_reinit == 0:
+                self._init_pheromone()
+
             paths, days_and_prices = self._construct_paths()
 
             self._update_pheromone(paths, days_and_prices)
