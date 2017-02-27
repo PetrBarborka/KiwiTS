@@ -20,9 +20,9 @@ def initBackTracker(data_file):
 
 def runBackTracker(dataset, b):
 
-    b.search(dataset)
+    return b.search(dataset)
 
-# def validateBackTracker(datafile, valid_paths_file, best_path_file):
+# def validateBackTracker(result, valid_paths_file, best_path_file):
 
 def initIndians(data_file):
 
