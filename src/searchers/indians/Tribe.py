@@ -17,9 +17,10 @@ class Tribe:
         if not self.best_price or self.best_price > path.price:
             self.best_price = path.price
             self.best_path = path
-            print("Best price changed!")
+            # print("Best price changed!")
 
     def search(self, dataset):
         indian = Indian(self, dataset)
         indian.start_as_chief()
-        print(self.best_path.to_string(dataset))
+        # print(self.best_path.to_string(dataset))
+        return self.best_path

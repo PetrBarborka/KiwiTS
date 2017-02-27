@@ -6,7 +6,7 @@ from functools import partial
 sys.path.append(os.path.relpath('../'))
 
 from src.datasets import DictDataset
-from src.searchers import BackTracker
+from src.searchers import *
 
 import timeit
 
@@ -52,15 +52,27 @@ def runGraphACO(solver):
 
     solver.search(10)
 
+def initGraphShortestPath(data_file):
+
+    return GraphShortestPath(Graph(data_file).G)
+
+def runGraphShortestPath(solver):
+
+    solver.search()
+
 def benchmark_method(initfcn, runfcn, filename, reps):
-    run_args = initBackTracker(file_name)
-    t_init = timeit.timeit(partial(initBackTracker, file_name), number=reps)
-    t_run = timeit.timeit(partial(runBackTracker, *run_args), number=reps)
+    run_args = initfcn(file_name)
+    t_init = timeit.timeit(partial(initfcn, file_name), number=reps)
+    if type(run_args) is tuple:
+        t_run = timeit.timeit(partial(runfcn, *run_args), number=reps)
+    else:
+        t_run = timeit.timeit(partial(runfcn, run_args), number=reps)
 
     return t_init, t_run
 
-reps = 100
-file_name = "benchmarkdata/300_ap_3000_total_random_input"
+reps = 10
+# file_name = "benchmarkdata/300_ap_3000_total_random_input"
+file_name = "../input/300_airports_input.csv"
 
 t_init, t_run = benchmark_method(initBackTracker, runBackTracker, file_name, reps)
 
@@ -81,3 +93,8 @@ t_init, t_run = benchmark_method(initGraphACO, runGraphACO, file_name, reps)
 
 print("GraphACO load time: {}".format(t_init/reps))
 print("GraphACO run time: {}".format(t_run/reps))
+
+t_init, t_run = benchmark_method(initGraphShortestPath, runGraphShortestPath, file_name, reps)
+
+print("GraphShortestPath load time: {}".format(t_init/reps))
+print("GraphShortestPath run time: {}".format(t_run/reps))
