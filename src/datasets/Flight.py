@@ -4,8 +4,8 @@ class Flight:
         self.int_id = int_id
         self.city_from = city_from
         self.city_to = city_to
-        self.day = day
-        self.price = price
+        self.day = int(day)
+        self.price = int(price)
 
     def __str__(self):
         return 'id: {}, {} {} {} {}'.format(self.int_id, self.city_from, self.city_to, self.day, self.price)
@@ -14,7 +14,7 @@ class Flight:
         return '<Flight: {}>'.format(str(self))
 
     def __eq__(self, other):
-        return  self.city_from == other.city_from and \
+        return  self.city_from == other.city_from  and \
                 self.city_to == other.city_to and \
                 self.day == other.day and \
                 self.price == other.price

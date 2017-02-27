@@ -4,6 +4,7 @@ class DataPath:
 
     def __init__(self, flights, price):
         assert len(flights) > 0
+        assert type(price) is type(5)
         assert isinstance(flights[0], Flight)
         assert flights[0].city_from == flights[-1].city_to
 
@@ -11,12 +12,17 @@ class DataPath:
         self.price = price
 
     def is_valid(self):
-        valid = True
+
+        cities = set()
+
         cur = self.flights[0].city_from
-        valid = valid and self.flights[-1].city_to == cur
+        valid = self.flights[-1].city_to == cur
         for f in self.flights:
-            valit = valid and f.city_from == cur
+            valid = valid and f.city_from == cur
             cur = f.city_to
+            cities.add(cur)
+
+        valid = valid and len(cities) == len(self.flights)
 
         return valid
 

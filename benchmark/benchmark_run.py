@@ -10,55 +10,55 @@ from src.searchers import *
 
 import timeit
 
-def initBackTracker(data_file):
-
-    dataset = DictDataset()
-    dataset.load_data(data_file)
-    b = BackTracker()
-
-    return dataset, b
-
-def runBackTracker(dataset, b):
-
-    return b.search(dataset)
-
-# def validateBackTracker(result, valid_paths_file, best_path_file):
-
-def initIndians(data_file):
-
-    dataset = DictDataset()
-    dataset.load_data(data_file)
-    t = Tribe()
-
-    return dataset, t
-
-def runIndians(dataset, t):
-
-    t.search(dataset)
-
-def initGraphBackTracker(data_file):
-
-    return GraphBackTracker(Graph(data_file).G)
-
-def runGraphBackTracker(solver):
-
-    solver.search()
-
-def initGraphACO(data_file):
-
-    return GraphACO(Graph(data_file).G, ants=5)
-
-def runGraphACO(solver):
-
-    solver.search(10)
-
-def initGraphShortestPath(data_file):
-
-    return GraphShortestPath(Graph(data_file).G)
-
-def runGraphShortestPath(solver):
-
-    solver.search()
+# def initBackTracker(data_file):
+#
+#     dataset = DictDataset()
+#     dataset.load_data(data_file)
+#     b = BackTracker()
+#
+#     return dataset, b
+#
+# def runBackTracker(dataset, b):
+#
+#     return b.search(dataset)
+#
+# # def validateBackTracker(result, valid_paths_file, best_path_file):
+#
+# def initIndians(data_file):
+#
+#     dataset = DictDataset()
+#     dataset.load_data(data_file)
+#     t = Tribe()
+#
+#     return dataset, t
+#
+# def runIndians(dataset, t):
+#
+#     t.search(dataset)
+#
+# def initGraphBackTracker(data_file):
+#
+#     return GraphBackTracker(Graph(data_file).G)
+#
+# def runGraphBackTracker(solver):
+#
+#     solver.search()
+#
+# def initGraphACO(data_file):
+#
+#     return GraphACO(Graph(data_file).G, ants=5)
+#
+# def runGraphACO(solver):
+#
+#     solver.search(10)
+#
+# def initGraphShortestPath(data_file):
+#
+#     return GraphShortestPath(Graph(data_file).G)
+#
+# def runGraphShortestPath(solver):
+#
+#     solver.search()
 
 def benchmark_method(initfcn, runfcn, filename, reps):
     run_args = initfcn(file_name)
