@@ -12,6 +12,7 @@ class GraphShortestPath:
     def _shortest_path(self):
         dists = {}
         paths = {(self.start_city, 0): []}
+        visited = {(self.start_city, 0): []}
         seen = {(self.start_city, 0): 0}
         fringe = []
 
@@ -42,10 +43,12 @@ class GraphShortestPath:
                 dist = dists[(city_from, flight_data['day'])] + flight_data['weight']
                 tomorrow = today + 1
 
-                if (city_to, tomorrow) not in seen or dist < seen[(city_to, tomorrow)]:
+                if ((city_to, tomorrow) not in seen or dist < seen[(city_to, tomorrow)]) and city_to not in visited[
+                    (city_from, today)]:
                     seen[(city_to, tomorrow)] = dist
                     paths[(city_to, tomorrow)] = paths[(city_from, today)] + [
                         Flight(city_from, city_to, today, flight_data['weight'])]
+                    visited[(city_to, tomorrow)] = visited[(city_from, today)] + [city_to]
                     heappush(fringe, (dist, tomorrow, city_to))
 
         return paths, dists
