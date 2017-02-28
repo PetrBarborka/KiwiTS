@@ -25,7 +25,6 @@ class ShortestPath:
         prices = {}
         paths = {(starting_city, 0): []}
         visited = {(starting_city, 0): []}
-        seen = {(starting_city, 0): 0}
 
         heappush(heap, (starting_city, 0, 0))
 
@@ -63,9 +62,8 @@ class ShortestPath:
                 last_flight_key = (city_from, current_day)
                 next_flight_key = (city_to, next_day)
 
-                if (next_flight_key not in seen or price < seen[next_flight_key]) and city_to not in visited[
+                if (next_flight_key not in prices or price < prices[next_flight_key]) and city_to not in visited[
                     last_flight_key]:
-                    seen[next_flight_key] = price
                     paths[next_flight_key] = paths[last_flight_key] + [flight]
                     visited[next_flight_key] = visited[last_flight_key] + [city_to]
                     heappush(heap, (city_to, next_day, price))
