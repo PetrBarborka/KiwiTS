@@ -1,11 +1,12 @@
 from .Flight import Flight
+from .CFlight import CFlight
 
 class DataPath:
 
     def __init__(self, flights, price):
         assert len(flights) > 0
         assert type(price) is type(5)
-        assert isinstance(flights[0], Flight)
+        assert isinstance(flights[0], Flight) or isinstance(flights[0], CFlight)
         assert flights[0].city_from == flights[-1].city_to
 
         self.flights = flights

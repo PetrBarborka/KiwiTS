@@ -7,8 +7,9 @@ from src.searchers import BackTracker
 from src.datasets import Flight
 
 def load_data(path):
-    from src.datasets import DictDataset
-    d = DictDataset()
+    # from src.datasets import DictDataset
+    from src.datasets.CDictDataset import CDictDataset
+    d = CDictDataset()
     # d.load_data('input/3_airports_input.csv')
     # d.load_data('../input/3_airports_backtrace.csv')
     d.load_data(path)

@@ -1,0 +1,6 @@
+
+1) Bbefore importing Cython modules (.pyx) you need to build them
+    -> use build.sh
+2) If you're gonna touch them, you need to rebuild them every time.
+   It's advisable to clean before you build.
+    -> clean.sh && build.sh

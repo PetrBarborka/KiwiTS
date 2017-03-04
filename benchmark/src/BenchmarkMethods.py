@@ -4,6 +4,7 @@ sys.path.append(os.path.relpath('../../'))
 
 from BenchmarkMethodInterface import *
 from src.datasets import *
+from src.datasets.CDictDataset import CDictDataset
 from src.searchers import *
 
 class BenchmarkBackTracker(BenchmarkMethodInterface):
@@ -15,6 +16,27 @@ class BenchmarkBackTracker(BenchmarkMethodInterface):
 
     def initialize(self, data_file):
         dataset = DictDataset()
+        dataset.load_data(data_file)
+
+        self.dataset = dataset
+        self.backtracker = BackTracker()
+
+    def run(self):
+        
+        assert self.dataset and self.backtracker, "initialize before running"
+        flights = self.backtracker.search(self.dataset)
+        totalcost = sum([f.price for f in flights])
+        self.result = DataPath(flights, totalcost)
+
+class BenchmarkBackTracker_Cython(BenchmarkMethodInterface):
+
+    def __init__(self):
+        super().__init__()
+        self.dataset = None
+        self.backtracker = None
+
+    def initialize(self, data_file):
+        dataset = CDictDataset()
         dataset.load_data(data_file)
 
         self.dataset = dataset
@@ -103,14 +125,14 @@ if __name__ == "__main__":
     # input_file = "../benchmarkdata/5_ap_50_total_random_input"
     # valid_results_file = "../benchmarkdata/5_ap_50_total_random_all"
 
-    # input_file = "../benchmarkdata/300_ap_3000_total_random_input"
+    input_file = "../benchmarkdata/300_ap_3000_total_random_input"
     # valid_results_file = "../benchmarkdata/300_ap_3000_total_random_all"
     #
     # input_file = "../../input/500_airports_input.csv"
     # valid_results_file = "paths.csv"
     #
 
-    input_file = "../../kiwisources/travelling-salesman/real_data/sorted_data/data_200.txt"
+    # input_file = "../../kiwisources/travelling-salesman/real_data/sorted_data/data_200.txt"
     valid_results_file = "paths.csv"
 
 
@@ -119,15 +141,15 @@ if __name__ == "__main__":
 
     timeout = 30
 
-    for bclass in [BenchmarkBackTracker, BenchmarkIndians, BenchmarkGraphBackTracker,
-                   BenchmarkACO, BenchmarkShortestPath]:
+    for bclass in [BenchmarkBackTracker,  BenchmarkBackTracker_Cython, BenchmarkIndians, 
+                   BenchmarkGraphBackTracker, BenchmarkACO, BenchmarkShortestPath]:
 
         def timed_run():
             print( "--- {} ---".format(bclass.__name__))
             b = bclass()
             b.initialize(input_file)
             b.run()
-            print( repr(b.result) )
+            # print( repr(b.result) )
             print( b.result.price )
             b.validate(valid_results_file)
             print ( "Result valid?: {}".format(b.result_is_valid) )
