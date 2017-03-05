@@ -23,4 +23,4 @@ class Tribe:
         indian = Indian(self, dataset)
         indian.start_as_chief()
         # print(self.best_path.to_string(dataset))
-        return self.best_path
+        return [dataset.get_flight_by_id(flt) for flt in self.best_path.flights]

@@ -53,11 +53,8 @@ class ShortestPathTest(unittest.TestCase):
         dataset.load_data('../benchmark/benchmarkdata/300_ap_3000_total_random_input')
 
         sp = ShortestPath()
-        path, price = sp.search(dataset)
-
-        print(price)
-        for p in path:
-            print(p)
+        path = sp.search(dataset)
+        print(path)
 
 
 if __name__ == '__main__':
