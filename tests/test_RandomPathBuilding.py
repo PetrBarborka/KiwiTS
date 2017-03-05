@@ -20,13 +20,7 @@ def run(rpb, dataset):
         path = rpb.search(dataset)
     end = timer()
 
-    print('{:20}{}'.format('Iterations:', i))
-    print('{:20}{}s'.format('Run time:', round(end - start, 5)))
-    print('{:20}{}'.format('Cost:', sum(p.price for p in path)))
-    print('{:20}{}'.format('Path:', path))
-    print()
-
-    return path
+    return i, path, end-start
 
 
 class RandomPathBuildingTest(unittest.TestCase):
@@ -36,19 +30,19 @@ class RandomPathBuildingTest(unittest.TestCase):
         dataset = DictDataset()
         dataset.load_data('../input/3_airports_input.csv')
 
-        path = run(rpb, dataset)
+        path = run(rpb, dataset)[1]
         self.assertEquals(len(path), 3)
 
         dataset = DictDataset()
         dataset.load_data('../input/3_airports_backtrace.csv')
 
-        path = run(rpb, dataset)
+        path = run(rpb, dataset)[1]
         self.assertEquals(len(path), 3)
 
         dataset = DictDataset()
         dataset.load_data('../input/4_airports_backtrace.csv')
 
-        path = run(rpb, dataset)
+        path = run(rpb, dataset)[1]
         self.assertEquals(len(path), 4)
 
     def test_run(self):
@@ -57,11 +51,28 @@ class RandomPathBuildingTest(unittest.TestCase):
         print('Data loaded.\n')
 
         rpb = RandomPathBuilding()
-        # TODO: run async
-        path = run(rpb, dataset)
-        path = run(rpb, dataset)
-        path = run(rpb, dataset)
-        path = run(rpb, dataset)
+
+        path = []
+        cost = sys.maxsize
+        iters = 0
+        time_taken = 0
+
+        start = timer()
+        for i in range(1000):
+            new_iters, new_path, new_time_taken = run(rpb, dataset)
+            new_cost = sum(p.price for p in new_path)
+            if new_cost < cost:
+                cost = new_cost
+                path = new_path
+                iters = new_iters
+                time_taken = new_time_taken
+        end = timer()
+
+        print('{:20}{}'.format('Iterations:', iters))
+        print('{:20}{}s'.format('Run time:', round(time_taken, 5)))
+        print('{:20}{}'.format('Cost:', cost))
+        print('{:20}{}'.format('Path:', path))
+        print('\nFinished in {}s'.format(round(end - start, 5)))
 
 
 if __name__ == '__main__':

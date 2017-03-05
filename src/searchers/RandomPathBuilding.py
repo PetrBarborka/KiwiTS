@@ -23,7 +23,10 @@ class RandomPathBuilding:
             if not possible_flights:
                 return None
             else:
-                flight_to_take = randint(0, len(possible_flights) - 1)
+                upper_range = int(len(possible_flights) / 10)
+                if upper_range == 0:
+                    upper_range = len(possible_flights) - 1
+                flight_to_take = randint(0, upper_range)
                 flight_taken = possible_flights[flight_to_take]
 
                 trip.append(flight_taken)
