@@ -16,7 +16,8 @@ class AsyncManager:
     def search_async(self):
         pool = mp.Pool()
         for s in self.searchers:
-            pool.apply_async(self.search, args=(s, self.dataset,), callback=lambda x: self.log_result(x[0], x[1], x[2]))
+            pool.apply_async(self.search, args=(s, self.dataset,), 
+                             callback=lambda x: self.log_result(x[0], x[1], x[2]))
         pool.close()
         pool.join()
 

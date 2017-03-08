@@ -9,9 +9,6 @@ import timeit, time
 
 from functools import partial
 
-import multiprocessing
-from multiprocessing import Process
-
 class BenchmarkMethodInterface:
     """Set whatever you want in __init__, but leave any real data manipulation
        to initialize(). Set self.result to a DataPath in run() for validation.
@@ -57,19 +54,26 @@ class BenchmarkMethodInterface:
 
         return self.result_is_valid
 
-    def benchmark(self, file_name, reps=10, timeout=10):
+    def benchmark(self, input_file, valid_results_file=None, reps=10, timeout=10):
 
-        def timed_run():
-            t_init = timeit.timeit(partial(self.initialize, file_name), number=reps)/reps
-            t_run = timeit.timeit(self.run, number=reps)/reps
-            print("time: {:.6f} ({:.6f} + {:.6f})".format(t_init + t_run, t_init, t_run))
+        t_init = timeit.timeit(partial(self.initialize, input_file), number=reps)/reps
+        t_run = timeit.timeit(self.run, number=reps)/reps
 
-        p = Process(target=timed_run)
-        p.start()
+        print( "input: {}, {} reps".format(input_file, reps) )
+        print( "average time: {:.6f} ({:.6f} + {:.6f})".format(t_init + t_run, t_init, t_run))
 
-        p.join(timeout=timeout)
+        if self.result :
+            if len( self.result.flights ) > 10:
+                print( "->path: {} ... {} \n->price: {}".format(self.result.flights[:3], 
+                                                             self.result.flights[-3:],
+                                                             self.result.price) )
+            else:
+                print( "->path: {}\n ->price: {}".format(self.result.flights, self.result.price) )
 
-        if p.is_alive():
-            p.terminate()
-            print("timeout of {} seconds exceeded".format(timeout))
+            self.validate(valid_results_file)
+            print ( "Result valid?: {}".format(self.result_is_valid) )
+            print ( "Result best known?: {}".format(self.result_is_best_known) )
+
+        else:
+            print ( "Failed to find path" )
 

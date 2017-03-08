@@ -7,6 +7,8 @@ from src.datasets import *
 from src.datasets.CDictDataset import CDictDataset
 from src.searchers import *
 
+from multiprocessing import Process
+
 class BenchmarkBackTracker(BenchmarkMethodInterface):
 
     def __init__(self):
@@ -66,9 +68,10 @@ class BenchmarkIndians(BenchmarkMethodInterface):
     def run(self):
 
         assert self.dataset and self.tribe, "initialize before running"
-        r = self.tribe.search(self.dataset)
-        flights = [self.dataset.get_flight_by_id(f) for f in r.flights]
-        self.result = DataPath(flights, r.price)
+
+        flights = self.tribe.search(self.dataset)
+        totalcost = sum([f.price for f in flights])
+        self.result = DataPath(flights, totalcost)
 
 class BenchmarkGraphBackTracker(BenchmarkMethodInterface):
 
@@ -120,12 +123,34 @@ class BenchmarkShortestPath(BenchmarkMethodInterface):
         # flights = [self.dataset.get_flight_by_id(f) for f in r.flights]
         self.result = DataPath(r[0], r[1])
 
+class BenchmarkRandomPathBuilding(BenchmarkMethodInterface):
+
+    def __init__(self):
+        super().__init__()
+        self.dataset = None
+        self.rpb = None
+
+    def initialize(self, data_file):
+        dataset = CDictDataset()
+        dataset.load_data(data_file)
+
+        self.dataset = dataset
+        self.rpb = RandomPathBuilding()
+
+    def run(self):
+        
+        assert self.dataset and self.rpb, "initialize before running"
+        flights = self.rpb.search(self.dataset)
+        if flights: 
+            totalcost = sum([f.price for f in flights])
+            self.result = DataPath(flights, totalcost)
+
 if __name__ == "__main__":
     
     # input_file = "../benchmarkdata/5_ap_50_total_random_input"
     # valid_results_file = "../benchmarkdata/5_ap_50_total_random_all"
 
-    input_file = "../benchmarkdata/300_ap_3000_total_random_input"
+    # input_file = "../benchmarkdata/300_ap_3000_total_random_input"
     # valid_results_file = "../benchmarkdata/300_ap_3000_total_random_all"
     #
     # input_file = "../../input/500_airports_input.csv"
@@ -133,37 +158,23 @@ if __name__ == "__main__":
     #
 
     # input_file = "../../kiwisources/travelling-salesman/real_data/sorted_data/data_200.txt"
+    input_file = "../../kiwisources/travelling-salesman/real_data/data_300.txt"
     valid_results_file = "paths.csv"
 
+    timeout = 200
+    # timeout = 10
 
-    # for bclass in [BenchmarkBackTracker, BenchmarkIndians, BenchmarkGraphBackTracker,
-    #                BenchmarkACO, BenchmarkShortestPath]:
+    for b in [BenchmarkBackTracker(),  BenchmarkBackTracker_Cython(), BenchmarkIndians(), 
+              BenchmarkGraphBackTracker(), BenchmarkACO(), BenchmarkShortestPath(),
+              BenchmarkRandomPathBuilding()]:
 
-    timeout = 30
-
-    for bclass in [BenchmarkBackTracker,  BenchmarkBackTracker_Cython, BenchmarkIndians, 
-                   BenchmarkGraphBackTracker, BenchmarkACO, BenchmarkShortestPath]:
-
-        def timed_run():
-            print( "--- {} ---".format(bclass.__name__))
-            b = bclass()
-            b.initialize(input_file)
-            b.run()
-            # print( repr(b.result) )
-            print( b.result.price )
-            b.validate(valid_results_file)
-            print ( "Result valid?: {}".format(b.result_is_valid) )
-            print ( "Result best known?: {}".format(b.result_is_best_known) )
-
-        p = Process(target=timed_run)
+        print( "--- {} ---".format(b.__class__.__name__))
+        p = Process(target=partial(b.benchmark, input_file, valid_results_file=valid_results_file, reps=1, timeout=timeout))
         p.start()
-
         p.join(timeout=timeout)
-
         if p.is_alive():
             p.terminate()
-            print("Initial run: timeout of {} seconds exceeded".format(timeout))
+            print("timeout of {} seconds exceeded for".format(timeout))
+            continue
 
-        b = bclass()
-        b.benchmark(input_file, reps=1, timeout=timeout)
 

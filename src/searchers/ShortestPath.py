@@ -86,5 +86,6 @@ class ShortestPath:
         starting_city = dataset.get_starting_city()
         last_day = len(dataset)
 
-        paths, prices = self._single_source_dijkstra(dataset, starting_city, last_day - 1)
+        paths, prices = self._single_source_dijkstra(dataset, starting_city, 
+                                                     last_day - 1)
         return paths[(starting_city, last_day)]

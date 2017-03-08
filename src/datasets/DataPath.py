@@ -7,7 +7,6 @@ class DataPath:
         assert len(flights) > 0
         assert type(price) is type(5)
         assert isinstance(flights[0], Flight) or isinstance(flights[0], CFlight)
-        assert flights[0].city_from == flights[-1].city_to
 
         self.flights = flights
         self.price = price
@@ -22,6 +21,8 @@ class DataPath:
             valid = valid and f.city_from == cur
             cur = f.city_to
             cities.add(cur)
+
+        valid = valid and self.flights[0].city_from == self.flights[-1].city_to
 
         valid = valid and len(cities) == len(self.flights)
 
