@@ -15,6 +15,9 @@ from src.searchers import ShortestPath
 from src.searchers import Tribe
 from src.searchers.AsyncBackTracker import AsyncBackTracker
 
+import datetime
+
+import logging
 
 class AsyncManager:
     def __init__(self, dataset, searchers):
@@ -60,8 +63,8 @@ class AsyncManager:
 
         validity = "VALID" if path.is_valid() else "NON-VALID"
         td = timer() - self.time_start
-        print( "{} found {} path for: {}\n\ton: {}"
-              .format( method_name, validity, path.price, td ) )
+        logging.info( "{} found {} path for {}"
+                      .format( method_name, validity, path.price ) )
 
         if path.is_valid():
             if self.best_result is None or self.best_result["path"].price > path.price:
@@ -86,19 +89,45 @@ class AsyncManager:
         print('\t{:15}{}'.format('Path:', path))
 
 if __name__ == '__main__':
+
     dataset = CDictDataset()
-    # d.load_data('benchmark/benchmarkdata/300_ap_1500000_total_random_input')
-    # dataset.load_data('benchmark/benchmarkdata/300_ap_3000_total_random_input')
-    # dataset.load_data("kiwisources/travelling-salesman/real_data/data_300.txt")
-    # dataset.load_data("kiwisources/travelling-salesman/real_data/sorted_data/data_100.txt")
-    # dataset.load_data("kiwisources/travelling-salesman/real_data/sorted_data/data_200.txt")
-    dataset.load_data("kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt")
+    # input_file = 'benchmark/benchmarkdata/300_ap_1500000_total_random_input'
+    # input_file = 'benchmark/benchmarkdata/300_ap_3000_total_random_input'
+    # input_file = "kiwisources/travelling-salesman/real_data/data_300.txt"
+    # input_file = "kiwisources/travelling-salesman/real_data/sorted_data/data_100.txt"
+    # input_file = "kiwisources/travelling-salesman/real_data/sorted_data/data_200.txt"
+    input_file = "kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt"
+
+    ts = datetime.datetime.now().strftime("%d-%m-%Y-%I-%M%p")
+    lfile = "logs/{}_{}AsyncManager.log".format(input_file.split('.')[0].split('/')[-1], ts)
+
+    log_to_file = True
+    log_to_console = not log_to_file
+
+    fmt = '%(relativeCreated)dms %(module)s %(funcName)s %(levelname)-8s %(message)s'
+    if log_to_file:
+        logging.basicConfig(filename=lfile, 
+                            format=fmt,
+                            datefmt='%H:%M:%S',
+                            level=logging.DEBUG)
+    else:
+        logging.basicConfig(stream=sys.stdout,
+                            format=fmt,
+                            datefmt='%H:%M:%S',
+                            level=logging.DEBUG)
+    logging.info("loading input file {} ...".format(input_file) )
+    dataset.load_data(input_file)
+    logging.info("done")
     
     timeout = 30
     AM = AsyncManager(dataset, [AsyncBackTracker])
     p = Process(target=partial(AM.search_async, timeout=timeout))
+
+    logging.info("starting AsyncManager process")
     p.start()
     p.join(timeout)
     if p.is_alive():
         p.terminate()
-        print("Async manager process timed out")
+        logging.info("Async manager process timed out")
+    else:
+        logging.info("Async manager process ended")
