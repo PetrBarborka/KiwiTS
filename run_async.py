@@ -55,6 +55,13 @@ class AsyncManager:
         while( timer() - self.time_start < timeout and any_alive(threads) ):
             time.sleep(1)
 
+        if any_alive(threads):
+            logging.info("some threads are still alive after timeout of {}s"
+                         .format(timeout) )
+        else:
+            logging.info("all threads finished before timeout of {}s"
+                         .format(timeout) )
+
         # self.final_report()
 
     def register_result(self, path, method_name="method name undefined"):
@@ -93,10 +100,10 @@ if __name__ == '__main__':
     dataset = CDictDataset()
     # input_file = 'benchmark/benchmarkdata/300_ap_1500000_total_random_input'
     # input_file = 'benchmark/benchmarkdata/300_ap_3000_total_random_input'
-    # input_file = "kiwisources/travelling-salesman/real_data/data_300.txt"
+    input_file = "kiwisources/travelling-salesman/real_data/data_300.txt"
     # input_file = "kiwisources/travelling-salesman/real_data/sorted_data/data_100.txt"
     # input_file = "kiwisources/travelling-salesman/real_data/sorted_data/data_200.txt"
-    input_file = "kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt"
+    # input_file = "kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt"
 
     ts = datetime.datetime.now().strftime("%d-%m-%Y-%I-%M%p")
     lfile = "logs/{}_{}AsyncManager.log".format(input_file.split('.')[0].split('/')[-1], ts)
@@ -119,9 +126,9 @@ if __name__ == '__main__':
     dataset.load_data(input_file)
     logging.info("done")
     
-    timeout = 30
+    timeout = 120
     AM = AsyncManager(dataset, [AsyncBackTracker])
-    p = Process(target=partial(AM.search_async, timeout=timeout))
+    p = Process(target=partial(AM.search_async, timeout=(timeout - 1)))
 
     logging.info("starting AsyncManager process")
     p.start()

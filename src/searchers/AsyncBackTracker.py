@@ -4,6 +4,7 @@ sys.path.append(os.path.realpath(".."))
 
 from datasets import DataPath
 
+import logging
 
 class AsyncBackTracker:
 
@@ -56,7 +57,7 @@ class AsyncBackTracker:
                 # print( "backwards" )
 
                 if day == 0:
-                    # print ( "self.dataset exhausted" )
+                    logging.info( "self.dataset exhausted" )
                     return
 
                 assert day != 0, "day 0 and nowhere to go  \
