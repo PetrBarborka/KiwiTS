@@ -92,7 +92,7 @@ if __name__ == '__main__':
     # dataset.load_data("kiwisources/travelling-salesman/real_data/data_300.txt")
     # dataset.load_data("kiwisources/travelling-salesman/real_data/sorted_data/data_100.txt")
     # dataset.load_data("kiwisources/travelling-salesman/real_data/sorted_data/data_200.txt")
-    dataset.load_data("kiwisources/travelling-salesman/real_data/sorted_data/data_15.txt")
+    dataset.load_data("kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt")
     
     timeout = 30
     AM = AsyncManager(dataset, [AsyncBackTracker])
