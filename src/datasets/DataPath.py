@@ -3,10 +3,10 @@ from .CFlight import CFlight
 
 class DataPath:
 
-    def __init__(self, flights, price):
-        assert len(flights) > 0
+    def __init__(self, flights=[], price=0):
+        # assert len(flights) > 0
         assert type(price) is type(5)
-        assert isinstance(flights[0], Flight) or isinstance(flights[0], CFlight)
+        # assert isinstance(flights[0], Flight) or isinstance(flights[0], CFlight)
 
         self.flights = flights
         self.price = price
@@ -28,6 +28,20 @@ class DataPath:
 
         return valid
 
+    def push_flight(self, flight):
+        assert type(flight.price) is type(5)
+        assert isinstance(flight, Flight) or isinstance(flight, CFlight)
+
+        self.flights.append(flight)
+        self.price += flight.price
+
+    def pop_flight(self):
+
+        out = self.flights.pop(-1)
+        self.price -= out.price
+
+        return out
+
     def __str__(self):
         out = ""
         for f in self.flights:
@@ -37,6 +51,9 @@ class DataPath:
 
     def __repr__(self):
         return '<Path: {}>'.format(str(self))
+
+    def __hash__(self):
+        return hash(str(self))
 
     def __eq__(self, other):
         assert isinstance(other, self.__class__)

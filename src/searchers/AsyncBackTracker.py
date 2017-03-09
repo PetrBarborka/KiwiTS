@@ -10,10 +10,11 @@ class AsyncBackTracker:
     def __init__(self, dataset, register_result_callback):
         self.dataset = dataset
         self.register_result = register_result_callback
+        self.best_price_so_far = None
 
     def search(self):
 
-        trip = []
+        path = DataPath()
         #possible_flights = { day : [flight flight flight ... ] }
         # je to vpodstate stack
         possible_flights = {}
@@ -31,20 +32,29 @@ class AsyncBackTracker:
                                                             day,
                                                             cities_to_visit=cities_to_visit,
                                                             sort_by_price=True)
-            if possible_flights[day]:
+
+            flights_are_available = True if possible_flights[day] else False
+            price_is_not_too_high = flights_are_available and \
+                                    ( (self.best_price_so_far is None) or \
+                                      path.price + possible_flights[day][0].price < \
+                                      self.best_price_so_far )
+
+            if flights_are_available and price_is_not_too_high:
                 #forward
                 # print( "forward" )
 
                 flight_taken = possible_flights[day].pop(0)
-                trip.append(flight_taken)
+                path.push_flight(flight_taken)
+
                 cities_to_visit.remove(flight_taken.city_to)
                 cur_city = flight_taken.city_to
+
                 day += 1
 
             else:
                 #backwards
                 # print( "backwards" )
-                
+
                 if day == 0:
                     # print ( "self.dataset exhausted" )
                     return
@@ -53,9 +63,11 @@ class AsyncBackTracker:
                                   - either a bug or no cycle in data"
                 del possible_flights[day]
 
-                last_flight = trip.pop(-1)
+                last_flight = path.pop_flight()
+
                 cities_to_visit.append(cur_city)
                 cur_city = last_flight.city_from
+
                 day -= 1
                 assert day >= 0, "bug: returning before day 0"
 
@@ -66,18 +78,26 @@ class AsyncBackTracker:
                                                             day,
                                                             cities_to_visit=[start_city],
                                                             sort_by_price=True )
-                while( return_possibilities ):
+
+                flights_are_available = True if return_possibilities else False
+                price_is_not_too_high = flights_are_available and \
+                                        ( (self.best_price_so_far is None) or \
+                                        path.price + return_possibilities[0].price < \
+                                        self.best_price_so_far )
+                if flights_are_available and price_is_not_too_high:
 
                     flight_taken = return_possibilities.pop(0)
-                    trip.append( flight_taken )
-                    price = sum([f.price for f in trip])
-                    path = DataPath(trip, price)
+                    path.push_flight(flight_taken)
+
+                    if path.is_valid():
+                        self.best_price_so_far = path.price
+                        # print ( "best price so far: {}".format(self.best_price_so_far) )
 
                     self.register_result( path )
 
-                    trip.pop(-1)
+                    path.pop_flight()
 
-                last_flight = trip.pop(-1)
+                last_flight = path.pop_flight()
                 cities_to_visit.append(cur_city)
                 cur_city = last_flight.city_from
                 day -= 1
@@ -93,7 +113,8 @@ if __name__ == "__main__":
     sys.path.append(os.path.realpath(".."))
     from datasets.CDictDataset import CDictDataset
 
-    input_file = "../../benchmark/benchmarkdata/300_ap_3000_total_random_input"
+    # input_file = "../../benchmark/benchmarkdata/300_ap_3000_total_random_input"
+    input_file = "../../kiwisources/travelling-salesman/real_data/data_300.txt"
     dataset = CDictDataset()
     dataset.load_data(input_file)
 
