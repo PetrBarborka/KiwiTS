@@ -3,30 +3,37 @@ from .CFlight import CFlight
 
 class DataPath:
 
-    def __init__(self, flights=[], price=0):
+    def __init__(self, flights=None, price=0):
         # assert len(flights) > 0
         assert type(price) is type(5)
         # assert isinstance(flights[0], Flight) or isinstance(flights[0], CFlight)
 
-        self.flights = flights
+        self.flights = flights if flights is not None else []
         self.price = price
 
-    def is_valid(self):
+    def copy(self):
+        o = DataPath()
+        o.price = self.price
+        o.flights = self.flights
+
+    def is_valid(self, partial=False):
 
         cities = set()
 
         cur = self.flights[0].city_from
-        valid = self.flights[-1].city_to == cur
+        valid  = True
         for f in self.flights:
             valid = valid and f.city_from == cur
             cur = f.city_to
             cities.add(cur)
 
-        valid = valid and self.flights[0].city_from == self.flights[-1].city_to
-
         valid = valid and len(cities) == len(self.flights)
 
-        return valid
+        if partial:
+            return valid
+        else:
+            valid = valid and self.flights[0].city_from == self.flights[-1].city_to
+            return valid
 
     def push_flight(self, flight):
         assert type(flight.price) is type(5)

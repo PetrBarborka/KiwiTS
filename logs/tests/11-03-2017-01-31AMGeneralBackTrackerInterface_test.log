@@ -1,0 +1,279 @@
+270ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	STARTING THE METHOD from PRG, day 0 to PRG, day 3
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Path after construction:  price: 0
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: [<Flight: id: 1, PRG BCN 0 50>, <Flight: id: 0, PRG TXL 0 100>]
+	best price so far: None
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Taking flight id: 1, PRG BCN 0 50
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 1, PRG BCN 0 50> price: 50
+	possible flights: [<Flight: id: 4, BCN TXL 1 20>]
+	best price so far: None
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Taking flight id: 4, BCN TXL 1 20
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	day: 2, looking for a flight back to PRG
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70
+	possible return flights: []
+	best price so far: None
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	backtracking ...
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 1, PRG BCN 0 50> price: 50
+	possible flights: []
+	best price so far: None
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	backtracking ...
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: [<Flight: id: 0, PRG TXL 0 100>]
+	best price so far: None
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Taking flight id: 0, PRG TXL 0 100
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 0, PRG TXL 0 100> price: 100
+	possible flights: [<Flight: id: 3, TXL BCN 1 100>]
+	best price so far: None
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Taking flight id: 3, TXL BCN 1 100
+271ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	day: 2, looking for a flight back to PRG
+272ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200
+	possible return flights: [<Flight: id: 6, BCN PRG 2 100>]
+	best price so far: None
+272ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	FOUND NEW BEST PATH: 
+	<Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300, returning
+272ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	STARTING THE METHOD from PRG, day 0 to BCN, day 1
+272ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Path after construction:  price: 0
+272ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: []
+	best price so far: None
+272ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	day: 0, looking for a flight back to BCN
+272ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible return flights: [<Flight: id: 1, PRG BCN 0 50>]
+	best price so far: None
+272ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	FOUND NEW BEST PATH: 
+	<Flight: id: 1, PRG BCN 0 50> price: 50, returning
+272ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	STARTING THE METHOD from BCN, day 1 to TXL, day 2
+272ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Path after construction:  price: 0
+272ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: []
+	best price so far: None
+273ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	day: 1, looking for a flight back to TXL
+273ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible return flights: [<Flight: id: 4, BCN TXL 1 20>]
+	best price so far: None
+273ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	FOUND NEW BEST PATH: 
+	<Flight: id: 4, BCN TXL 1 20> price: 20, returning
+273ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	STARTING THE METHOD from BCN, day 1 to PRG, day 3
+273ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Path after construction:  price: 0
+273ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: [<Flight: id: 4, BCN TXL 1 20>]
+	best price so far: None
+273ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Taking flight id: 4, BCN TXL 1 20
+273ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	day: 2, looking for a flight back to PRG
+273ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 4, BCN TXL 1 20> price: 20
+	possible return flights: []
+	best price so far: None
+274ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	backtracking ...
+274ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: []
+	best price so far: None
+274ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	backtracking ...
+274ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	self.dataset exhausted, returning
+274ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	STARTING THE METHOD from TXL, day 1 to PRG, day 3
+274ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Path after construction:  price: 0
+274ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: [<Flight: id: 3, TXL BCN 1 100>]
+	best price so far: None
+274ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Taking flight id: 3, TXL BCN 1 100
+274ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	day: 2, looking for a flight back to PRG
+274ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 3, TXL BCN 1 100> price: 100
+	possible return flights: [<Flight: id: 6, BCN PRG 2 100>]
+	best price so far: None
+274ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	FOUND NEW BEST PATH: 
+	<Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 200, returning
+286ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	STARTING THE METHOD from PRG, day 0 to PRG, day 3
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Path after construction:  price: 0
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: [<Flight: id: 1, PRG BCN 0 50>, <Flight: id: 0, PRG TXL 0 100>]
+	best price so far: None
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Taking flight id: 1, PRG BCN 0 50
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 1, PRG BCN 0 50> price: 50
+	possible flights: [<Flight: id: 4, BCN TXL 1 20>]
+	best price so far: None
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Taking flight id: 4, BCN TXL 1 20
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	day: 2, looking for a flight back to PRG
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70
+	possible return flights: []
+	best price so far: None
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	backtracking ...
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 1, PRG BCN 0 50> price: 50
+	possible flights: []
+	best price so far: None
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	backtracking ...
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: [<Flight: id: 0, PRG TXL 0 100>]
+	best price so far: None
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Taking flight id: 0, PRG TXL 0 100
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 0, PRG TXL 0 100> price: 100
+	possible flights: [<Flight: id: 3, TXL BCN 1 100>]
+	best price so far: None
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Taking flight id: 3, TXL BCN 1 100
+287ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	day: 2, looking for a flight back to PRG
+288ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200
+	possible return flights: [<Flight: id: 6, BCN PRG 2 100>]
+	best price so far: None
+288ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	FOUND NEW BEST PATH: 
+	<Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300, returning
+288ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	STARTING THE METHOD from PRG, day 0 to BCN, day 1
+288ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Path after construction:  price: 0
+288ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: []
+	best price so far: None
+288ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	day: 0, looking for a flight back to BCN
+288ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible return flights: [<Flight: id: 1, PRG BCN 0 50>]
+	best price so far: None
+288ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	FOUND NEW BEST PATH: 
+	<Flight: id: 1, PRG BCN 0 50> price: 50, returning
+288ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	STARTING THE METHOD from BCN, day 1 to TXL, day 2
+288ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Path after construction:  price: 0
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: []
+	best price so far: None
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	day: 1, looking for a flight back to TXL
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible return flights: [<Flight: id: 4, BCN TXL 1 20>]
+	best price so far: None
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	FOUND NEW BEST PATH: 
+	<Flight: id: 4, BCN TXL 1 20> price: 20, returning
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	STARTING THE METHOD from BCN, day 1 to PRG, day 3
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Path after construction:  price: 0
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: [<Flight: id: 4, BCN TXL 1 20>]
+	best price so far: None
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Taking flight id: 4, BCN TXL 1 20
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	day: 2, looking for a flight back to PRG
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 4, BCN TXL 1 20> price: 20
+	possible return flights: []
+	best price so far: None
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	backtracking ...
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: []
+	best price so far: None
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	backtracking ...
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	self.dataset exhausted, returning
+289ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	STARTING THE METHOD from TXL, day 1 to PRG, day 3
+290ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Path after construction:  price: 0
+290ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: [<Flight: id: 3, TXL BCN 1 100>]
+	best price so far: None
+290ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Taking flight id: 3, TXL BCN 1 100
+290ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	day: 2, looking for a flight back to PRG
+290ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 3, TXL BCN 1 100> price: 100
+	possible return flights: [<Flight: id: 6, BCN PRG 2 100>]
+	best price so far: None
+290ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	FOUND NEW BEST PATH: 
+	<Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 200, returning
+290ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	STARTING THE METHOD from PRG, day 0 to TXL, day 2
+290ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Path after construction:  price: 0
+290ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path:  price: 0
+	possible flights: [<Flight: id: 1, PRG BCN 0 50>]
+	best price so far: None
+290ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	Taking flight id: 1, PRG BCN 0 50
+290ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	day: 1, looking for a flight back to TXL
+290ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	path: <Flight: id: 1, PRG BCN 0 50> price: 50
+	possible return flights: [<Flight: id: 4, BCN TXL 1 20>]
+	best price so far: None
+291ms GeneralBackTrackerInterface _from_to_forwards DEBUG    
+	FOUND NEW BEST PATH: 
+	<Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70, returning

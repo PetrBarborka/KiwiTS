@@ -29,10 +29,11 @@ class AsyncBackTracker:
 
         while(cities_to_visit):
             if day not in possible_flights.keys():
-                possible_flights[day] = self.dataset.get_flights(cur_city,
-                                                            day,
-                                                            cities_to_visit=cities_to_visit,
-                                                            sort_by_price=True)
+                possible_flights[day] = \
+                        self.dataset.get_flights(cur_city,
+                                                 day,
+                                                 cities_to_visit=cities_to_visit,
+                                                 sort_by_price=True)
 
             flights_are_available = True if possible_flights[day] else False
             price_is_not_too_high = flights_are_available and \
@@ -42,7 +43,6 @@ class AsyncBackTracker:
 
             if flights_are_available and price_is_not_too_high:
                 #forward
-                # print( "forward" )
 
                 flight_taken = possible_flights[day].pop(0)
                 path.push_flight(flight_taken)
@@ -54,14 +54,11 @@ class AsyncBackTracker:
 
             else:
                 #backwards
-                # print( "backwards" )
 
                 if day == 0:
                     logging.info( "self.dataset exhausted" )
                     return
 
-                assert day != 0, "day 0 and nowhere to go  \
-                                  - either a bug or no cycle in data"
                 del possible_flights[day]
 
                 last_flight = path.pop_flight()

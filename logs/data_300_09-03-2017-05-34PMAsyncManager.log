@@ -1,0 +1,27 @@
+577ms run_async <module> INFO     loading input file kiwisources/travelling-salesman/real_data/data_300.txt ...
+212167ms run_async <module> INFO     done
+212209ms run_async <module> INFO     starting AsyncManager process
+213530ms run_async register_result INFO     AsyncBackTracker found VALID path for 52562
+213532ms run_async register_result INFO     AsyncBackTracker found VALID path for 52077
+213535ms run_async register_result INFO     AsyncBackTracker found VALID path for 52009
+213540ms run_async register_result INFO     AsyncBackTracker found VALID path for 51914
+213546ms run_async register_result INFO     AsyncBackTracker found VALID path for 50607
+213549ms run_async register_result INFO     AsyncBackTracker found VALID path for 50430
+213594ms run_async register_result INFO     AsyncBackTracker found VALID path for 50248
+214020ms run_async register_result INFO     AsyncBackTracker found VALID path for 50208
+214027ms run_async register_result INFO     AsyncBackTracker found VALID path for 50072
+214047ms run_async register_result INFO     AsyncBackTracker found VALID path for 49978
+214053ms run_async register_result INFO     AsyncBackTracker found VALID path for 49976
+214110ms run_async register_result INFO     AsyncBackTracker found VALID path for 49763
+214301ms run_async register_result INFO     AsyncBackTracker found VALID path for 49610
+214759ms run_async register_result INFO     AsyncBackTracker found VALID path for 49446
+214813ms run_async register_result INFO     AsyncBackTracker found VALID path for 49155
+214849ms run_async register_result INFO     AsyncBackTracker found VALID path for 49129
+215017ms run_async register_result INFO     AsyncBackTracker found VALID path for 49127
+215058ms run_async register_result INFO     AsyncBackTracker found VALID path for 49043
+216165ms run_async register_result INFO     AsyncBackTracker found VALID path for 48905
+216181ms run_async register_result INFO     AsyncBackTracker found VALID path for 48806
+216494ms run_async register_result INFO     AsyncBackTracker found VALID path for 48775
+222034ms run_async register_result INFO     AsyncBackTracker found VALID path for 48680
+232513ms run_async register_result INFO     AsyncBackTracker found VALID path for 48622
+242504ms run_async <module> INFO     Async manager process timed out
