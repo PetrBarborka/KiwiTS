@@ -39,7 +39,7 @@ class BacktracerTest(unittest.TestCase):
         self.assertEqual(r[1], Flight("EFQ", "KCA", 1, 0))
         self.assertEqual(r[2], Flight("KCA", "QSA", 2, 0))
 
-    def test_big(self):
+g   def test_big(self):
 
         dataset = load_data('../input/300_90K_flights.csv')
 

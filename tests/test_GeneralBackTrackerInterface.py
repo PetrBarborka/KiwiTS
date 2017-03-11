@@ -59,7 +59,7 @@ class DataPathTest(unittest.TestCase):
 
 class BacktracerTest(unittest.TestCase):
 
-    def test_forward(self):
+    def test_3ap_from_to(self):
 
         dataset = load_data('../input/3_airports_backtrace.csv')
 
@@ -87,7 +87,39 @@ class BacktracerTest(unittest.TestCase):
         self.assertEqual(p.flights[0], CFlight("PRG", "BCN", 0, 50))
         self.assertEqual(p.flights[1], CFlight("BCN", "TXL", 1, 20))
 
+    def test_big_from_to(self):
 
+        dataset = load_data('../input/300_90K_flights.csv')
+        b = GeneralBackTrackerInterface(dataset, register_result_callback)
+
+        p =  b._from_to(dataset.cities, 0, 300, 
+                        dataset.get_starting_city(), dataset.get_starting_city() )
+
+        self.assertTrue( p.is_valid() )
+
+    def test_3ap_from_days_forward(self):
+
+        dataset = load_data('../input/3_airports_backtrace.csv')
+
+        b = GeneralBackTrackerInterface(dataset, register_result_callback)
+
+        p =  b._from_days_forward(["PRG", "BCN", "TXL"], 2, 0, "PRG")
+        self.assertEqual(p.flights[0], CFlight("PRG", "BCN", 0, 50))
+        self.assertEqual(p.flights[1], CFlight("BCN", "TXL", 1, 20))
+
+        p =  b._from_days_forward(["PRG", "BCN", "TXL"], 2, 1, "BCN")
+        self.assertEqual(p.flights[0], CFlight("BCN", "PRG", 1, 30))
+        self.assertEqual(p.flights[1], CFlight("PRG", "TXL", 2, 30))
+
+    def test_big_from_to(self):
+
+        dataset = load_data('../input/300_90K_flights.csv')
+        b = GeneralBackTrackerInterface(dataset, register_result_callback)
+
+        p =  b._from_days_forward(dataset.cities, 299, 0, 
+                        dataset.get_starting_city() )
+
+        self.assertTrue( p.is_valid(partial=True) )
 
 if __name__ == '__main__':
     unittest.main()

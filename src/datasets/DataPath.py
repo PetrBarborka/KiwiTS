@@ -13,8 +13,9 @@ class DataPath:
 
     def copy(self):
         o = DataPath()
-        o.price = self.price
-        o.flights = self.flights
+        for f in self.flights:
+            o.push_flight(f)
+        return o
 
     def is_valid(self, partial=False):
 
