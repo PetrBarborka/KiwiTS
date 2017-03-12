@@ -104,14 +104,26 @@ class BacktracerTest(unittest.TestCase):
         b = GeneralBackTrackerInterface(dataset, register_result_callback)
 
         p =  b._from_days_forward(["PRG", "BCN", "TXL"], 2, 0, "PRG")
-        self.assertEqual(p.flights[0], CFlight("PRG", "BCN", 0, 50))
-        self.assertEqual(p.flights[1], CFlight("BCN", "TXL", 1, 20))
+        self.assertEqual(p[0].flights[0], CFlight("PRG", "BCN", 0, 50))
+        self.assertEqual(p[0].flights[1], CFlight("BCN", "TXL", 1, 20))
+        self.assertEqual(p[1].flights[0], CFlight("PRG", "TXL", 0, 100))
+        self.assertEqual(p[1].flights[1], CFlight("TXL", "BCN", 1, 100))
+        
+        p =  b._from_days_forward(["PRG", "BCN", "TXL"], 2, 0, "PRG")
+        self.assertEqual(p[0].flights[0], CFlight("PRG", "BCN", 0, 50))
+        self.assertEqual(p[0].flights[1], CFlight("BCN", "TXL", 1, 20))
+        self.assertEqual(p[1].flights[0], CFlight("PRG", "TXL", 0, 100))
+        self.assertEqual(p[1].flights[1], CFlight("TXL", "BCN", 1, 100))
 
         p =  b._from_days_forward(["PRG", "BCN", "TXL"], 2, 1, "BCN")
-        self.assertEqual(p.flights[0], CFlight("BCN", "PRG", 1, 30))
-        self.assertEqual(p.flights[1], CFlight("PRG", "TXL", 2, 30))
+        self.assertEqual(p[0].flights[0], CFlight("BCN", "PRG", 1, 30))
+        self.assertEqual(p[0].flights[1], CFlight("PRG", "TXL", 2, 30))
+        
+        p =  b._from_days_forward(["PRG", "BCN", "TXL"], 1, 0, "PRG")
+        self.assertEqual(p[0].flights[0], CFlight("PRG", "BCN", 0, 50))
+        self.assertEqual(p[1].flights[0], CFlight("PRG", "TXL", 0, 100))
 
-    def test_big_from_to(self):
+    def test_big_from_days_forward(self):
 
         dataset = load_data('../input/300_90K_flights.csv')
         b = GeneralBackTrackerInterface(dataset, register_result_callback)
@@ -119,7 +131,10 @@ class BacktracerTest(unittest.TestCase):
         p =  b._from_days_forward(dataset.cities, 299, 0, 
                         dataset.get_starting_city() )
 
-        self.assertTrue( p.is_valid(partial=True) )
+        for pa in p:
+            self.assertTrue( pa.is_valid(partial=True) )
+
+        self.assertEqual( p, sorted(p, key=lambda x: x.price) )
 
 if __name__ == '__main__':
     unittest.main()
