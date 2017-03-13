@@ -1,0 +1,3 @@
+580ms run_async do_file INFO     ==================================================
+580ms run_async do_file INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_5.txt ...
+595ms run_async do_file INFO     done

@@ -1,0 +1,5 @@
+52ms run_async <module> INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt ...
+113ms run_async <module> INFO     done
+113ms run_async <module> INFO     starting AsyncManager process
+135ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 8274
+199ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 8259

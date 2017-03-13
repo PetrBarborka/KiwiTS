@@ -1,0 +1,3 @@
+686ms run_async <module> INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt ...
+938ms run_async <module> INFO     done
+939ms run_async <module> INFO     starting AsyncManager process

@@ -1,0 +1,8 @@
+45ms run_async <module> INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt ...
+106ms run_async <module> INFO     done
+106ms run_async <module> INFO     starting AsyncManager process
+124ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 8274
+306ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 8259
+23828ms run_async register_result INFO     Lookup_l:3_s:2 found VALID path for 8184
+29993ms run_async search_async INFO     threads ['functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x110b89e10>>, 1, 1)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x110b91438>>, 2, 1)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x110b91588>>, 2, 2)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x1114e1908>>, 3, 1)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x1114e1940>>, 3, 2)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x1114e1978>>, 3, 3)'] are still alive after timeout of 29s
+30041ms run_async <module> INFO     Async manager process ended

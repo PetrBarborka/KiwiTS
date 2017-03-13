@@ -1,0 +1,15 @@
+819ms run_async do_file INFO     ==================================================
+820ms run_async do_file INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_5.txt ...
+857ms run_async do_file INFO     done
+858ms run_async do_file INFO     starting AsyncManager process
+889ms run_async search_async INFO     2 workers
+891ms run_async register_result INFO     Simple backtracker found VALID path for 2838
+891ms AsyncBackTracker search INFO     self.dataset exhausted
+892ms run_async search_async INFO     all threads finished before timeout of 29s
+922ms run_async do_file INFO     Async manager process ended
+922ms run_async do_file INFO     ==================================================
+923ms run_async do_file INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_15.txt ...
+994ms run_async do_file INFO     done
+995ms run_async do_file INFO     starting AsyncManager process
+999ms run_async search_async INFO     2 workers
+1001ms run_async register_result INFO     Simple backtracker found VALID path for 5324

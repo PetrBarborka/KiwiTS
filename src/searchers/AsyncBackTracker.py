@@ -8,9 +8,10 @@ import logging
 
 class AsyncBackTracker:
 
-    def __init__(self, dataset, register_result_callback):
+    def __init__(self, dataset, register_result_callback, best_result_callback):
         self.dataset = dataset
         self.register_result = register_result_callback
+        self.best_result_callback = best_result_callback
         self.best_price_so_far = None
 
     def search(self):
@@ -78,6 +79,9 @@ class AsyncBackTracker:
                                                             sort_by_price=True )
 
                 flights_are_available = True if return_possibilities else False
+                global_best = self.best_result_callback()
+                if global_best:
+                    self.best_price_so_far = global_best.price
                 price_is_not_too_high = flights_are_available and \
                                         ( (self.best_price_so_far is None) or \
                                         path.price + return_possibilities[0].price < \

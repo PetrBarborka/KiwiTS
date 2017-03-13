@@ -1,0 +1,71 @@
+495ms run_async do_file INFO     ==================================================
+495ms run_async do_file INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_5.txt ...
+510ms run_async do_file INFO     done
+510ms run_async do_file INFO     starting AsyncManager process
+544ms run_async search_async INFO     15 workers
+546ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 2838
+657ms run_async search_async INFO     all threads finished before timeout of 29s
+658ms run_async do_file INFO     Async manager process ended
+658ms run_async do_file INFO     ==================================================
+659ms run_async do_file INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_15.txt ...
+687ms run_async do_file INFO     done
+688ms run_async do_file INFO     starting AsyncManager process
+692ms run_async search_async INFO     15 workers
+696ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 5324
+4553ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 5286
+9225ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 5234
+29801ms run_async search_async INFO     some threads are still alive after timeout of 29s
+29845ms run_async do_file INFO     Async manager process ended
+29846ms run_async do_file INFO     ==================================================
+29846ms run_async do_file INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt ...
+29932ms run_async do_file INFO     done
+29933ms run_async do_file INFO     starting AsyncManager process
+29940ms run_async search_async INFO     15 workers
+29953ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 8274
+30033ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 8259
+59634ms run_async search_async INFO     some threads are still alive after timeout of 29s
+59675ms run_async do_file INFO     Async manager process ended
+59675ms run_async do_file INFO     ==================================================
+59675ms run_async do_file INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_50.txt ...
+60024ms run_async do_file INFO     done
+60024ms run_async do_file INFO     starting AsyncManager process
+60029ms run_async search_async INFO     15 workers
+60090ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 12624
+89873ms run_async search_async INFO     some threads are still alive after timeout of 29s
+89957ms run_async do_file INFO     Async manager process ended
+89958ms run_async do_file INFO     ==================================================
+89958ms run_async do_file INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_100.txt ...
+93100ms run_async do_file INFO     done
+93101ms run_async do_file INFO     starting AsyncManager process
+93109ms run_async search_async INFO     15 workers
+94560ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 21613
+94806ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 21606
+95052ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 21066
+100447ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 20997
+122406ms run_async search_async INFO     some threads are still alive after timeout of 29s
+122497ms run_async do_file INFO     Async manager process ended
+122498ms run_async do_file INFO     ==================================================
+122498ms run_async do_file INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_200.txt ...
+150011ms run_async do_file INFO     done
+150011ms run_async do_file INFO     starting AsyncManager process
+150039ms run_async search_async INFO     15 workers
+161664ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 45089
+162092ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 44911
+165627ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 44883
+165698ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 44862
+167370ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 44639
+179833ms run_async search_async INFO     some threads are still alive after timeout of 29s
+180036ms run_async do_file INFO     Async manager process timed out
+180037ms run_async do_file INFO     ==================================================
+180037ms run_async do_file INFO     loading input file kiwisources/travelling-salesman/real_data/data_300.txt ...
+468577ms run_async do_file INFO     done
+468580ms run_async do_file INFO     starting AsyncManager process
+469152ms run_async search_async INFO     15 workers
+492962ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 52562
+492967ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 52077
+493462ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 52009
+494079ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 51914
+494662ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 50607
+495168ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 50430
+498226ms run_async search_async INFO     some threads are still alive after timeout of 29s
+498653ms run_async do_file INFO     Async manager process ended

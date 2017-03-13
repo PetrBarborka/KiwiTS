@@ -6,6 +6,7 @@ sys.path.append(os.path.realpath("../src"))
 
 from src.searchers.GeneralBackTrackerInterface import GeneralBackTrackerInterface
 from src.searchers.BackTrackerLookup import BackTrackerLookup
+from src.searchers.AsyncBackTracker import AsyncBackTracker
 from src.datasets import CFlight
 from src.datasets import DataPath
 
@@ -29,6 +30,11 @@ else:
                         datefmt='%H:%M:%S',
                         level=logging.DEBUG)
 
+# logging.disable(logging.CRITICAL)
+# logger_interface = logging.getLogger("GeneralBackTrackerInterface")
+# logger_interface.setLevel(level=logging.CRITICAL)
+# logger_interface.propagate = False
+
 def load_data(path):
     from src.datasets.CDictDataset import CDictDataset
     d = CDictDataset()
@@ -38,7 +44,9 @@ def load_data(path):
     return d
 
 def register_result_callback(path):
-    print( "found path for: {} ".format(path.price) )
+    assert path.is_valid()
+    # print( "found path for: {}:\n{} ".format(path.price, path) )
+    print( "found path for: {}:".format(path.price) )
 
 class BackTrackerLookupTest(unittest.TestCase):
 
@@ -52,34 +60,36 @@ class BackTrackerLookupTest(unittest.TestCase):
                 p = b.search(lookup, step)
                 self.assertTrue(p.is_valid())
 
-        # self.assertEqual(p.flights[0], CFlight("PRG", "TXL", 0, 100))
-        # self.assertEqual(p.flights[1], CFlight("TXL", "BCN", 1, 100))
-        # self.assertEqual(p.flights[2], CFlight("BCN", "PRG", 2, 100))
 
-        # p =  b._from_to(["PRG", "BCN"], 0, 1, "PRG", "BCN")
-        # self.assertEqual(p.flights[0], CFlight("PRG", "BCN", 0, 50))
+    def test_5ap(self):
 
-        # p =  b._from_to(["BCN", "TXL"], 1, 2, "BCN", "TXL")
-        # self.assertEqual(p.flights[0], CFlight("BCN", "TXL", 1, 20))
+        dataset = load_data('../input/5_airports.csv')
+
+        for step in range(1, 10):
+            for lookup in range(step, 10):
+                b = BackTrackerLookup(dataset, register_result_callback)
+                print ( "lookup: {}, step: {}".format(lookup, step) )
+                p = b.search(lookup, step)
+                self.assertTrue(p.is_valid())
+
+        print("lookup")
+        b = BackTrackerLookup(dataset, register_result_callback)
+        p =  b.search( 2, 1 )
         
-        # p =  b._from_to(["PRG", "BCN", "TXL"], 1, 3, "BCN", "PRG")
-        # self.assertEqual(p, None)
+        print("async")
+        async = AsyncBackTracker(dataset, register_result_callback)
+        p =  async.search()
 
-        # p =  b._from_to(["PRG", "BCN", "TXL"], 1, 3, "TXL", "PRG")
-        # self.assertEqual(p.flights[0], CFlight("TXL", "BCN", 1, 100))
-        # self.assertEqual(p.flights[1], CFlight("BCN", "PRG", 2, 100))
+    def test_big_from_to(self):
 
-        # p =  b._from_to(["PRG", "BCN", "TXL"], 0, 2, "PRG", "TXL")
-        # self.assertEqual(p.flights[0], CFlight("PRG", "BCN", 0, 50))
-        # self.assertEqual(p.flights[1], CFlight("BCN", "TXL", 1, 20))
-
-    # def test_big_from_to(self):
-
-        # dataset = load_data('../input/300_90K_flights.csv')
-        # b = GeneralBackTrackerInterface(dataset, register_result_callback)
-
-        # p =  b._from_to(dataset.cities, 0, 300, 
-                        # dataset.get_starting_city(), dataset.get_starting_city() )
+        dataset = load_data('../input/300_90K_flights.csv')
+        print("lookup")
+        b = BackTrackerLookup(dataset, register_result_callback)
+        p =  b.search( 1, 1 )
+        
+        print("async")
+        async = AsyncBackTracker(dataset, register_result_callback)
+        p =  async.search()
 
         # self.assertTrue( p.is_valid() )
 

@@ -1,0 +1,18 @@
+49ms run_async <module> INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt ...
+108ms run_async <module> INFO     done
+41ms run_async <module> INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt ...
+102ms run_async <module> INFO     done
+102ms run_async <module> INFO     starting AsyncManager process
+114ms run_async register_result INFO     AsyncManager found VALID path for 8274
+120ms run_async register_result INFO     AsyncManager found VALID path for 8259
+6544ms run_async register_result INFO     AsyncManager found VALID path for 8171
+9174ms run_async search_async INFO     threads ['AsyncBackTracker'] are still alive after timeout of 9s
+9182ms run_async <module> INFO     Async manager process ended
+41ms run_async <module> INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt ...
+96ms run_async <module> INFO     done
+96ms run_async <module> INFO     starting AsyncManager process
+109ms run_async register_result INFO     Simple backtracker found VALID path for 8274
+113ms run_async register_result INFO     Simple backtracker found VALID path for 8259
+6680ms run_async register_result INFO     Simple backtracker found VALID path for 8171
+9167ms run_async search_async INFO     threads ['AsyncBackTracker'] are still alive after timeout of 9s
+9169ms run_async <module> INFO     Async manager process ended

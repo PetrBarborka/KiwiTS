@@ -9,9 +9,10 @@ import logging
 
 class GeneralBackTrackerInterface:
 
-    def __init__(self, dataset, register_result_callback):
+    def __init__(self, dataset, register_result_callback, best_result_callback):
         self.dataset = dataset
         self.register_result = register_result_callback
+        self.best_result_callback = best_result_callback
 
     def search(self):
         raise NotImplementedError( "Should have implemented this" )
@@ -30,10 +31,40 @@ class GeneralBackTrackerInterface:
             else:
                 return None
 
+        def backwards( day, cur_city, path, possible_flights, cities_to_visit ):
+            del possible_flights[day]
+            last_flight = path.pop_flight()
+            cities_to_visit.append(cur_city)
+            cur_city = last_flight.city_from
+            day -= 1
+
+            return day, cur_city, path, possible_flights, cities_to_visit
+
+        def forwards( day, cur_city, path, possible_flights, cities_to_visit ):
+            flight_taken = possible_flights[day].pop(0)
+            path.push_flight(flight_taken)
+            cities_to_visit.remove(flight_taken.city_to)
+            cur_city = flight_taken.city_to
+            day += 1
+
+            return day, cur_city, path, possible_flights, cities_to_visit
+
+        def return_to_target( day, cur_city, path, destination ):
+            return_possibilities = \
+                    self.dataset.get_flights(cur_city,
+                                             day,
+                                             cities_to_visit=[destination],
+                                             sort_by_price=True)
+            if return_possibilities:
+                out = path.copy()
+                out.push_flight(return_possibilities[0])
+                return out
+
+            return None
 
         dstr = 100 * "=" + "\n"
         dstr += "STARTING THE METHOD from {}, day {} to {}, day {}"
-        logging.debug(dstr.format(ap1, day1, ap2, day2) )
+        #logging.debug(dstr.format(ap1, day1, ap2, day2) )
 
         result_path = None
 
@@ -60,11 +91,11 @@ class GeneralBackTrackerInterface:
         while True:
             if day not in possible_flights.keys():
                 assert day >= day1
-                c = cities_to_visit if day < (day2 - 1) else [ap2]
+
                 possible_flights[day] = \
                     self.dataset.get_flights(cur_city,
                                              day,
-                                             cities_to_visit=c,
+                                             cities_to_visit=cities_to_visit,
                                              sort_by_price=True)
 
             flights_are_available = True if possible_flights[day] else False
@@ -74,70 +105,57 @@ class GeneralBackTrackerInterface:
                                       possible_flights[day][0].price < \
                                       local_best_price )
 
-            logging.debug( "day: {},path: {}\n\tpossible flights: {}\n\tbest price so far: {}"\
-                          .format(day, path, possible_flights[day], 
-                                  local_best_price) )
+            dstr = "day: {},path: {}\n\tpossible flights: {}\n\tbest price so far: {}"\
+                          .format(day, path, possible_flights[day], local_best_price) 
+            dstr += "\n\tcities_to_visit: {}".format(cities_to_visit) 
+            #logging.debug( dstr )
 
-            if flights_are_available and price_is_not_too_high:
-                #forward
-                dstr = ""
+            if day == (day2 - 1):
+                dstr = "day: {}\n".format(day)
 
-                if day == (day2 - 1):
-                    dstr = "day: {}, looking for a flight back to {}\n".format(day, ap2)
-                    dstr += "path: {}\n\tpossible return flights: {}\n\tbest price so far: {}\n"\
-                            .format(path, possible_flights[day], local_best_price)
-
-                flight_taken = possible_flights[day].pop(0)
-                path.push_flight(flight_taken)
-
-                dstr += "Taking flight {}".format(flight_taken)
-                logging.debug( dstr )
-
-                if day == (day2 - 1):
-
-                    if path.is_valid(partial=True):
-                        local_best_price = path.price
+                solution = return_to_target( day, cur_city, path, ap2 )
+                if solution is not None:
+                    dstr += "\tFound a way back: {}".format(solution)
+                    if solution.is_valid(partial=True):
+                        local_best_price = solution.price
+                        result_path = solution
                     else: 
                         logging.error( "found invalid path, has to be a BUG" )
                         assert False, "should not compute invalid path"
-
-                    logging.debug( "FOUND NEW BEST PATH: \n\t{}".format(path) )
-
-                    result_path = path.copy()
-
-                    path.pop_flight() # returning point
-                    path.pop_flight() # one more
-
-                    del possible_flights[day]
-                    day -= 1
-
                 else:
-                    cities_to_visit.remove(flight_taken.city_to)
-                    cur_city = flight_taken.city_to
+                    dstr += "\tFailed to find a way back"
+                #logging.debug(dstr)
 
-                    day += 1
+                if day > day1:
+                    day, cur_city, path, possible_flights, cities_to_visit = \
+                            backwards( day, cur_city, path, possible_flights, cities_to_visit )
+                else:
+                    return result_path
+
+
+            if flights_are_available and price_is_not_too_high:
+                #forward
+
+                dstr = "going forwards ... "
+                #logging.debug(dstr)
+
+                day, cur_city, path, possible_flights, cities_to_visit = \
+                        forwards( day, cur_city, path, possible_flights, cities_to_visit )
 
             else :
                 #backwards
 
                 dstr = "backtracking ... "
-
                 if day == day1:
                     dstr += "self.dataset exhausted, returning \n"
                     dstr += "result_path: \n\t{}".format(result_path)
-                    logging.debug(dstr)
+                    #logging.debug(dstr)
                     return result_path
+                #logging.debug(dstr)
 
-                logging.debug(dstr)
+                day, cur_city, path, possible_flights, cities_to_visit = \
+                        backwards( day, cur_city, path, possible_flights, cities_to_visit )
 
-                del possible_flights[day]
-
-                last_flight = path.pop_flight()
-
-                cities_to_visit.append(cur_city)
-                cur_city = last_flight.city_from
-
-                day -= 1
 
     def _from_days_forward(self, cities_to_visit, num_days, day1, ap1):
         """Get the best path (brutefoce) from ap1 day1 for a given
@@ -160,7 +178,7 @@ class GeneralBackTrackerInterface:
 
         dstr = 100 * "=" + "\n"
         dstr += "STARTING THE METHOD from {}, day {} best for {} days"
-        logging.debug( dstr.format(ap1, day1, num_days) )
+        #logging.debug( dstr.format(ap1, day1, num_days) )
 
         result_paths = None
 
@@ -187,8 +205,8 @@ class GeneralBackTrackerInterface:
                                              sort_by_price=True)
 
 
-            logging.debug( "day: {}, city: {}, path: {}\n\tpossible flights: {}"\
-                          .format(day, cur_city, path, possible_flights[day]) )
+            #logging.debug( "day: {}, city: {}, path: {}\n\tpossible flights: {}"\
+                          # .format(day, cur_city, path, possible_flights[day]) )
 
             if possible_flights[day]:
                 #forward
@@ -198,7 +216,7 @@ class GeneralBackTrackerInterface:
                 path.push_flight(flight_taken)
 
                 dstr += "Taking flight {}".format(flight_taken)
-                logging.debug( dstr )
+                #logging.debug( dstr )
 
                 if day == (day1 + num_days - 1):
 
@@ -206,7 +224,7 @@ class GeneralBackTrackerInterface:
                         logging.error( "found invalid path, has to be a BUG" )
                         assert False, "should not compute invalid path"
 
-                    logging.debug( "FOUND NEW PATH: \n\t{}".format(path) )
+                    #logging.debug( "FOUND NEW PATH: \n\t{}".format(path) )
 
                     if result_paths is not None:
                         result_paths.append( path.copy() )
@@ -229,13 +247,13 @@ class GeneralBackTrackerInterface:
                 if day == day1:
                     dstr += "self.dataset exhausted, returning \n"
                     dstr += "result_paths: \n\t{}".format(result_paths)
-                    logging.debug(dstr)
+                    #logging.debug(dstr)
                     if result_paths:
                         return sorted(result_paths, key=lambda p: p.price)
                     else:
                         return None
 
-                logging.debug(dstr)
+                #logging.debug(dstr)
 
                 del possible_flights[day]
 

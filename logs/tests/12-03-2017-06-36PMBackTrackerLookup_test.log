@@ -1,0 +1,703 @@
+330ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD
+330ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	====================================================================================================
+STARTING THE METHOD from PRG, day 0 best for 2 days
+330ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 0, city: PRG, path:  price: 0
+	possible flights: [<Flight: id: 1, PRG CDG 0 10>, <Flight: id: 4, PRG BCN 0 50>, <Flight: id: 2, PRG LHR 0 70>, <Flight: id: 3, PRG TXL 0 100>]
+330ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 1, PRG CDG 0 10
+330ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: CDG, path: <Flight: id: 1, PRG CDG 0 10> price: 10
+	possible flights: [<Flight: id: 9, CDG LHR 1 30>]
+330ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 9, CDG LHR 1 30
+330ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40
+330ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: CDG, path: <Flight: id: 1, PRG CDG 0 10> price: 10
+	possible flights: []
+330ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 0, city: PRG, path:  price: 0
+	possible flights: [<Flight: id: 4, PRG BCN 0 50>, <Flight: id: 2, PRG LHR 0 70>, <Flight: id: 3, PRG TXL 0 100>]
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 4, PRG BCN 0 50
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: BCN, path: <Flight: id: 4, PRG BCN 0 50> price: 50
+	possible flights: [<Flight: id: 6, BCN TXL 1 20>, <Flight: id: 7, BCN LHR 1 20>]
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 6, BCN TXL 1 20
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: BCN, path: <Flight: id: 4, PRG BCN 0 50> price: 50
+	possible flights: [<Flight: id: 7, BCN LHR 1 20>]
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 7, BCN LHR 1 20
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: BCN, path: <Flight: id: 4, PRG BCN 0 50> price: 50
+	possible flights: []
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 0, city: PRG, path:  price: 0
+	possible flights: [<Flight: id: 2, PRG LHR 0 70>, <Flight: id: 3, PRG TXL 0 100>]
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 2, PRG LHR 0 70
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: LHR, path: <Flight: id: 2, PRG LHR 0 70> price: 70
+	possible flights: [<Flight: id: 10, LHR CDG 1 110>]
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 10, LHR CDG 1 110
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180
+331ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: LHR, path: <Flight: id: 2, PRG LHR 0 70> price: 70
+	possible flights: []
+332ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+332ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 0, city: PRG, path:  price: 0
+	possible flights: [<Flight: id: 3, PRG TXL 0 100>]
+332ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 3, PRG TXL 0 100
+332ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: TXL, path: <Flight: id: 3, PRG TXL 0 100> price: 100
+	possible flights: [<Flight: id: 11, TXL BCN 1 100>]
+332ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 11, TXL BCN 1 100
+332ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200
+332ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: TXL, path: <Flight: id: 3, PRG TXL 0 100> price: 100
+	possible flights: []
+332ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+332ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 0, city: PRG, path:  price: 0
+	possible flights: []
+332ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_paths: 
+	[<Path: <Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+332ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+332ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40
+332ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	====================================================================================================
+STARTING THE METHOD from CDG, day 1 best for 2 days
+332ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: CDG, path:  price: 0
+	possible flights: [<Flight: id: 9, CDG LHR 1 30>]
+332ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 9, CDG LHR 1 30
+333ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: LHR, path: <Flight: id: 9, CDG LHR 1 30> price: 30
+	possible flights: [<Flight: id: 16, LHR BCN 2 10>]
+333ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 16, LHR BCN 2 10
+333ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 9, CDG LHR 1 30><Flight: id: 16, LHR BCN 2 10> price: 40
+333ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: LHR, path: <Flight: id: 9, CDG LHR 1 30> price: 30
+	possible flights: []
+333ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+333ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: CDG, path:  price: 0
+	possible flights: []
+333ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_paths: 
+	[<Path: <Flight: id: 9, CDG LHR 1 30><Flight: id: 16, LHR BCN 2 10> price: 40>]
+333ms BackTrackerLookup search DEBUG    
+	day: 1, city: CDG, price: 10, path:
+<Flight: id: 1, PRG CDG 0 10> price: 10,
+possibilities:
+[<Path: <Flight: id: 9, CDG LHR 1 30><Flight: id: 16, LHR BCN 2 10> price: 40>]
+333ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 9, CDG LHR 1 30><Flight: id: 16, LHR BCN 2 10> price: 40
+333ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	====================================================================================================
+STARTING THE METHOD from LHR, day 2 best for 2 days
+333ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: LHR, path:  price: 0
+	possible flights: [<Flight: id: 16, LHR BCN 2 10>]
+333ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 16, LHR BCN 2 10
+333ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 3, city: BCN, path: <Flight: id: 16, LHR BCN 2 10> price: 10
+	possible flights: [<Flight: id: 23, BCN TXL 3 100>]
+333ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 23, BCN TXL 3 100
+333ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 16, LHR BCN 2 10><Flight: id: 23, BCN TXL 3 100> price: 110
+334ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 3, city: BCN, path: <Flight: id: 16, LHR BCN 2 10> price: 10
+	possible flights: []
+334ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+334ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: LHR, path:  price: 0
+	possible flights: []
+334ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_paths: 
+	[<Path: <Flight: id: 16, LHR BCN 2 10><Flight: id: 23, BCN TXL 3 100> price: 110>]
+334ms BackTrackerLookup search DEBUG    
+	day: 2, city: LHR, price: 40, path:
+<Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40,
+possibilities:
+[<Path: <Flight: id: 16, LHR BCN 2 10><Flight: id: 23, BCN TXL 3 100> price: 110>]
+334ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 16, LHR BCN 2 10><Flight: id: 23, BCN TXL 3 100> price: 110
+334ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+334ms GeneralBackTrackerInterface _from_to DEBUG    
+	====================================================================================================
+STARTING THE METHOD from BCN, day 3 to PRG, day 5
+334ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 3,path:  price: 0
+	possible flights: [<Flight: id: 23, BCN TXL 3 100>]
+	best price so far: None
+	cities_to_visit: ['TXL']
+334ms GeneralBackTrackerInterface _from_to DEBUG    
+	going forwards ... 
+334ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 4,path: <Flight: id: 23, BCN TXL 3 100> price: 100
+	possible flights: []
+	best price so far: None
+	cities_to_visit: []
+334ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 4
+	Found a way back: <Flight: id: 23, BCN TXL 3 100><Flight: id: 37, TXL PRG 4 10> price: 110
+334ms GeneralBackTrackerInterface _from_to DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_path: 
+	<Flight: id: 23, BCN TXL 3 100><Flight: id: 37, TXL PRG 4 10> price: 110
+334ms BackTrackerLookup search DEBUG    
+	day: 3, city: BCN, price: 50, path:
+<Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30><Flight: id: 16, LHR BCN 2 10> price: 50,
+334ms BackTrackerLookup search DEBUG    
+	return path: <Flight: id: 23, BCN TXL 3 100><Flight: id: 37, TXL PRG 4 10> price: 110
+335ms BackTrackerLookup search DEBUG    
+	day: 2, city: LHR, price: 40, path:
+<Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40,
+possibilities:
+[]
+335ms BackTrackerLookup search DEBUG    
+	day: 1, city: CDG, price: 10, path:
+<Flight: id: 1, PRG CDG 0 10> price: 10,
+possibilities:
+[]
+335ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+335ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70
+335ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	====================================================================================================
+STARTING THE METHOD from BCN, day 1 best for 2 days
+335ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: BCN, path:  price: 0
+	possible flights: [<Flight: id: 6, BCN TXL 1 20>, <Flight: id: 7, BCN LHR 1 20>]
+335ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 6, BCN TXL 1 20
+335ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: TXL, path: <Flight: id: 6, BCN TXL 1 20> price: 20
+	possible flights: [<Flight: id: 19, TXL CDG 2 10>]
+336ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 19, TXL CDG 2 10
+336ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30
+336ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: TXL, path: <Flight: id: 6, BCN TXL 1 20> price: 20
+	possible flights: []
+336ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+336ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: BCN, path:  price: 0
+	possible flights: [<Flight: id: 7, BCN LHR 1 20>]
+336ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 7, BCN LHR 1 20
+336ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: LHR, path: <Flight: id: 7, BCN LHR 1 20> price: 20
+	possible flights: []
+336ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+336ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: BCN, path:  price: 0
+	possible flights: []
+336ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_paths: 
+	[<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]
+336ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]
+336ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30
+336ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	====================================================================================================
+STARTING THE METHOD from TXL, day 2 best for 2 days
+336ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: TXL, path:  price: 0
+	possible flights: [<Flight: id: 19, TXL CDG 2 10>]
+337ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 19, TXL CDG 2 10
+337ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 3, city: CDG, path: <Flight: id: 19, TXL CDG 2 10> price: 10
+	possible flights: [<Flight: id: 25, CDG LHR 3 30>]
+337ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 25, CDG LHR 3 30
+337ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40
+337ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 3, city: CDG, path: <Flight: id: 19, TXL CDG 2 10> price: 10
+	possible flights: []
+337ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+337ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: TXL, path:  price: 0
+	possible flights: []
+337ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_paths: 
+	[<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]
+337ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]
+337ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40
+337ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+337ms GeneralBackTrackerInterface _from_to DEBUG    
+	====================================================================================================
+STARTING THE METHOD from CDG, day 3 to PRG, day 5
+338ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 3,path:  price: 0
+	possible flights: [<Flight: id: 25, CDG LHR 3 30>]
+	best price so far: None
+	cities_to_visit: ['LHR']
+338ms GeneralBackTrackerInterface _from_to DEBUG    
+	going forwards ... 
+338ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 4,path: <Flight: id: 25, CDG LHR 3 30> price: 30
+	possible flights: []
+	best price so far: None
+	cities_to_visit: []
+338ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 4
+	Found a way back: <Flight: id: 25, CDG LHR 3 30><Flight: id: 34, LHR PRG 4 10> price: 40
+338ms GeneralBackTrackerInterface _from_to DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_path: 
+	<Flight: id: 25, CDG LHR 3 30><Flight: id: 34, LHR PRG 4 10> price: 40
+338ms BackTrackerLookup search DEBUG    
+	day: 3, city: CDG, price: 80, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 80,
+338ms BackTrackerLookup search DEBUG    
+	return path: <Flight: id: 25, CDG LHR 3 30><Flight: id: 34, LHR PRG 4 10> price: 40
+338ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[]
+338ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[]
+339ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+339ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70
+339ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	====================================================================================================
+STARTING THE METHOD from BCN, day 1 best for 2 days
+339ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: BCN, path:  price: 0
+	possible flights: [<Flight: id: 6, BCN TXL 1 20>, <Flight: id: 7, BCN LHR 1 20>]
+339ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 6, BCN TXL 1 20
+339ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: TXL, path: <Flight: id: 6, BCN TXL 1 20> price: 20
+	possible flights: [<Flight: id: 19, TXL CDG 2 10>]
+339ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 19, TXL CDG 2 10
+339ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30
+339ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: TXL, path: <Flight: id: 6, BCN TXL 1 20> price: 20
+	possible flights: []
+339ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+339ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: BCN, path:  price: 0
+	possible flights: [<Flight: id: 7, BCN LHR 1 20>]
+339ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 7, BCN LHR 1 20
+339ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: LHR, path: <Flight: id: 7, BCN LHR 1 20> price: 20
+	possible flights: []
+339ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+339ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: BCN, path:  price: 0
+	possible flights: []
+340ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_paths: 
+	[<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]
+340ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]
+340ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30
+340ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	====================================================================================================
+STARTING THE METHOD from TXL, day 2 best for 2 days
+340ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: TXL, path:  price: 0
+	possible flights: [<Flight: id: 19, TXL CDG 2 10>]
+340ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 19, TXL CDG 2 10
+340ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 3, city: CDG, path: <Flight: id: 19, TXL CDG 2 10> price: 10
+	possible flights: [<Flight: id: 25, CDG LHR 3 30>]
+340ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 25, CDG LHR 3 30
+340ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40
+340ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 3, city: CDG, path: <Flight: id: 19, TXL CDG 2 10> price: 10
+	possible flights: []
+340ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+340ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: TXL, path:  price: 0
+	possible flights: []
+340ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_paths: 
+	[<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]
+340ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]
+341ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40
+341ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+341ms GeneralBackTrackerInterface _from_to DEBUG    
+	====================================================================================================
+STARTING THE METHOD from CDG, day 3 to PRG, day 5
+341ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 3,path:  price: 0
+	possible flights: [<Flight: id: 25, CDG LHR 3 30>]
+	best price so far: None
+	cities_to_visit: ['LHR']
+341ms GeneralBackTrackerInterface _from_to DEBUG    
+	going forwards ... 
+341ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 4,path: <Flight: id: 25, CDG LHR 3 30> price: 30
+	possible flights: []
+	best price so far: None
+	cities_to_visit: []
+341ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 4
+	Found a way back: <Flight: id: 25, CDG LHR 3 30><Flight: id: 34, LHR PRG 4 10> price: 40
+341ms GeneralBackTrackerInterface _from_to DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_path: 
+	<Flight: id: 25, CDG LHR 3 30><Flight: id: 34, LHR PRG 4 10> price: 40
+341ms BackTrackerLookup search DEBUG    
+	day: 3, city: CDG, price: 80, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 80,
+341ms BackTrackerLookup search DEBUG    
+	return path: <Flight: id: 25, CDG LHR 3 30><Flight: id: 34, LHR PRG 4 10> price: 40
+341ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[]
+341ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[]
+342ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+342ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180
+342ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	====================================================================================================
+STARTING THE METHOD from LHR, day 1 best for 2 days
+342ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: LHR, path:  price: 0
+	possible flights: [<Flight: id: 10, LHR CDG 1 110>]
+342ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 10, LHR CDG 1 110
+342ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: CDG, path: <Flight: id: 10, LHR CDG 1 110> price: 110
+	possible flights: [<Flight: id: 15, CDG BCN 2 30>]
+342ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 15, CDG BCN 2 30
+342ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 10, LHR CDG 1 110><Flight: id: 15, CDG BCN 2 30> price: 140
+342ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: CDG, path: <Flight: id: 10, LHR CDG 1 110> price: 110
+	possible flights: []
+342ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+342ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: LHR, path:  price: 0
+	possible flights: []
+342ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_paths: 
+	[<Path: <Flight: id: 10, LHR CDG 1 110><Flight: id: 15, CDG BCN 2 30> price: 140>]
+342ms BackTrackerLookup search DEBUG    
+	day: 1, city: LHR, price: 70, path:
+<Flight: id: 2, PRG LHR 0 70> price: 70,
+possibilities:
+[<Path: <Flight: id: 10, LHR CDG 1 110><Flight: id: 15, CDG BCN 2 30> price: 140>]
+342ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 10, LHR CDG 1 110><Flight: id: 15, CDG BCN 2 30> price: 140
+342ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	====================================================================================================
+STARTING THE METHOD from CDG, day 2 best for 2 days
+343ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: CDG, path:  price: 0
+	possible flights: [<Flight: id: 15, CDG BCN 2 30>]
+343ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 15, CDG BCN 2 30
+343ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 3, city: BCN, path: <Flight: id: 15, CDG BCN 2 30> price: 30
+	possible flights: [<Flight: id: 23, BCN TXL 3 100>]
+343ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 23, BCN TXL 3 100
+343ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 15, CDG BCN 2 30><Flight: id: 23, BCN TXL 3 100> price: 130
+343ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 3, city: BCN, path: <Flight: id: 15, CDG BCN 2 30> price: 30
+	possible flights: []
+343ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+343ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: CDG, path:  price: 0
+	possible flights: []
+343ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_paths: 
+	[<Path: <Flight: id: 15, CDG BCN 2 30><Flight: id: 23, BCN TXL 3 100> price: 130>]
+343ms BackTrackerLookup search DEBUG    
+	day: 2, city: CDG, price: 180, path:
+<Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180,
+possibilities:
+[<Path: <Flight: id: 15, CDG BCN 2 30><Flight: id: 23, BCN TXL 3 100> price: 130>]
+343ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 15, CDG BCN 2 30><Flight: id: 23, BCN TXL 3 100> price: 130
+343ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+343ms GeneralBackTrackerInterface _from_to DEBUG    
+	====================================================================================================
+STARTING THE METHOD from BCN, day 3 to PRG, day 5
+343ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 3,path:  price: 0
+	possible flights: [<Flight: id: 23, BCN TXL 3 100>]
+	best price so far: None
+	cities_to_visit: ['TXL']
+344ms GeneralBackTrackerInterface _from_to DEBUG    
+	going forwards ... 
+344ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 4,path: <Flight: id: 23, BCN TXL 3 100> price: 100
+	possible flights: []
+	best price so far: None
+	cities_to_visit: []
+344ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 4
+	Found a way back: <Flight: id: 23, BCN TXL 3 100><Flight: id: 37, TXL PRG 4 10> price: 110
+344ms GeneralBackTrackerInterface _from_to DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_path: 
+	<Flight: id: 23, BCN TXL 3 100><Flight: id: 37, TXL PRG 4 10> price: 110
+344ms BackTrackerLookup search DEBUG    
+	day: 3, city: BCN, price: 210, path:
+<Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110><Flight: id: 15, CDG BCN 2 30> price: 210,
+344ms BackTrackerLookup search DEBUG    
+	return path: <Flight: id: 23, BCN TXL 3 100><Flight: id: 37, TXL PRG 4 10> price: 110
+344ms BackTrackerLookup search DEBUG    
+	day: 2, city: CDG, price: 180, path:
+<Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180,
+possibilities:
+[]
+344ms BackTrackerLookup search DEBUG    
+	day: 1, city: LHR, price: 70, path:
+<Flight: id: 2, PRG LHR 0 70> price: 70,
+possibilities:
+[]
+345ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+345ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200
+345ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	====================================================================================================
+STARTING THE METHOD from TXL, day 1 best for 2 days
+345ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: TXL, path:  price: 0
+	possible flights: [<Flight: id: 11, TXL BCN 1 100>]
+345ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 11, TXL BCN 1 100
+345ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: BCN, path: <Flight: id: 11, TXL BCN 1 100> price: 100
+	possible flights: [<Flight: id: 13, BCN LHR 2 100>]
+345ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 13, BCN LHR 2 100
+345ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 11, TXL BCN 1 100><Flight: id: 13, BCN LHR 2 100> price: 200
+345ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: BCN, path: <Flight: id: 11, TXL BCN 1 100> price: 100
+	possible flights: []
+345ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+345ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 1, city: TXL, path:  price: 0
+	possible flights: []
+345ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_paths: 
+	[<Path: <Flight: id: 11, TXL BCN 1 100><Flight: id: 13, BCN LHR 2 100> price: 200>]
+345ms BackTrackerLookup search DEBUG    
+	day: 1, city: TXL, price: 100, path:
+<Flight: id: 3, PRG TXL 0 100> price: 100,
+possibilities:
+[<Path: <Flight: id: 11, TXL BCN 1 100><Flight: id: 13, BCN LHR 2 100> price: 200>]
+345ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 11, TXL BCN 1 100><Flight: id: 13, BCN LHR 2 100> price: 200
+345ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	====================================================================================================
+STARTING THE METHOD from BCN, day 2 best for 2 days
+346ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: BCN, path:  price: 0
+	possible flights: [<Flight: id: 13, BCN LHR 2 100>]
+346ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 13, BCN LHR 2 100
+346ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 3, city: LHR, path: <Flight: id: 13, BCN LHR 2 100> price: 100
+	possible flights: [<Flight: id: 27, LHR CDG 3 10>]
+346ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	Taking flight id: 27, LHR CDG 3 10
+346ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	FOUND NEW PATH: 
+	<Flight: id: 13, BCN LHR 2 100><Flight: id: 27, LHR CDG 3 10> price: 110
+346ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 3, city: LHR, path: <Flight: id: 13, BCN LHR 2 100> price: 100
+	possible flights: []
+346ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... 
+346ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	day: 2, city: BCN, path:  price: 0
+	possible flights: []
+346ms GeneralBackTrackerInterface _from_days_forward DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_paths: 
+	[<Path: <Flight: id: 13, BCN LHR 2 100><Flight: id: 27, LHR CDG 3 10> price: 110>]
+346ms BackTrackerLookup search DEBUG    
+	day: 2, city: BCN, price: 200, path:
+<Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200,
+possibilities:
+[<Path: <Flight: id: 13, BCN LHR 2 100><Flight: id: 27, LHR CDG 3 10> price: 110>]
+346ms BackTrackerLookup search DEBUG    
+	path taken: <Flight: id: 13, BCN LHR 2 100><Flight: id: 27, LHR CDG 3 10> price: 110
+346ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+347ms GeneralBackTrackerInterface _from_to DEBUG    
+	====================================================================================================
+STARTING THE METHOD from LHR, day 3 to PRG, day 5
+347ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 3,path:  price: 0
+	possible flights: [<Flight: id: 27, LHR CDG 3 10>]
+	best price so far: None
+	cities_to_visit: ['CDG']
+347ms GeneralBackTrackerInterface _from_to DEBUG    
+	going forwards ... 
+347ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 4,path: <Flight: id: 27, LHR CDG 3 10> price: 10
+	possible flights: []
+	best price so far: None
+	cities_to_visit: []
+347ms GeneralBackTrackerInterface _from_to DEBUG    
+	day: 4
+	Found a way back: <Flight: id: 27, LHR CDG 3 10><Flight: id: 33, CDG PRG 4 30> price: 40
+347ms GeneralBackTrackerInterface _from_to DEBUG    
+	backtracking ... self.dataset exhausted, returning 
+result_path: 
+	<Flight: id: 27, LHR CDG 3 10><Flight: id: 33, CDG PRG 4 30> price: 40
+347ms BackTrackerLookup search DEBUG    
+	day: 3, city: LHR, price: 300, path:
+<Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100><Flight: id: 13, BCN LHR 2 100> price: 300,
+347ms BackTrackerLookup search DEBUG    
+	return path: <Flight: id: 27, LHR CDG 3 10><Flight: id: 33, CDG PRG 4 30> price: 40
+347ms BackTrackerLookup search DEBUG    
+	day: 2, city: BCN, price: 200, path:
+<Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200,
+possibilities:
+[]
+348ms BackTrackerLookup search DEBUG    
+	day: 1, city: TXL, price: 100, path:
+<Flight: id: 3, PRG TXL 0 100> price: 100,
+possibilities:
+[]
+348ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[]

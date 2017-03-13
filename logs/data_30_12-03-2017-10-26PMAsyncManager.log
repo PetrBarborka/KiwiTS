@@ -1,0 +1,13 @@
+547ms run_async <module> INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt ...
+663ms run_async <module> INFO     done
+663ms run_async <module> INFO     starting AsyncManager process
+729ms run_async register_result INFO     Simple backtracker found VALID path for 8274
+733ms run_async register_result INFO     Simple backtracker found VALID path for 8259
+751ms run_async register_result INFO     Lookup backtracker found VALID path for 8274
+815ms run_async register_result INFO     Lookup backtracker found VALID path for 8259
+15122ms run_async register_result INFO     Simple backtracker found VALID path for 8171
+158793ms run_async register_result INFO     Lookup backtracker found VALID path for 8171
+543937ms run_async register_result INFO     Simple backtracker found VALID path for 8129
+543940ms run_async register_result INFO     Simple backtracker found VALID path for 8114
+600136ms run_async search_async INFO     threads ['<bound method AsyncBackTracker.search of <src.searchers.AsyncBackTracker.AsyncBackTracker object at 0x109046ac8>>', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x10927dc18>>, 1, 1)'] are still alive after timeout of 599s
+600150ms run_async <module> INFO     Async manager process ended

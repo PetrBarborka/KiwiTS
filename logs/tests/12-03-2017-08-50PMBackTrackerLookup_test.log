@@ -1,0 +1,2691 @@
+270ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 1, step: 1
+270ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 1, PRG BCN 0 50> price: 50>, <Path: <Flight: id: 0, PRG TXL 0 100> price: 100>]}
+270ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 1, PRG BCN 0 50> price: 50>, <Path: <Flight: id: 0, PRG TXL 0 100> price: 100>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+271ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+271ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 0, PRG TXL 0 100> price: 100>], 1: [<Path: <Flight: id: 4, BCN TXL 1 20> price: 20>]}
+271ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 1, PRG BCN 0 50> price: 50,
+possibilities:
+[<Path: <Flight: id: 4, BCN TXL 1 20> price: 20>]
+	cities_to_visit: 
+	['TXL']
+271ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+271ms BackTrackerLookup search DEBUG    
+	day + lookup = 2 + 1 = 3,
+final_day is 3.bruteforcing my way back.
+271ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+271ms BackTrackerLookup return_to_target DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70,
+271ms BackTrackerLookup return_to_target DEBUG    
+	return path: None
+271ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+271ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 0, PRG TXL 0 100> price: 100>], 1: []}
+271ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 1, PRG BCN 0 50> price: 50,
+possibilities:
+[]
+	cities_to_visit: 
+	['TXL']
+271ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+271ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 0, PRG TXL 0 100> price: 100>]}
+271ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 0, PRG TXL 0 100> price: 100>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+271ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+271ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: [<Path: <Flight: id: 3, TXL BCN 1 100> price: 100>]}
+272ms BackTrackerLookup search DEBUG    
+	day: 1, city: TXL, price: 100, path:
+<Flight: id: 0, PRG TXL 0 100> price: 100,
+possibilities:
+[<Path: <Flight: id: 3, TXL BCN 1 100> price: 100>]
+	cities_to_visit: 
+	['BCN']
+272ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+272ms BackTrackerLookup search DEBUG    
+	day + lookup = 2 + 1 = 3,
+final_day is 3.bruteforcing my way back.
+272ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+272ms BackTrackerLookup return_to_target DEBUG    
+	day: 2, city: BCN, price: 200, path:
+<Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200,
+272ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 6, BCN PRG 2 100> price: 100
+272ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+272ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: []}
+272ms BackTrackerLookup search DEBUG    
+	day: 1, city: TXL, price: 100, path:
+<Flight: id: 0, PRG TXL 0 100> price: 100,
+possibilities:
+[]
+	cities_to_visit: 
+	['BCN']
+272ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+272ms BackTrackerLookup search DEBUG    
+	possible paths: {0: []}
+272ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[]
+	cities_to_visit: 
+	['BCN', 'TXL']
+272ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 2, step: 1
+273ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]}
+273ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+273ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+273ms BackTrackerLookup search DEBUG    
+	day + lookup = 1 + 2 = 3,
+final_day is 3.bruteforcing my way back.
+273ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+273ms BackTrackerLookup return_to_target DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 1, PRG BCN 0 50> price: 50,
+273ms BackTrackerLookup return_to_target DEBUG    
+	return path: None
+273ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 0 ... 
+
+273ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]}
+273ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+273ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+273ms BackTrackerLookup search DEBUG    
+	day + lookup = 1 + 2 = 3,
+final_day is 3.bruteforcing my way back.
+273ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+274ms BackTrackerLookup return_to_target DEBUG    
+	day: 1, city: TXL, price: 100, path:
+<Flight: id: 0, PRG TXL 0 100> price: 100,
+274ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 200
+274ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 0 ... 
+
+274ms BackTrackerLookup search DEBUG    
+	possible paths: {0: []}
+274ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[]
+	cities_to_visit: 
+	['BCN', 'TXL']
+274ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 3, step: 1
+274ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 3 = 3,
+final_day is 3.bruteforcing my way back.
+274ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+274ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+275ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+275ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 4, step: 1
+275ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 4 = 4,
+final_day is 3.bruteforcing my way back.
+275ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+275ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+275ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+275ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 5, step: 1
+275ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 5 = 5,
+final_day is 3.bruteforcing my way back.
+276ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+276ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+276ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+276ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 6, step: 1
+276ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 6 = 6,
+final_day is 3.bruteforcing my way back.
+276ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+277ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+277ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+277ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 7, step: 1
+277ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 7 = 7,
+final_day is 3.bruteforcing my way back.
+277ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+277ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+277ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+278ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 1
+278ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+278ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+278ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+278ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+278ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 1
+278ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+278ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+279ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+279ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+279ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 2, step: 2
+279ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]}
+279ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+279ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+279ms BackTrackerLookup search DEBUG    
+	day + lookup = 2 + 2 = 4,
+final_day is 3.bruteforcing my way back.
+279ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+279ms BackTrackerLookup return_to_target DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70,
+279ms BackTrackerLookup return_to_target DEBUG    
+	return path: None
+280ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+280ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]}
+280ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+280ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+280ms BackTrackerLookup search DEBUG    
+	day + lookup = 2 + 2 = 4,
+final_day is 3.bruteforcing my way back.
+280ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+280ms BackTrackerLookup return_to_target DEBUG    
+	day: 2, city: BCN, price: 200, path:
+<Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200,
+280ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 6, BCN PRG 2 100> price: 100
+280ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+280ms BackTrackerLookup search DEBUG    
+	possible paths: {0: []}
+280ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[]
+	cities_to_visit: 
+	['BCN', 'TXL']
+280ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 3, step: 2
+281ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 3 = 3,
+final_day is 3.bruteforcing my way back.
+281ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+281ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+281ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+281ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 4, step: 2
+281ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 4 = 4,
+final_day is 3.bruteforcing my way back.
+281ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+281ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+282ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+282ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 5, step: 2
+282ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 5 = 5,
+final_day is 3.bruteforcing my way back.
+282ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+282ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+282ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+282ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 6, step: 2
+282ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 6 = 6,
+final_day is 3.bruteforcing my way back.
+283ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+283ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+283ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+283ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 7, step: 2
+283ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 7 = 7,
+final_day is 3.bruteforcing my way back.
+283ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+283ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+283ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+284ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 2
+284ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+284ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+284ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+284ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+284ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 2
+284ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+285ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+285ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+285ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+285ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 3, step: 3
+285ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 3 = 3,
+final_day is 3.bruteforcing my way back.
+285ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+285ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+286ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+286ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 4, step: 3
+286ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 4 = 4,
+final_day is 3.bruteforcing my way back.
+286ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+286ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+286ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+286ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 5, step: 3
+286ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 5 = 5,
+final_day is 3.bruteforcing my way back.
+286ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+287ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+287ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+287ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 6, step: 3
+287ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 6 = 6,
+final_day is 3.bruteforcing my way back.
+287ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+287ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+287ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+287ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 7, step: 3
+288ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 7 = 7,
+final_day is 3.bruteforcing my way back.
+288ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+288ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+288ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+288ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 3
+288ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+288ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+289ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+289ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+289ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 3
+289ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+289ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+289ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+289ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+289ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 4, step: 4
+289ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 4 = 4,
+final_day is 3.bruteforcing my way back.
+290ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+290ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+290ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+290ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 5, step: 4
+290ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 5 = 5,
+final_day is 3.bruteforcing my way back.
+290ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+290ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+290ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+291ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 6, step: 4
+291ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 6 = 6,
+final_day is 3.bruteforcing my way back.
+291ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+291ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+291ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+291ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 7, step: 4
+291ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 7 = 7,
+final_day is 3.bruteforcing my way back.
+291ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+292ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+292ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+292ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 4
+292ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+292ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+292ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+292ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+292ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 4
+293ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+293ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+293ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+293ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+293ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 5, step: 5
+293ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 5 = 5,
+final_day is 3.bruteforcing my way back.
+293ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+294ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+294ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+294ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 6, step: 5
+294ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 6 = 6,
+final_day is 3.bruteforcing my way back.
+294ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+294ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+294ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+294ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 7, step: 5
+294ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 7 = 7,
+final_day is 3.bruteforcing my way back.
+295ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+295ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+295ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+295ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 5
+295ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+295ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+296ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+296ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+296ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 5
+296ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+296ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+296ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+296ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+296ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 6, step: 6
+296ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 6 = 6,
+final_day is 3.bruteforcing my way back.
+297ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+297ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+297ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+297ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 7, step: 6
+297ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 7 = 7,
+final_day is 3.bruteforcing my way back.
+297ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+297ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+298ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+298ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 6
+298ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+298ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+298ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+298ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+298ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 6
+299ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+299ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+299ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+299ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+299ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 7, step: 7
+299ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 7 = 7,
+final_day is 3.bruteforcing my way back.
+299ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+300ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+300ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+300ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 7
+300ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+300ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+300ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+300ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+300ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 7
+301ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+301ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+301ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+301ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+301ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 8
+301ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+301ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+301ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+302ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+302ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 8
+302ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+302ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+302ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+302ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+302ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 9
+302ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+302ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+303ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+303ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+263ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 1, step: 1
+263ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 1, PRG BCN 0 50> price: 50>, <Path: <Flight: id: 0, PRG TXL 0 100> price: 100>]}
+263ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 1, PRG BCN 0 50> price: 50>, <Path: <Flight: id: 0, PRG TXL 0 100> price: 100>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+263ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+263ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 0, PRG TXL 0 100> price: 100>], 1: [<Path: <Flight: id: 4, BCN TXL 1 20> price: 20>]}
+263ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 1, PRG BCN 0 50> price: 50,
+possibilities:
+[<Path: <Flight: id: 4, BCN TXL 1 20> price: 20>]
+	cities_to_visit: 
+	['TXL']
+263ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+263ms BackTrackerLookup search DEBUG    
+	day + lookup = 2 + 1 = 3,
+final_day is 3.bruteforcing my way back.
+263ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+263ms BackTrackerLookup return_to_target DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70,
+263ms BackTrackerLookup return_to_target DEBUG    
+	return path: None
+263ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+263ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 0, PRG TXL 0 100> price: 100>], 1: []}
+264ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 1, PRG BCN 0 50> price: 50,
+possibilities:
+[]
+	cities_to_visit: 
+	['TXL']
+264ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+264ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 0, PRG TXL 0 100> price: 100>]}
+264ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 0, PRG TXL 0 100> price: 100>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+264ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+264ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: [<Path: <Flight: id: 3, TXL BCN 1 100> price: 100>]}
+264ms BackTrackerLookup search DEBUG    
+	day: 1, city: TXL, price: 100, path:
+<Flight: id: 0, PRG TXL 0 100> price: 100,
+possibilities:
+[<Path: <Flight: id: 3, TXL BCN 1 100> price: 100>]
+	cities_to_visit: 
+	['BCN']
+264ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+264ms BackTrackerLookup search DEBUG    
+	day + lookup = 2 + 1 = 3,
+final_day is 3.bruteforcing my way back.
+264ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+264ms BackTrackerLookup return_to_target DEBUG    
+	day: 2, city: BCN, price: 200, path:
+<Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200,
+264ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 6, BCN PRG 2 100> price: 100
+264ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+264ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: []}
+265ms BackTrackerLookup search DEBUG    
+	day: 1, city: TXL, price: 100, path:
+<Flight: id: 0, PRG TXL 0 100> price: 100,
+possibilities:
+[]
+	cities_to_visit: 
+	['BCN']
+265ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+265ms BackTrackerLookup search DEBUG    
+	possible paths: {0: []}
+265ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[]
+	cities_to_visit: 
+	['BCN', 'TXL']
+265ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 2, step: 1
+265ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]}
+265ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+265ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+265ms BackTrackerLookup search DEBUG    
+	day + lookup = 1 + 2 = 3,
+final_day is 3.bruteforcing my way back.
+266ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+266ms BackTrackerLookup return_to_target DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 1, PRG BCN 0 50> price: 50,
+266ms BackTrackerLookup return_to_target DEBUG    
+	return path: None
+266ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 0 ... 
+
+266ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]}
+266ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+266ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+266ms BackTrackerLookup search DEBUG    
+	day + lookup = 1 + 2 = 3,
+final_day is 3.bruteforcing my way back.
+266ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+266ms BackTrackerLookup return_to_target DEBUG    
+	day: 1, city: TXL, price: 100, path:
+<Flight: id: 0, PRG TXL 0 100> price: 100,
+266ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 200
+267ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 0 ... 
+
+267ms BackTrackerLookup search DEBUG    
+	possible paths: {0: []}
+267ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[]
+	cities_to_visit: 
+	['BCN', 'TXL']
+267ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 3, step: 1
+267ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 3 = 3,
+final_day is 3.bruteforcing my way back.
+267ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+267ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+267ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+267ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 4, step: 1
+267ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 4 = 4,
+final_day is 3.bruteforcing my way back.
+268ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+268ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+268ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+268ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 5, step: 1
+268ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 5 = 5,
+final_day is 3.bruteforcing my way back.
+268ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+268ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+268ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+269ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 6, step: 1
+269ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 6 = 6,
+final_day is 3.bruteforcing my way back.
+269ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+269ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+269ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+269ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 7, step: 1
+269ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 7 = 7,
+final_day is 3.bruteforcing my way back.
+269ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+270ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+270ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+270ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 1
+270ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+270ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+270ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+270ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+270ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 1
+270ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+271ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+271ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+271ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+271ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 2, step: 2
+271ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]}
+271ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+271ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+271ms BackTrackerLookup search DEBUG    
+	day + lookup = 2 + 2 = 4,
+final_day is 3.bruteforcing my way back.
+271ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+272ms BackTrackerLookup return_to_target DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 1, PRG BCN 0 50><Flight: id: 4, BCN TXL 1 20> price: 70,
+272ms BackTrackerLookup return_to_target DEBUG    
+	return path: None
+272ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+272ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]}
+272ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+272ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+272ms BackTrackerLookup search DEBUG    
+	day + lookup = 2 + 2 = 4,
+final_day is 3.bruteforcing my way back.
+272ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+272ms BackTrackerLookup return_to_target DEBUG    
+	day: 2, city: BCN, price: 200, path:
+<Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100> price: 200,
+272ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 6, BCN PRG 2 100> price: 100
+272ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+272ms BackTrackerLookup search DEBUG    
+	possible paths: {0: []}
+272ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[]
+	cities_to_visit: 
+	['BCN', 'TXL']
+272ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 3, step: 2
+272ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 3 = 3,
+final_day is 3.bruteforcing my way back.
+273ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+273ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+273ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+273ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 4, step: 2
+273ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 4 = 4,
+final_day is 3.bruteforcing my way back.
+273ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+273ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+273ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+274ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 5, step: 2
+274ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 5 = 5,
+final_day is 3.bruteforcing my way back.
+274ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+274ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+274ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+274ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 6, step: 2
+274ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 6 = 6,
+final_day is 3.bruteforcing my way back.
+274ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+275ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+275ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+275ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 7, step: 2
+275ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 7 = 7,
+final_day is 3.bruteforcing my way back.
+275ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+275ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+275ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+275ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 2
+276ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+276ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+276ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+276ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+276ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 2
+276ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+276ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+276ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+277ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+277ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 3, step: 3
+277ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 3 = 3,
+final_day is 3.bruteforcing my way back.
+277ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+277ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+277ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+277ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 4, step: 3
+277ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 4 = 4,
+final_day is 3.bruteforcing my way back.
+277ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+278ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+278ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+278ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 5, step: 3
+278ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 5 = 5,
+final_day is 3.bruteforcing my way back.
+278ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+278ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+278ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+279ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 6, step: 3
+279ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 6 = 6,
+final_day is 3.bruteforcing my way back.
+279ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+279ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+279ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+279ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 7, step: 3
+279ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 7 = 7,
+final_day is 3.bruteforcing my way back.
+279ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+280ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+280ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+280ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 3
+280ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+280ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+280ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+280ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+281ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 3
+281ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+281ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+281ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+281ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+281ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 4, step: 4
+281ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 4 = 4,
+final_day is 3.bruteforcing my way back.
+281ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+282ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+282ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+282ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 5, step: 4
+282ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 5 = 5,
+final_day is 3.bruteforcing my way back.
+282ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+282ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+282ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+283ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 6, step: 4
+283ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 6 = 6,
+final_day is 3.bruteforcing my way back.
+283ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+283ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+283ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+283ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 7, step: 4
+283ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 7 = 7,
+final_day is 3.bruteforcing my way back.
+283ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+284ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+284ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+284ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 4
+284ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+284ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+284ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+284ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+285ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 4
+285ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+285ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+285ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+285ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+285ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 5, step: 5
+285ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 5 = 5,
+final_day is 3.bruteforcing my way back.
+285ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+286ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+286ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+286ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 6, step: 5
+286ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 6 = 6,
+final_day is 3.bruteforcing my way back.
+286ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+286ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+286ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+287ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 7, step: 5
+287ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 7 = 7,
+final_day is 3.bruteforcing my way back.
+287ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+287ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+287ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+287ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 5
+287ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+287ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+288ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+288ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+288ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 5
+288ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+288ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+290ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+290ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+290ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 6, step: 6
+290ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 6 = 6,
+final_day is 3.bruteforcing my way back.
+290ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+291ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+291ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+291ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 7, step: 6
+291ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 7 = 7,
+final_day is 3.bruteforcing my way back.
+291ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+292ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+292ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+292ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 6
+292ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+292ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+292ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+292ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+293ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 6
+293ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+293ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+293ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+293ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+293ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 7, step: 7
+293ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 7 = 7,
+final_day is 3.bruteforcing my way back.
+293ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+294ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+294ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+294ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 7
+295ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+295ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+295ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+295ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+295ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 7
+295ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+295ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+296ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+296ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+296ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 8, step: 8
+296ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 8 = 8,
+final_day is 3.bruteforcing my way back.
+296ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+296ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+296ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+296ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 8
+296ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+297ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+297ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+297ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+297ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 9, step: 9
+297ms BackTrackerLookup search DEBUG    
+	day + lookup = 0 + 9 = 9,
+final_day is 3.bruteforcing my way back.
+297ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+297ms BackTrackerLookup return_to_target DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+297ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 0, PRG TXL 0 100><Flight: id: 3, TXL BCN 1 100><Flight: id: 6, BCN PRG 2 100> price: 300
+320ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 2, step: 1
+321ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+322ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['CDG', 'BCN', 'LHR', 'TXL']
+322ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+323ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [<Path: <Flight: id: 9, CDG LHR 1 30><Flight: id: 16, LHR BCN 2 10> price: 40>]}
+323ms BackTrackerLookup search DEBUG    
+	day: 1, city: CDG, price: 10, path:
+<Flight: id: 1, PRG CDG 0 10> price: 10,
+possibilities:
+[<Path: <Flight: id: 9, CDG LHR 1 30><Flight: id: 16, LHR BCN 2 10> price: 40>]
+	cities_to_visit: 
+	['BCN', 'LHR', 'TXL']
+323ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+323ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: [<Path: <Flight: id: 16, LHR BCN 2 10><Flight: id: 23, BCN TXL 3 100> price: 110>]}
+323ms BackTrackerLookup search DEBUG    
+	day: 2, city: LHR, price: 40, path:
+<Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40,
+possibilities:
+[<Path: <Flight: id: 16, LHR BCN 2 10><Flight: id: 23, BCN TXL 3 100> price: 110>]
+	cities_to_visit: 
+	['BCN', 'TXL']
+324ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+324ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+324ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+324ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: BCN, price: 50, path:
+<Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30><Flight: id: 16, LHR BCN 2 10> price: 50,
+324ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 23, BCN TXL 3 100><Flight: id: 37, TXL PRG 4 10> price: 110
+324ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+325ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: []}
+325ms BackTrackerLookup search DEBUG    
+	day: 2, city: LHR, price: 40, path:
+<Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40,
+possibilities:
+[]
+	cities_to_visit: 
+	['TXL', 'BCN']
+325ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+325ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: []}
+325ms BackTrackerLookup search DEBUG    
+	day: 1, city: CDG, price: 10, path:
+<Flight: id: 1, PRG CDG 0 10> price: 10,
+possibilities:
+[]
+	cities_to_visit: 
+	['TXL', 'BCN', 'LHR']
+325ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+325ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+326ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['TXL', 'BCN', 'LHR', 'CDG']
+326ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+326ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]}
+326ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]
+	cities_to_visit: 
+	['TXL', 'LHR', 'CDG']
+326ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+327ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: [<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]}
+327ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]
+	cities_to_visit: 
+	['LHR', 'CDG']
+327ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+327ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+327ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+327ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: CDG, price: 80, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 80,
+327ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 25, CDG LHR 3 30><Flight: id: 34, LHR PRG 4 10> price: 40
+327ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+328ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: []}
+328ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[]
+	cities_to_visit: 
+	['LHR', 'CDG']
+328ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+328ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: []}
+328ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL']
+328ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+328ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+328ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL', 'BCN']
+329ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+329ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]}
+329ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL']
+329ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+329ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: [<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]}
+329ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]
+	cities_to_visit: 
+	['LHR', 'CDG']
+329ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+329ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+330ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+330ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: CDG, price: 80, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 80,
+330ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 25, CDG LHR 3 30><Flight: id: 34, LHR PRG 4 10> price: 40
+330ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+330ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: []}
+331ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[]
+	cities_to_visit: 
+	['LHR', 'CDG']
+331ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+331ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: []}
+331ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL']
+331ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+331ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+331ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL', 'BCN']
+331ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+331ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [<Path: <Flight: id: 10, LHR CDG 1 110><Flight: id: 15, CDG BCN 2 30> price: 140>]}
+332ms BackTrackerLookup search DEBUG    
+	day: 1, city: LHR, price: 70, path:
+<Flight: id: 2, PRG LHR 0 70> price: 70,
+possibilities:
+[<Path: <Flight: id: 10, LHR CDG 1 110><Flight: id: 15, CDG BCN 2 30> price: 140>]
+	cities_to_visit: 
+	['CDG', 'TXL', 'BCN']
+332ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+332ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: [<Path: <Flight: id: 15, CDG BCN 2 30><Flight: id: 23, BCN TXL 3 100> price: 130>]}
+332ms BackTrackerLookup search DEBUG    
+	day: 2, city: CDG, price: 180, path:
+<Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180,
+possibilities:
+[<Path: <Flight: id: 15, CDG BCN 2 30><Flight: id: 23, BCN TXL 3 100> price: 130>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+332ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+332ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+332ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+332ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: BCN, price: 210, path:
+<Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110><Flight: id: 15, CDG BCN 2 30> price: 210,
+333ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 23, BCN TXL 3 100><Flight: id: 37, TXL PRG 4 10> price: 110
+333ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+333ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: []}
+333ms BackTrackerLookup search DEBUG    
+	day: 2, city: CDG, price: 180, path:
+<Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180,
+possibilities:
+[]
+	cities_to_visit: 
+	['TXL', 'BCN']
+333ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+333ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: []}
+333ms BackTrackerLookup search DEBUG    
+	day: 1, city: LHR, price: 70, path:
+<Flight: id: 2, PRG LHR 0 70> price: 70,
+possibilities:
+[]
+	cities_to_visit: 
+	['TXL', 'BCN', 'CDG']
+333ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+333ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+334ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['TXL', 'BCN', 'CDG', 'LHR']
+334ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+334ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: [<Path: <Flight: id: 11, TXL BCN 1 100><Flight: id: 13, BCN LHR 2 100> price: 200>]}
+334ms BackTrackerLookup search DEBUG    
+	day: 1, city: TXL, price: 100, path:
+<Flight: id: 3, PRG TXL 0 100> price: 100,
+possibilities:
+[<Path: <Flight: id: 11, TXL BCN 1 100><Flight: id: 13, BCN LHR 2 100> price: 200>]
+	cities_to_visit: 
+	['BCN', 'CDG', 'LHR']
+334ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+334ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: [], 2: [<Path: <Flight: id: 13, BCN LHR 2 100><Flight: id: 27, LHR CDG 3 10> price: 110>]}
+334ms BackTrackerLookup search DEBUG    
+	day: 2, city: BCN, price: 200, path:
+<Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200,
+possibilities:
+[<Path: <Flight: id: 13, BCN LHR 2 100><Flight: id: 27, LHR CDG 3 10> price: 110>]
+	cities_to_visit: 
+	['CDG', 'LHR']
+334ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+334ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+334ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+335ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: LHR, price: 300, path:
+<Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100><Flight: id: 13, BCN LHR 2 100> price: 300,
+335ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 27, LHR CDG 3 10><Flight: id: 33, CDG PRG 4 30> price: 40
+335ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+335ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: [], 2: []}
+335ms BackTrackerLookup search DEBUG    
+	day: 2, city: BCN, price: 200, path:
+<Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200,
+possibilities:
+[]
+	cities_to_visit: 
+	['CDG', 'LHR']
+335ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+335ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: []}
+335ms BackTrackerLookup search DEBUG    
+	day: 1, city: TXL, price: 100, path:
+<Flight: id: 3, PRG TXL 0 100> price: 100,
+possibilities:
+[]
+	cities_to_visit: 
+	['CDG', 'LHR', 'BCN']
+336ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+336ms BackTrackerLookup search DEBUG    
+	possible paths: {0: []}
+336ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[]
+	cities_to_visit: 
+	['CDG', 'LHR', 'BCN', 'TXL']
+273ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 2, step: 1
+273ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+273ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['CDG', 'BCN', 'LHR', 'TXL']
+273ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+274ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [<Path: <Flight: id: 9, CDG LHR 1 30><Flight: id: 16, LHR BCN 2 10> price: 40>]}
+274ms BackTrackerLookup search DEBUG    
+	day: 1, city: CDG, price: 10, path:
+<Flight: id: 1, PRG CDG 0 10> price: 10,
+possibilities:
+[<Path: <Flight: id: 9, CDG LHR 1 30><Flight: id: 16, LHR BCN 2 10> price: 40>]
+	cities_to_visit: 
+	['BCN', 'LHR', 'TXL']
+274ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+274ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: [<Path: <Flight: id: 16, LHR BCN 2 10><Flight: id: 23, BCN TXL 3 100> price: 110>]}
+274ms BackTrackerLookup search DEBUG    
+	day: 2, city: LHR, price: 40, path:
+<Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40,
+possibilities:
+[<Path: <Flight: id: 16, LHR BCN 2 10><Flight: id: 23, BCN TXL 3 100> price: 110>]
+	cities_to_visit: 
+	['BCN', 'TXL']
+274ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+274ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+274ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+274ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: BCN, price: 50, path:
+<Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30><Flight: id: 16, LHR BCN 2 10> price: 50,
+274ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 23, BCN TXL 3 100><Flight: id: 37, TXL PRG 4 10> price: 110
+274ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+275ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: []}
+275ms BackTrackerLookup search DEBUG    
+	day: 2, city: LHR, price: 40, path:
+<Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40,
+possibilities:
+[]
+	cities_to_visit: 
+	['TXL', 'BCN']
+275ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+275ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: []}
+275ms BackTrackerLookup search DEBUG    
+	day: 1, city: CDG, price: 10, path:
+<Flight: id: 1, PRG CDG 0 10> price: 10,
+possibilities:
+[]
+	cities_to_visit: 
+	['TXL', 'BCN', 'LHR']
+275ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+275ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+275ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['TXL', 'BCN', 'LHR', 'CDG']
+276ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+276ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]}
+276ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]
+	cities_to_visit: 
+	['TXL', 'LHR', 'CDG']
+276ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+276ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: [<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]}
+276ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]
+	cities_to_visit: 
+	['LHR', 'CDG']
+276ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+276ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+276ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+277ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: CDG, price: 80, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 80,
+277ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 25, CDG LHR 3 30><Flight: id: 34, LHR PRG 4 10> price: 40
+277ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+277ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: []}
+277ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[]
+	cities_to_visit: 
+	['LHR', 'CDG']
+277ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+277ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: []}
+277ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL']
+277ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+277ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+277ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL', 'BCN']
+277ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+278ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]}
+278ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL']
+278ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+278ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: [<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]}
+278ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]
+	cities_to_visit: 
+	['LHR', 'CDG']
+278ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+278ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+278ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+279ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: CDG, price: 80, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 80,
+279ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 25, CDG LHR 3 30><Flight: id: 34, LHR PRG 4 10> price: 40
+279ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+279ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: []}
+279ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[]
+	cities_to_visit: 
+	['LHR', 'CDG']
+279ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+279ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: []}
+280ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL']
+280ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+280ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+280ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL', 'BCN']
+280ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+280ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [<Path: <Flight: id: 10, LHR CDG 1 110><Flight: id: 15, CDG BCN 2 30> price: 140>]}
+280ms BackTrackerLookup search DEBUG    
+	day: 1, city: LHR, price: 70, path:
+<Flight: id: 2, PRG LHR 0 70> price: 70,
+possibilities:
+[<Path: <Flight: id: 10, LHR CDG 1 110><Flight: id: 15, CDG BCN 2 30> price: 140>]
+	cities_to_visit: 
+	['CDG', 'TXL', 'BCN']
+280ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+280ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: [<Path: <Flight: id: 15, CDG BCN 2 30><Flight: id: 23, BCN TXL 3 100> price: 130>]}
+280ms BackTrackerLookup search DEBUG    
+	day: 2, city: CDG, price: 180, path:
+<Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180,
+possibilities:
+[<Path: <Flight: id: 15, CDG BCN 2 30><Flight: id: 23, BCN TXL 3 100> price: 130>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+280ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+280ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+281ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+281ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: BCN, price: 210, path:
+<Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110><Flight: id: 15, CDG BCN 2 30> price: 210,
+281ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 23, BCN TXL 3 100><Flight: id: 37, TXL PRG 4 10> price: 110
+282ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+282ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: []}
+282ms BackTrackerLookup search DEBUG    
+	day: 2, city: CDG, price: 180, path:
+<Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180,
+possibilities:
+[]
+	cities_to_visit: 
+	['TXL', 'BCN']
+282ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+282ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: []}
+282ms BackTrackerLookup search DEBUG    
+	day: 1, city: LHR, price: 70, path:
+<Flight: id: 2, PRG LHR 0 70> price: 70,
+possibilities:
+[]
+	cities_to_visit: 
+	['TXL', 'BCN', 'CDG']
+282ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+282ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+282ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['TXL', 'BCN', 'CDG', 'LHR']
+282ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+283ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: [<Path: <Flight: id: 11, TXL BCN 1 100><Flight: id: 13, BCN LHR 2 100> price: 200>]}
+283ms BackTrackerLookup search DEBUG    
+	day: 1, city: TXL, price: 100, path:
+<Flight: id: 3, PRG TXL 0 100> price: 100,
+possibilities:
+[<Path: <Flight: id: 11, TXL BCN 1 100><Flight: id: 13, BCN LHR 2 100> price: 200>]
+	cities_to_visit: 
+	['BCN', 'CDG', 'LHR']
+283ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+283ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: [], 2: [<Path: <Flight: id: 13, BCN LHR 2 100><Flight: id: 27, LHR CDG 3 10> price: 110>]}
+283ms BackTrackerLookup search DEBUG    
+	day: 2, city: BCN, price: 200, path:
+<Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200,
+possibilities:
+[<Path: <Flight: id: 13, BCN LHR 2 100><Flight: id: 27, LHR CDG 3 10> price: 110>]
+	cities_to_visit: 
+	['CDG', 'LHR']
+283ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+283ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+283ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+283ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: LHR, price: 300, path:
+<Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100><Flight: id: 13, BCN LHR 2 100> price: 300,
+283ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 27, LHR CDG 3 10><Flight: id: 33, CDG PRG 4 30> price: 40
+283ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+283ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: [], 2: []}
+284ms BackTrackerLookup search DEBUG    
+	day: 2, city: BCN, price: 200, path:
+<Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200,
+possibilities:
+[]
+	cities_to_visit: 
+	['CDG', 'LHR']
+284ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+284ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: []}
+284ms BackTrackerLookup search DEBUG    
+	day: 1, city: TXL, price: 100, path:
+<Flight: id: 3, PRG TXL 0 100> price: 100,
+possibilities:
+[]
+	cities_to_visit: 
+	['CDG', 'LHR', 'BCN']
+284ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+284ms BackTrackerLookup search DEBUG    
+	possible paths: {0: []}
+284ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[]
+	cities_to_visit: 
+	['CDG', 'LHR', 'BCN', 'TXL']
+263ms BackTrackerLookup search DEBUG    
+	====================================================================================================
+STARTING THE METHOD lookup: 2, step: 1
+264ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+264ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['CDG', 'BCN', 'LHR', 'TXL']
+264ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+264ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [<Path: <Flight: id: 9, CDG LHR 1 30><Flight: id: 16, LHR BCN 2 10> price: 40>]}
+264ms BackTrackerLookup search DEBUG    
+	day: 1, city: CDG, price: 10, path:
+<Flight: id: 1, PRG CDG 0 10> price: 10,
+possibilities:
+[<Path: <Flight: id: 9, CDG LHR 1 30><Flight: id: 16, LHR BCN 2 10> price: 40>]
+	cities_to_visit: 
+	['BCN', 'LHR', 'TXL']
+264ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+265ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: [<Path: <Flight: id: 16, LHR BCN 2 10><Flight: id: 23, BCN TXL 3 100> price: 110>]}
+265ms BackTrackerLookup search DEBUG    
+	day: 2, city: LHR, price: 40, path:
+<Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40,
+possibilities:
+[<Path: <Flight: id: 16, LHR BCN 2 10><Flight: id: 23, BCN TXL 3 100> price: 110>]
+	cities_to_visit: 
+	['BCN', 'TXL']
+265ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+265ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+265ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+265ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: BCN, price: 50, path:
+<Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30><Flight: id: 16, LHR BCN 2 10> price: 50,
+265ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 23, BCN TXL 3 100><Flight: id: 37, TXL PRG 4 10> price: 110
+265ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+265ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: []}
+265ms BackTrackerLookup search DEBUG    
+	day: 2, city: LHR, price: 40, path:
+<Flight: id: 1, PRG CDG 0 10><Flight: id: 9, CDG LHR 1 30> price: 40,
+possibilities:
+[]
+	cities_to_visit: 
+	['TXL', 'BCN']
+266ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+266ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: []}
+266ms BackTrackerLookup search DEBUG    
+	day: 1, city: CDG, price: 10, path:
+<Flight: id: 1, PRG CDG 0 10> price: 10,
+possibilities:
+[]
+	cities_to_visit: 
+	['TXL', 'BCN', 'LHR']
+266ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+266ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+266ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70>, <Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['TXL', 'BCN', 'LHR', 'CDG']
+266ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+266ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]}
+266ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]
+	cities_to_visit: 
+	['TXL', 'LHR', 'CDG']
+266ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+266ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: [<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]}
+267ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]
+	cities_to_visit: 
+	['LHR', 'CDG']
+267ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+267ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+267ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+267ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: CDG, price: 80, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 80,
+267ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 25, CDG LHR 3 30><Flight: id: 34, LHR PRG 4 10> price: 40
+267ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+267ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: []}
+267ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[]
+	cities_to_visit: 
+	['LHR', 'CDG']
+267ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+267ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: []}
+267ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL']
+268ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+268ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+268ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 4, PRG BCN 0 50><Flight: id: 7, BCN LHR 1 20> price: 70>, <Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL', 'BCN']
+268ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+268ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]}
+268ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[<Path: <Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 30>]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL']
+268ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+268ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: [<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]}
+268ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[<Path: <Flight: id: 19, TXL CDG 2 10><Flight: id: 25, CDG LHR 3 30> price: 40>]
+	cities_to_visit: 
+	['LHR', 'CDG']
+268ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+268ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+268ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+269ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: CDG, price: 80, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20><Flight: id: 19, TXL CDG 2 10> price: 80,
+269ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 25, CDG LHR 3 30><Flight: id: 34, LHR PRG 4 10> price: 40
+269ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+269ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: []}
+269ms BackTrackerLookup search DEBUG    
+	day: 2, city: TXL, price: 70, path:
+<Flight: id: 4, PRG BCN 0 50><Flight: id: 6, BCN TXL 1 20> price: 70,
+possibilities:
+[]
+	cities_to_visit: 
+	['LHR', 'CDG']
+269ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+269ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: []}
+269ms BackTrackerLookup search DEBUG    
+	day: 1, city: BCN, price: 50, path:
+<Flight: id: 4, PRG BCN 0 50> price: 50,
+possibilities:
+[]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL']
+269ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+269ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+269ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180>, <Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['LHR', 'CDG', 'TXL', 'BCN']
+269ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+270ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [<Path: <Flight: id: 10, LHR CDG 1 110><Flight: id: 15, CDG BCN 2 30> price: 140>]}
+270ms BackTrackerLookup search DEBUG    
+	day: 1, city: LHR, price: 70, path:
+<Flight: id: 2, PRG LHR 0 70> price: 70,
+possibilities:
+[<Path: <Flight: id: 10, LHR CDG 1 110><Flight: id: 15, CDG BCN 2 30> price: 140>]
+	cities_to_visit: 
+	['CDG', 'TXL', 'BCN']
+270ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+270ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: [<Path: <Flight: id: 15, CDG BCN 2 30><Flight: id: 23, BCN TXL 3 100> price: 130>]}
+270ms BackTrackerLookup search DEBUG    
+	day: 2, city: CDG, price: 180, path:
+<Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180,
+possibilities:
+[<Path: <Flight: id: 15, CDG BCN 2 30><Flight: id: 23, BCN TXL 3 100> price: 130>]
+	cities_to_visit: 
+	['TXL', 'BCN']
+270ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+270ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+270ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+270ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: BCN, price: 210, path:
+<Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110><Flight: id: 15, CDG BCN 2 30> price: 210,
+270ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 23, BCN TXL 3 100><Flight: id: 37, TXL PRG 4 10> price: 110
+270ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+270ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: [], 2: []}
+271ms BackTrackerLookup search DEBUG    
+	day: 2, city: CDG, price: 180, path:
+<Flight: id: 2, PRG LHR 0 70><Flight: id: 10, LHR CDG 1 110> price: 180,
+possibilities:
+[]
+	cities_to_visit: 
+	['TXL', 'BCN']
+271ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+271ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>], 1: []}
+271ms BackTrackerLookup search DEBUG    
+	day: 1, city: LHR, price: 70, path:
+<Flight: id: 2, PRG LHR 0 70> price: 70,
+possibilities:
+[]
+	cities_to_visit: 
+	['TXL', 'BCN', 'CDG']
+271ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+271ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]}
+271ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[<Path: <Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200>]
+	cities_to_visit: 
+	['TXL', 'BCN', 'CDG', 'LHR']
+271ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+271ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: [<Path: <Flight: id: 11, TXL BCN 1 100><Flight: id: 13, BCN LHR 2 100> price: 200>]}
+271ms BackTrackerLookup search DEBUG    
+	day: 1, city: TXL, price: 100, path:
+<Flight: id: 3, PRG TXL 0 100> price: 100,
+possibilities:
+[<Path: <Flight: id: 11, TXL BCN 1 100><Flight: id: 13, BCN LHR 2 100> price: 200>]
+	cities_to_visit: 
+	['BCN', 'CDG', 'LHR']
+271ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+272ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: [], 2: [<Path: <Flight: id: 13, BCN LHR 2 100><Flight: id: 27, LHR CDG 3 10> price: 110>]}
+272ms BackTrackerLookup search DEBUG    
+	day: 2, city: BCN, price: 200, path:
+<Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200,
+possibilities:
+[<Path: <Flight: id: 13, BCN LHR 2 100><Flight: id: 27, LHR CDG 3 10> price: 110>]
+	cities_to_visit: 
+	['CDG', 'LHR']
+272ms BackTrackerLookup forwards DEBUG    
+	going forwards ... 
+
+272ms BackTrackerLookup search DEBUG    
+	day + lookup = 3 + 2 = 5,
+final_day is 5.bruteforcing my way back.
+272ms BackTrackerLookup return_to_target DEBUG    
+	returning to PRG 
+272ms BackTrackerLookup return_to_target DEBUG    
+	day: 3, city: LHR, price: 300, path:
+<Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100><Flight: id: 13, BCN LHR 2 100> price: 300,
+272ms BackTrackerLookup return_to_target DEBUG    
+	return path: <Flight: id: 27, LHR CDG 3 10><Flight: id: 33, CDG PRG 4 30> price: 40
+272ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+272ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: [], 2: []}
+272ms BackTrackerLookup search DEBUG    
+	day: 2, city: BCN, price: 200, path:
+<Flight: id: 3, PRG TXL 0 100><Flight: id: 11, TXL BCN 1 100> price: 200,
+possibilities:
+[]
+	cities_to_visit: 
+	['CDG', 'LHR']
+272ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 2 ... 
+
+272ms BackTrackerLookup search DEBUG    
+	possible paths: {0: [], 1: []}
+273ms BackTrackerLookup search DEBUG    
+	day: 1, city: TXL, price: 100, path:
+<Flight: id: 3, PRG TXL 0 100> price: 100,
+possibilities:
+[]
+	cities_to_visit: 
+	['CDG', 'LHR', 'BCN']
+273ms BackTrackerLookup backwards DEBUG    
+	backtracking from day 1 ... 
+
+273ms BackTrackerLookup search DEBUG    
+	possible paths: {0: []}
+273ms BackTrackerLookup search DEBUG    
+	day: 0, city: PRG, price: 0, path:
+ price: 0,
+possibilities:
+[]
+	cities_to_visit: 
+	['CDG', 'LHR', 'BCN', 'TXL']

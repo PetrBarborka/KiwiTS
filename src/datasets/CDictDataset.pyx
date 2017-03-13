@@ -2,6 +2,8 @@ from DatasetInterface import DatasetInterface
 from Flight import Flight
 from CFlight import CFlight
 
+from copy import deepcopy
+
 
 cdef class CDictDataset:
     """ Class representing dataset with dict
@@ -19,6 +21,20 @@ cdef class CDictDataset:
         self.next_id = 0  # next ID to be assigned to a flight
         self.starting_city = None
         self.cities = []
+
+    def copy(self):
+        o = CDictDataset()
+        o.dataset = {}
+        for k, v in self.dataset.items():
+            o.dataset[k] = v
+        o.flights = {}
+        for k, v in self.flights.items():
+            o.flights[k] = v
+        o.next_id = self.next_id
+        o.starting_city = self.starting_city
+        for c in self.cities:
+            o.cities.append(c)
+        return o
 
     property dataset:
         def __get__(self):

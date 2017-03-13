@@ -1,0 +1,36 @@
+45ms run_async <module> INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt ...
+105ms run_async <module> INFO     done
+106ms run_async <module> INFO     starting AsyncManager process
+120ms run_async register_result INFO     Simple backtracker found VALID path for 8274
+123ms run_async register_result INFO     Simple backtracker found VALID path for 8259
+146ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 8274
+225ms run_async register_result INFO     Lookup_l:1_s:1 found VALID path for 8259
+2199ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 10391
+2200ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 9775
+2201ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 9759
+2311ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 9613
+2312ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 9602
+2313ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 9375
+6388ms run_async register_result INFO     Lookup_l:2_s:1 found VALID path for 9187
+6542ms run_async register_result INFO     Lookup_l:2_s:1 found VALID path for 9116
+10391ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 9305
+10392ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 9289
+16881ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 8868
+17504ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 8735
+17890ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 8729
+40128ms run_async register_result INFO     Lookup_l:2_s:1 found VALID path for 9044
+77620ms run_async register_result INFO     Lookup_l:3_s:3 found VALID path for 9404
+79119ms run_async register_result INFO     Lookup_l:3_s:3 found VALID path for 9371
+84636ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 8613
+85356ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 8499
+102090ms run_async register_result INFO     Lookup_l:3_s:3 found VALID path for 8431
+103462ms run_async register_result INFO     Lookup_l:3_s:3 found VALID path for 8260
+114763ms run_async register_result INFO     Lookup_l:3_s:2 found VALID path for 8184
+214448ms run_async register_result INFO     Lookup_l:3_s:1 found VALID path for 10068
+214450ms run_async register_result INFO     Lookup_l:3_s:1 found VALID path for 9775
+215705ms run_async register_result INFO     Simple backtracker found VALID path for 8171
+246215ms run_async register_result INFO     Lookup_l:3_s:1 found VALID path for 9753
+424809ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 8491
+425447ms run_async register_result INFO     Lookup_l:2_s:2 found VALID path for 8377
+599547ms run_async search_async INFO     threads ['<bound method AsyncBackTracker.search of <src.searchers.AsyncBackTracker.AsyncBackTracker object at 0x1070c8c88>>', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x1070cf2e8>>, 1, 1)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20828>>, 2, 1)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20860>>, 2, 2)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20898>>, 3, 1)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a208d0>>, 3, 2)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20908>>, 3, 3)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20940>>, 5, 1)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20978>>, 5, 2)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a209b0>>, 5, 3)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a209e8>>, 5, 5)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20a20>>, 10, 1)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20a58>>, 10, 2)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20a90>>, 10, 3)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20ac8>>, 10, 5)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20b00>>, 10, 10)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20b38>>, 15, 1)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20b70>>, 15, 2)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20ba8>>, 15, 3)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20be0>>, 15, 5)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20c18>>, 15, 10)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20c50>>, 15, 15)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20c88>>, 30, 1)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20cc0>>, 30, 2)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20cf8>>, 30, 3)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20d30>>, 30, 5)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20d68>>, 30, 10)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20da0>>, 30, 15)', 'functools.partial(<bound method BackTrackerLookup.search of <src.searchers.BackTrackerLookup.BackTrackerLookup object at 0x107a20dd8>>, 30, 30)'] are still alive after timeout of 599s
+600122ms run_async <module> INFO     Async manager process timed out
