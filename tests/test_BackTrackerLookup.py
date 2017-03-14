@@ -48,6 +48,10 @@ def register_result_callback(path):
     # print( "found path for: {}:\n{} ".format(path.price, path) )
     print( "found path for: {}:".format(path.price) )
 
+def best_result_callback():
+    # print( "best_path callback called" )
+    return None
+
 class BackTrackerLookupTest(unittest.TestCase):
 
     def test_3ap(self):
@@ -67,28 +71,28 @@ class BackTrackerLookupTest(unittest.TestCase):
 
         for step in range(1, 10):
             for lookup in range(step, 10):
-                b = BackTrackerLookup(dataset, register_result_callback)
+                b = BackTrackerLookup(dataset, register_result_callback, best_result_callback)
                 print ( "lookup: {}, step: {}".format(lookup, step) )
                 p = b.search(lookup, step)
                 self.assertTrue(p.is_valid())
 
         print("lookup")
-        b = BackTrackerLookup(dataset, register_result_callback)
+        b = BackTrackerLookup(dataset, register_result_callback, best_result_callback)
         p =  b.search( 2, 1 )
         
         print("async")
-        async = AsyncBackTracker(dataset, register_result_callback)
+        async = AsyncBackTracker(dataset, register_result_callback, best_result_callback)
         p =  async.search()
 
     def test_big_from_to(self):
 
         dataset = load_data('../input/300_90K_flights.csv')
-        print("lookup")
-        b = BackTrackerLookup(dataset, register_result_callback)
+        # print("lookup")
+        b = BackTrackerLookup(dataset, register_result_callback, best_result_callback)
         p =  b.search( 1, 1 )
         
-        print("async")
-        async = AsyncBackTracker(dataset, register_result_callback)
+        # print("async")
+        async = AsyncBackTracker(dataset, register_result_callback, best_result_callback)
         p =  async.search()
 
         # self.assertTrue( p.is_valid() )
