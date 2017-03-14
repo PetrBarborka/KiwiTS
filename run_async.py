@@ -144,16 +144,21 @@ if __name__ == '__main__':
             search_fcns.append(partial(BackTrackerLookup(dataset, set_result_callback,
                                                             get_result_callback).search, lookup, step))
         AM.search_fcns = search_fcns
-        p = Process(target=partial(AM.search_async, timeout=(timeout - 1)))
 
-        logging.info("starting AsyncManager process")
-        p.start()
-        p.join(timeout)
-        if p.is_alive():
-            p.terminate()
-            logging.info("Async manager process timed out")
+        wrap_in_process = True # turn false for pycharm concurrency to see the threads
+        if wrap_in_process:
+            p = Process(target=partial(AM.search_async, timeout=(timeout - 1)))
+
+            logging.info("starting AsyncManager process")
+            p.start()
+            p.join(timeout)
+            if p.is_alive():
+                p.terminate()
+                logging.info("Async manager process timed out")
+            else:
+                logging.info("Async manager process ended")
         else:
-            logging.info("Async manager process ended")
+            AM.search_async(timeout=timeout-2)
 
     files = []
     # input_file = 'benchmark/benchmarkdata/300_ap_1500000_total_random_input'
@@ -161,12 +166,12 @@ if __name__ == '__main__':
     # input_file = "kiwisources/travelling-salesman/real_data/data_300.txt"
     # input_file = "kiwisources/travelling-salesman/real_data/sorted_data/data_100.txt"
     # input_file = "kiwisources/travelling-salesman/real_data/sorted_data/data_200.txt"
-    files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_5.txt")
-    files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_15.txt")
-    files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt")
-    files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_50.txt")
-    files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_100.txt")
-    files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_200.txt")
+    # files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_5.txt")
+    # files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_15.txt")
+    # files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt")
+    # files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_50.txt")
+    # files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_100.txt")
+    # files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_200.txt")
     files.append("kiwisources/travelling-salesman/real_data/data_300.txt")
 
     timeout = 30
