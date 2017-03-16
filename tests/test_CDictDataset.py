@@ -3,7 +3,7 @@ import unittest
 import sys, os
 sys.path.append(os.path.realpath(".."))
 
-class DictDatasetTest(unittest.TestCase):
+class CDictDatasetTest(unittest.TestCase):
 
     def test_cities(self):
         from src.datasets.CDictDataset import CDictDataset
