@@ -6,3 +6,4 @@ from .DataPath import *
 from .CFlight import *
 from .CDictDataset import *
 from .CListDataset import *
+from .CMatrixDataset import *

@@ -8,13 +8,13 @@ from functools import partial
 
 import numpy as np
 
-from src.datasets import MatrixDataset
+from src.datasets import CMatrixDataset
 from src.datasets import CFlight
 
-class MatrixDatasetTest(unittest.TestCase):
+class CCMatrixDatasetTest(unittest.TestCase):
 
     def test_cities(self):
-        d = MatrixDataset()
+        d = CMatrixDataset()
         d.load_data('../input/3_airports_backtrace.csv')
 
         self.assertTrue("PRG" in d.cities )
@@ -22,7 +22,7 @@ class MatrixDatasetTest(unittest.TestCase):
         self.assertTrue("TXL" in d.cities )
 
     def test_flights(self):
-        d = MatrixDataset()
+        d = CMatrixDataset()
         d.load_data('../input/3_airports_backtrace.csv')
 
         self.assertEqual(CFlight("PRG", "TXL", 0, 100), d.get_flight_by_id(0))
@@ -64,7 +64,7 @@ class MatrixDatasetTest(unittest.TestCase):
         np.testing.assert_array_equal(flights[1], [0, 1, 0, 100])
 
     def test_num_flights(self):
-        d = MatrixDataset()
+        d = CMatrixDataset()
         d.load_data('../input/3_airports_backtrace.csv')
         
         self.assertEqual( d.dataset.shape[0], 9 )
@@ -78,15 +78,15 @@ class MatrixDatasetTest(unittest.TestCase):
         # files.append("../kiwisources/travelling-salesman/real_data/data_300.txt")
 
         def load(f):
-            d = MatrixDataset()
+            d = CMatrixDataset()
             d.load_data(f)
 
         def time_and_tell(files, reps):
             for f in files:
                 t = timeit(partial(load, f), number=reps)
-                print("loading {} with MatrixDataset {} times: {}s".format(f, reps, t))
+                print("loading {} with CMatrixDataset {} times: {}s".format(f, reps, t))
 
-        # d = MatrixDataset()
+        # d = CMatrixDataset()
         # d.load_data(files[0])
         # print( "{}\n^dataset".format( d.dataset ) )
 
