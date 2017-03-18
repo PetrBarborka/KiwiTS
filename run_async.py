@@ -157,7 +157,7 @@ if __name__ == '__main__':
 
         wrap_in_process = True # turn false for pycharm concurrency to see the threads
         if wrap_in_process:
-            p = Process(target=partial(AM.search_async, timeout=(timeout - fread_time - 2)))
+            p = Process(target=partial(AM.search_async, timeout=(timeout - fread_time - 2.5)))
 
             logging.info("starting AsyncManager process")
             p.start()
