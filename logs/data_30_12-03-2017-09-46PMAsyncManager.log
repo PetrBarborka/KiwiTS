@@ -1,8 +1,0 @@
-43ms run_async <module> INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt ...
-109ms run_async <module> INFO     done
-110ms run_async <module> INFO     starting AsyncManager process
-123ms run_async register_result INFO     AsyncBackTracker found VALID path for 8274
-128ms run_async register_result INFO     AsyncBackTracker found VALID path for 8259
-6671ms run_async register_result INFO     AsyncBackTracker found VALID path for 8171
-9181ms run_async search_async INFO     threads ['AsyncBackTracker'] are still alive after timeout of 9s
-9188ms run_async <module> INFO     Async manager process ended

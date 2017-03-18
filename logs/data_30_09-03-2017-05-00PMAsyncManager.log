@@ -1,7 +1,0 @@
-17:00:19 INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt ...
-17:00:19 INFO     done
-17:00:19 INFO     starting AsyncManager process
-17:00:19 INFO     AsyncBackTracker found VALID path for: 8274
-17:00:19 INFO     AsyncBackTracker found VALID path for: 8259
-17:00:25 INFO     AsyncBackTracker found VALID path for: 8171
-17:00:49 INFO     Async manager process timed out

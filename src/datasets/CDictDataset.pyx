@@ -73,12 +73,13 @@ cdef class CDictDataset:
         """ See DatasetInterface """
         lines = None
         if stdin:
-            # data_in = sys.stdin.read().split('\n')[:-1]
-            data_in = os.read(0, int(4e8))
-            data_in = data_in.split(b'\n')[:-1]
-            self.starting_city = data_in[0].decode("latin-1")
+            data_in = sys.stdin.read().split('\n')[:-1]
+            # data_in = os.read(0, int(1e9))
+            # data_in = data_in.split(b'\n')[:-1]
+            assert len(data_in) > 2, "provide valid input to stdin!"
+            self.starting_city = data_in[0]
             lines = data_in[1:]
-            list(map(lambda line: self._process_one_line(line.decode("latin-1").split(' ')), lines))
+            list(map(lambda line: self._process_one_line(line.split(' ')), lines))
         else:
             with open(path, 'r') as f:
                 self.starting_city = f.readline().rstrip()

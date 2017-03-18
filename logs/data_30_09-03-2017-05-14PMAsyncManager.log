@@ -1,7 +1,0 @@
-44ms run_async <module> INFO     loading input file kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt ...
-107ms run_async <module> INFO     done
-107ms run_async <module> INFO     starting AsyncManager process
-119ms run_async register_result INFO     AsyncBackTracker found VALID path for 8274
-123ms run_async register_result INFO     AsyncBackTracker found VALID path for 8259
-6628ms run_async register_result INFO     AsyncBackTracker found VALID path for 8171
-30120ms run_async <module> INFO     Async manager process timed out
