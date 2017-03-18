@@ -45,11 +45,10 @@ cdef class CFlight:
             self.price = price
 
     def __str__(self):
-        return 'id: {}, {} {} {} {}'.format(self.int_id,
-                                            self.city_from,
-                                            self.city_to,
-                                            self.day,
-                                            self.price)
+        return '{} {} {} {}'.format( self.city_from,
+                                     self.city_to,
+                                     self.day,
+                                     self.price )
 
     def __repr__(self):
         return '<Flight: {}>'.format(str(self))

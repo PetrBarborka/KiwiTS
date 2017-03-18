@@ -33,7 +33,6 @@ class AsyncManager:
             # (method2, timefound2) ... ]
              # ... ] 
         # }
-        self.results = None
         self.time_start = None
         self.result_lock = Lock()
 
@@ -68,7 +67,7 @@ class AsyncManager:
             logging.info("all threads finished before timeout of {}s"
                          .format(timeout) )
 
-        # self.final_report()
+        self.final_report()
 
     def register_result(self, path, method_name="method name undefined"):
         # assert isinstance(path, DataPath), \
@@ -82,16 +81,9 @@ class AsyncManager:
         if path.is_valid():
             with self.result_lock:
                 if self.best_result is None or self.best_result["path"].price > path.price:
-                    self.best_result = {"path": path,
+                    self.best_result = {"path": path.copy(),
                                         "time": td,
                                         "method": method_name }
-
-                try:
-                    self.results[(path.price, path)].append((method_name, td))
-                except KeyError:
-                    self.results[(path.price, path)] = [(method_name, td)]
-                except TypeError:
-                    self.results = {(path.price, path): [(method_name, td)] }
 
     def get_best_result(self):
         with self.result_lock:
@@ -100,8 +92,16 @@ class AsyncManager:
             else:
                 return None
 
+    def final_report(self):
+        logging.info("giving final report")
+        if self.best_result is not None:
+            print(self.best_result["path"].price)
+            for f in self.best_result["path"].flights:
+                print ( str(f) )
+
 if __name__ == '__main__':
 
+    # ------- logging -------
     ts = datetime.datetime.now().strftime("%d-%m-%Y-%I-%M%p")
     # lfile = "logs/{}_{}AsyncManager.log".format(input_file.split('.')[0].split('/')[-1], ts)
     lfile = "logs/multifile_{}AsyncManager.log".format(ts)
@@ -121,33 +121,38 @@ if __name__ == '__main__':
                             datefmt='%H:%M:%S',
                             level=logging.DEBUG)
 
-    def do_file(input_file, timeout):
+    # ---------- processing ----------
+
+    def work(input_file=None, timeout=None):
         dataset = CDictDataset()
         logging.info("=" * 50 )
         logging.info("loading input file {} ...".format(input_file) )
-        dataset.load_data(input_file)
+        if input_file is None:
+            dataset.load_data(stdin=True)
+        else:
+            dataset.load_data(input_file)
         logging.info("done")
         
         AM = AsyncManager(dataset, [])
         set_result_callback = partial( AM.register_result, method_name="Simple backtracker" )
         get_result_callback = AM.get_best_result
-        # search_fcns = [AsyncBackTracker(dataset.copy(), set_result_callback, get_result_callback).search]
-        search_fcns = []
-        # lookups = [1,2,3,5,10,15,30]
-        lookups = [1,2,3]
-        # steps = [1,2,3,5,10,15,30]
-        steps = [1,2]
-        for ls in [(1,1), (2,1), (3,2)]:
-            lookup=ls[0]
-            step=ls[1]
-            set_result_callback = partial( AM.register_result, method_name="Lookup_l:{}_s:{}".format(lookup, step) )
-            search_fcns.append(partial(BackTrackerLookup(dataset, set_result_callback,
-                                                            get_result_callback).search, lookup, step))
+        search_fcns = [AsyncBackTracker(dataset, set_result_callback, get_result_callback).search]
+        # search_fcns = []
+        # # lookups = [1,2,3,5,10,15,30]
+        # lookups = [1,2,3]
+        # # steps = [1,2,3,5,10,15,30]
+        # steps = [1,2]
+        # for ls in [(1,1), (2,1), (3,1)]:
+            # lookup=ls[0]
+            # step=ls[1]
+            # set_result_callback = partial( AM.register_result, method_name="Lookup_l:{}_s:{}".format(lookup, step) )
+            # search_fcns.append(partial(BackTrackerLookup(dataset, set_result_callback,
+                                                            # get_result_callback).search, lookup, step))
         AM.search_fcns = search_fcns
 
         wrap_in_process = True # turn false for pycharm concurrency to see the threads
         if wrap_in_process:
-            p = Process(target=partial(AM.search_async, timeout=(timeout - 1)))
+            p = Process(target=partial(AM.search_async, timeout=(timeout - 2)))
 
             logging.info("starting AsyncManager process")
             p.start()
@@ -160,20 +165,5 @@ if __name__ == '__main__':
         else:
             AM.search_async(timeout=timeout-2)
 
-    files = []
-    # input_file = 'benchmark/benchmarkdata/300_ap_1500000_total_random_input'
-    # input_file = 'benchmark/benchmarkdata/300_ap_3000_total_random_input'
-    # input_file = "kiwisources/travelling-salesman/real_data/data_300.txt"
-    # input_file = "kiwisources/travelling-salesman/real_data/sorted_data/data_100.txt"
-    # input_file = "kiwisources/travelling-salesman/real_data/sorted_data/data_200.txt"
-    # files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_5.txt")
-    # files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_15.txt")
-    # files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_30.txt")
-    # files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_50.txt")
-    # files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_100.txt")
-    # files.append("kiwisources/travelling-salesman/real_data/sorted_data/data_200.txt")
-    files.append("kiwisources/travelling-salesman/real_data/data_300.txt")
-
     timeout = 30
-    for f in files:
-        do_file(f, timeout)
+    work(timeout=timeout)

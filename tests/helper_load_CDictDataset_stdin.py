@@ -6,4 +6,4 @@ from src.datasets import CDictDataset
 d = CDictDataset()
 d.load_data(stdin=True)
 
-# print( d.dataset )
+print( d )
