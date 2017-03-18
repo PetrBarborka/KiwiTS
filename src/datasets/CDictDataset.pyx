@@ -73,7 +73,8 @@ cdef class CDictDataset:
         """ See DatasetInterface """
         lines = None
         if stdin:
-            data_in = sys.stdin.read().split('\n')[:-1]
+            # data_in = sys.stdin.read().split('\n')[:-1]
+            data_in = sys.stdin.read().splitlines()
             # data_in = os.read(0, int(1e9))
             # data_in = data_in.split(b'\n')[:-1]
             assert len(data_in) > 2, "provide valid input to stdin!"

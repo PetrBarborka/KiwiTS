@@ -124,6 +124,9 @@ if __name__ == '__main__':
     # ---------- processing ----------
 
     def work(input_file=None, timeout=None):
+
+        time_start = timer()
+
         dataset = CDictDataset()
         logging.info("=" * 50 )
         logging.info("loading input file {} ...".format(input_file) )
@@ -132,6 +135,8 @@ if __name__ == '__main__':
         else:
             dataset.load_data(input_file)
         logging.info("done")
+
+        fread_time = timer() - time_start
         
         AM = AsyncManager(dataset, [])
         set_result_callback = partial( AM.register_result, method_name="Simple backtracker" )
@@ -152,7 +157,7 @@ if __name__ == '__main__':
 
         wrap_in_process = True # turn false for pycharm concurrency to see the threads
         if wrap_in_process:
-            p = Process(target=partial(AM.search_async, timeout=(timeout - 2)))
+            p = Process(target=partial(AM.search_async, timeout=(timeout - fread_time - 1)))
 
             logging.info("starting AsyncManager process")
             p.start()

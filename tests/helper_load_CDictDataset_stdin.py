@@ -6,4 +6,7 @@ from src.datasets import CDictDataset
 d = CDictDataset()
 d.load_data(stdin=True)
 
-print( d )
+# print( d.dataset )
+print( d.cities )
+print(len(d.cities) )
+print( d.starting_city )
