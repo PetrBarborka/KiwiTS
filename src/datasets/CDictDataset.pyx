@@ -4,7 +4,7 @@ from CFlight import CFlight
 
 from copy import deepcopy
 
-import sys
+import sys, os
 
 cdef class CDictDataset:
     """ Class representing dataset with dict
@@ -73,14 +73,17 @@ cdef class CDictDataset:
         """ See DatasetInterface """
         lines = None
         if stdin:
-            data_in = sys.stdin.read().split('\n')[:-1]
+            # data_in = sys.stdin.read().split('\n')[:-1]
+            data_in = os.read(0, int(4e8))
+            data_in = data_in.split(b'\n')[:-1]
             self.starting_city = data_in[0]
             lines = data_in[1:]
+            list(map(lambda line: self._process_one_line(line.decode("latin-1").split(' ')), lines))
         else:
             with open(path, 'r') as f:
                 self.starting_city = f.readline().rstrip()
                 lines = f.readlines()
-        list(map(lambda line: self._process_one_line(line.split(' ')), lines))
+            list(map(lambda line: self._process_one_line(line.split(' ')), lines))
         self.cities = list(self.dataset.keys())
 
     def _process_one_line(self, splt_line):

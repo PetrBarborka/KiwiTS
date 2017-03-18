@@ -24,8 +24,8 @@ class DatasetComparisonTest(unittest.TestCase):
         files = []
         files.append("{}real_data/sorted_data/data_5.txt".format(repo))
         files.append("{}real_data/sorted_data/data_20.txt".format(repo))
-        files.append("{}real_data/sorted_data/data_100.txt".format(repo))
-        files.append("{}real_data/data_300.txt".format(repo))
+        # files.append("{}real_data/sorted_data/data_100.txt".format(repo))
+        # files.append("{}real_data/data_300.txt".format(repo))
 
         def load(input_file, dataset_class, stdin=False):
             if stdin:
