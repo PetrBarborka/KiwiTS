@@ -4,6 +4,7 @@ from CFlight import CFlight
 
 from copy import deepcopy
 
+import sys
 
 cdef class CDictDataset:
     """ Class representing dataset with dict
@@ -68,9 +69,15 @@ cdef class CDictDataset:
     def __repr__(self):
             return self.starting_city + repr(self.dataset)
 
-    def load_data(self, path):
+    def load_data(self, path=None, stdin=False):
         """ See DatasetInterface """
-        with open(path, 'r') as f:
+        lines = None
+        if stdin:
+            data_in = sys.stdin.read().split('\n')[:-1]
+            self.starting_city = data_in[0]
+            lines = data_in[1:]
+        else:
+            with open(path, 'r') as f:
                 self.starting_city = f.readline().rstrip()
                 lines = f.readlines()
         list(map(lambda line: self._process_one_line(line.split(' ')), lines))

@@ -1,8 +1,14 @@
+# encoding: utf-8
+# cython: profile=True
+# filename: CMatrixDataset.pyx
+
 from .DatasetInterface import DatasetInterface
 from .CFlight import CFlight
 
 import numpy as np
 cimport numpy as np
+
+import csv
 
 cdef class CMatrixDataset:
     """ Class representing dataset with dict
@@ -38,6 +44,15 @@ cdef class CMatrixDataset:
             return [input_line[:3], input_line[4:7],
                     s[0], s[1]]
 
+        def stripline(l):
+            nrs = l[8:].split(b' ')
+            return  [  str(l[0:3])[2:5], 
+                    str(l[4:7])[2:5],
+                    int(nrs[0]),
+                    int(nrs[1]),
+                    ]
+
+        reader = None
         with open(path, 'r') as f:
             self.starting_city = f.readline().rstrip()
 
@@ -45,66 +60,43 @@ cdef class CMatrixDataset:
             self.city_name_to_id[self.starting_city] = 0
             self.city_id_to_name[0] = self.starting_city
 
-            lines = f.readlines()
-        self.dataset = np.empty((len(lines), 4), dtype=np.int)
-        # list(map(lambda line: self._process_one_line(line.split(' ')), lines))
+            self.dataset = np.empty((len(open(path).readlines())-1, 4), dtype=np.int)
+            reader = csv.reader(f, delimiter=" ")
 
-        for l in lines:
+            # for l in lines:
+            for l in reader:
 
-            splt_line = l.split(' ')
+                # splt_line = l.split(b' ')
+                # splt_line = stripline(l)
+                splt_line = l
+                
+                from_name = splt_line[0]
+                try:
+                    city_from_id = self.city_name_to_id[from_name]
+                except KeyError:
+                    city_from_id = len(self.cities)
+                    self.cities.append(from_name)
 
-            try:
-                city_from_id = self.city_name_to_id[splt_line[0]]
-            except KeyError:
-                city_from_id = len(self.cities)
-                self.cities.append(splt_line[0])
+                    self.city_name_to_id[from_name] = city_from_id
+                    self.city_id_to_name[city_from_id] = from_name
 
-                self.city_name_to_id[splt_line[0]] = city_from_id
-                self.city_id_to_name[city_from_id] = splt_line[0]
+                to_name = splt_line[1]
+                try:
+                    city_to_id = self.city_name_to_id[to_name]
+                except KeyError:
+                    city_to_id = len(self.cities)
+                    self.cities.append(to_name)
 
-            try:
-                city_to_id = self.city_name_to_id[splt_line[1]]
-            except KeyError:
-                city_to_id = len(self.cities)
-                self.cities.append(splt_line[1])
+                    self.city_name_to_id[to_name] = city_to_id
+                    self.city_id_to_name[city_to_id] = to_name
 
-                self.city_name_to_id[splt_line[1]] = city_to_id
-                self.city_id_to_name[city_to_id] = splt_line[1]
+                self.dataset[self.next_id, 0] = city_from_id
+                self.dataset[self.next_id, 1] = city_to_id
+                self.dataset[self.next_id, 2] = splt_line[2]
+                self.dataset[self.next_id, 3] = splt_line[3]
 
-            self.dataset[self.next_id, 0] = city_from_id
-            self.dataset[self.next_id, 1] = city_to_id
-            self.dataset[self.next_id, 2] = splt_line[2]
-            self.dataset[self.next_id, 3] = splt_line[3]
+                self.next_id += 1
 
-            self.next_id += 1
-
-    cdef _process_one_line(self, splt_line):
-        """ Processes one line of csv file """
-
-        try:
-            city_from_id = self.city_name_to_id[splt_line[0]]
-        except KeyError:
-            city_from_id = len(self.cities)
-            self.cities.append(splt_line[0])
-
-            self.city_name_to_id[splt_line[0]] = city_from_id
-            self.city_id_to_name[city_from_id] = splt_line[0]
-
-        try:
-            city_to_id = self.city_name_to_id[splt_line[1]]
-        except KeyError:
-            city_to_id = len(self.cities)
-            self.cities.append(splt_line[1])
-
-            self.city_name_to_id[splt_line[1]] = city_to_id
-            self.city_id_to_name[city_to_id] = splt_line[1]
-
-        self.dataset[self.next_id, 0] = city_from_id
-        self.dataset[self.next_id, 1] = city_to_id
-        self.dataset[self.next_id, 2] = splt_line[2]
-        self.dataset[self.next_id, 3] = splt_line[3]
-
-        self.next_id += 1
 
     def get_starting_city(self, by_id=None):
         """ See DatasetInterface """
@@ -144,6 +136,7 @@ cdef class CMatrixDataset:
                         sort_by_price=None):
         """ Return flights as arrays if [from_id, to_id, day, price] """
         d = self.dataset
+        # print( "dataset: {}".format(d) )
         possibilities = d[(d[:,0] == from_id) & (d[:,2] == day)]
 
         if sort_by_price is not None:
