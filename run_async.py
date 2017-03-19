@@ -16,6 +16,7 @@ from src.searchers import BackTracker
 from src.searchers import ShortestPath
 from src.searchers import Tribe
 from src.searchers.AsyncBackTracker import AsyncBackTracker
+from src.searchers.CAsyncBackTracker import CAsyncBackTracker
 from src.searchers.BackTrackerLookup import BackTrackerLookup
 
 import datetime
@@ -141,7 +142,7 @@ if __name__ == '__main__':
         AM = AsyncManager(dataset, [])
         set_result_callback = partial( AM.register_result, method_name="Simple backtracker" )
         get_result_callback = AM.get_best_result
-        search_fcns = [AsyncBackTracker(dataset, set_result_callback, get_result_callback).search]
+        search_fcns = [CAsyncBackTracker(dataset, set_result_callback, get_result_callback).search]
         # search_fcns = []
         # # lookups = [1,2,3,5,10,15,30]
         # lookups = [1,2,3]
