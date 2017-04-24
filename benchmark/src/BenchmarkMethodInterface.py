@@ -10,7 +10,9 @@ import timeit, time
 from functools import partial
 
 class BenchmarkMethodInterface:
-    """Set whatever you want in __init__, but leave any real data manipulation
+    """An interface for benchmarking and testing of various searching methods
+    
+       Set whatever you want in __init__, but leave any real data manipulation
        to initialize(). Set self.result to a DataPath in run() for validation.
        Assert initialization in run """
 
@@ -24,10 +26,14 @@ class BenchmarkMethodInterface:
         raise NotImplementedError( "Should have implemented this" )
 
     def run(self):
+        """ Run your method and save reslut to
+            self.result as a DataPath """
         raise NotImplementedError( "Should have implemented this" )
 
     def validate(self, known_paths_file=None):
-        
+        """ Validates the self.result for consistency
+            with rules. Optionaly compares to provided
+            results file """
         assert self.result, "initialize, run and then validate"
 
         known_paths = parse_paths_file(known_paths_file)
@@ -55,6 +61,7 @@ class BenchmarkMethodInterface:
         return self.result_is_valid
 
     def benchmark(self, input_file, valid_results_file=None, reps=10, timeout=10):
+        """ Check the average time of execution on given file. """
 
         t_init = timeit.timeit(partial(self.initialize, input_file), number=reps)/reps
         t_run = timeit.timeit(self.run, number=reps)/reps

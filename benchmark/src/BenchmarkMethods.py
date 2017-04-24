@@ -9,6 +9,8 @@ from src.searchers import *
 
 from multiprocessing import Process
 
+""" Benchmark classes for the various path search methods """
+
 class BenchmarkBackTracker(BenchmarkMethodInterface):
 
     def __init__(self):
@@ -146,6 +148,8 @@ class BenchmarkRandomPathBuilding(BenchmarkMethodInterface):
             self.result = DataPath(flights, totalcost)
 
 if __name__ == "__main__":
+    """ Tests the performance of all the benchmark classes 
+        in separate processes """
     
     # input_file = "../benchmarkdata/5_ap_50_total_random_input"
     # valid_results_file = "../benchmarkdata/5_ap_50_total_random_all"
@@ -175,6 +179,3 @@ if __name__ == "__main__":
         if p.is_alive():
             p.terminate()
             print("timeout of {} seconds exceeded for".format(timeout))
-            continue
-
-

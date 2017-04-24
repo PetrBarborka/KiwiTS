@@ -3,6 +3,10 @@ sys.path.append(os.path.realpath("../"))
 
 from src.datasets import *
 
+""" Little utility methods handling the "paths" files
+    generated to keep track of results of performance
+    testing of the methods """
+
 def get_best_path(paths):
     if paths:
         return sorted(paths, key=lambda p: p.price)[0]

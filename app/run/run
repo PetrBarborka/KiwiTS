@@ -1,1 +1,0 @@
-cd ../../ && cat $1 | python3 run_async.py && cd app/run

@@ -4,3 +4,5 @@
 *.pyo
 .idea
 *__pycache__*
+*.so
+*.un~

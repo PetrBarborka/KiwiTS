@@ -23,7 +23,39 @@ import datetime
 
 import logging
 
+"""
+    usage: cat inputfile.csv | python3 run_async.py
+
+    This file is used to run the whole process. Originally, we were
+    gonna run multiple methods simultaneously, exchange data and
+    report results back to the manager but this didn't turn out useful,
+    so the manager actually just ran one thread.
+
+    However, the AsyncManager was used in a way that it was able to run
+    the search, collect the data called back from the search method and
+    return the best result before the timeout even if the search was 
+    still not exhausted (which it often wasn't)
+ """
+
 class AsyncManager:
+    """ search the given dataset using provided search functions
+
+        example usage: 
+        dataset = CDictDataset()
+        dataset.load_data(input_file)
+
+        AM = AsyncManager(dataset, [])
+        set_result_callback = partial( AM.register_result, method_name="Simple backtracker" )
+        get_result_callback = AM.get_best_result
+        
+        # the constructor needs the callbacks from manager. 
+        # yes, this is not the greatest architecture
+        search_fcns = [CAsyncBackTracker(dataset, set_result_callback, get_result_callback).search]
+        AM.search_fcns = search_fcns
+
+        AM.search_async()
+    """
+
     def __init__(self, dataset, search_fcns):
         self.dataset = dataset
         self.search_fcns = search_fcns
@@ -102,6 +134,8 @@ class AsyncManager:
 
 if __name__ == '__main__':
 
+    """ Initialize logging and run the search """
+
     # ------- logging -------
     ts = datetime.datetime.now().strftime("%d-%m-%Y-%I-%M%p")
     # lfile = "logs/{}_{}AsyncManager.log".format(input_file.split('.')[0].split('/')[-1], ts)
@@ -125,6 +159,8 @@ if __name__ == '__main__':
     # ---------- processing ----------
 
     def work(input_file=None, timeout=None):
+        """ Wrap the asyncmanager in a process so it is easily
+            killable. No input file means stdin """
 
         time_start = timer()
 

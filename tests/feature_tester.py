@@ -1,3 +1,9 @@
+import sys, os
+sys.path.append(os.path.realpath("../"))
+
+""" Abandoned simple test file from the early
+    development of the first methods """
+
 def generate_flights():
     from src.generators import HenryGenerator
 

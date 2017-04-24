@@ -2,6 +2,9 @@ import numpy as np
 
 price = lambda x: float(np.asscalar(x[:,3]))
 
+import sys, os
+sys.path.append(os.path.realpath(".."))
+
 def getPossibilities(data, ap_from, cities_to_visit, start_day):
     """ Where can you go from given airport 
         at given day sorted by price"""

@@ -7,6 +7,8 @@ from datasets import DataPath
 import logging
 
 class CAsyncBackTracker:
+    """ A simple backtracking algorithm augmented with a very basic
+        branch cutting """
 
     def __init__(self, dataset, register_result_callback, best_result_callback):
         self.dataset = dataset

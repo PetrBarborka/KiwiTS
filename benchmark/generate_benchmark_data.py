@@ -5,6 +5,8 @@ sys.path.append(os.path.relpath('../'))
 
 from src.generators.HenryGenerator2 import HenryGenerator2
 
+""" A small script for generation of the benchmarking test files """
+
 def clear_files(prefix=""):
     for f in glob.glob("{}*_input".format(prefix)) + \
              glob.glob("{}*_target".format(prefix)) + \
